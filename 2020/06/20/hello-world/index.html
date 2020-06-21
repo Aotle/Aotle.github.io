@@ -69,8 +69,43 @@
 </head>
 
 <body>
+	<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+	<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+	<script type="text/javascript" src="/js/fireworks.js"></script>
   
-  <div id="loading-bar-wrapper">
+  <div class="cover-wrapper">
+    
+      <cover class='cover post half'>
+        <div class='cover-body'>
+  <div class='a'>
+    
+    
+      <p class="title">Aotle</p>
+    
+    
+      <p class="subtitle">你所看到的惊鸿，都曾被平庸磨练</p>
+    
+  </div>
+  <div class='b'>
+    
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="" />
+          <i class="icon fas fa-search fa-fw"></i>
+        </form>
+      </div>
+    
+    <div class='menu navigation'>
+      <ul class='cover-list-h'>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+      </cover>
+    
+    <div id="loading-bar-wrapper">
   <div id="loading-bar"></div>
 </div>
 <header class="l_header shadow blur">
@@ -323,9 +358,10 @@
 
 <script>setLoadingBarProgress(40);</script>
 
+  </div>
 
 
-  <div class="l_body nocover">
+  <div class="l_body">
     <div class='body-wrapper'>
       
 
@@ -1038,5 +1074,5 @@
 
 
   <script>setLoadingBarProgress(100);</script>
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"live2d-widget-model-haruto"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
