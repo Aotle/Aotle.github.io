@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,8 +16,14 @@
 
   <!-- 页面元数据 -->
   
-    <title>Tag: 考试 - Aotle</title>
+    <title>对称加密和非对称加密 - Aotle</title>
   
+    <meta name="keywords" content="安全,密码学">
+  
+  
+    <meta name="description" content="
+介绍了对称加密和非对称加密
+">
   
 
   <!-- feed -->
@@ -80,7 +84,7 @@
   
   <div class="cover-wrapper">
     
-      <cover class='cover  half'>
+      <cover class='cover post half'>
         <div class='cover-body'>
   <div class='a'>
     
@@ -338,29 +342,12 @@
     <div class='body-wrapper'>
       
 
-
 <div class='l_main'>
   
-    
-      
-  <section class="post-list ">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+
   
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -370,11 +357,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/2020/09/10/%E9%80%92%E5%BD%92%E6%96%B9%E7%A8%8B%E6%B1%82%E8%A7%A3%E6%96%B9%E6%B3%95/">
-      递归方程求解方法
+  <h1 class="title">
+    <a href="/2020/09/10/%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E5%92%8C%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/">
+      对称加密和非对称加密
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -397,9 +384,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/%E7%AE%97%E6%B3%95/' rel="nofollow">
+    <a href='/categories/%E5%AE%89%E5%85%A8/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>算法</p>
+      <p>安全</p>
     </a>
   </div>
 
@@ -421,11 +408,6 @@
 
             
           
-            
-              
-
-            
-          
         </div>
         
           <hr>
@@ -435,306 +417,69 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>这是一篇关于递归方程求解的简单方法</p>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <blockquote>
+<p>介绍了对称加密和非对称加密</p>
 </blockquote>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2020/09/10/%E9%80%92%E5%BD%92%E6%96%B9%E7%A8%8B%E6%B1%82%E8%A7%A3%E6%96%B9%E6%B3%95/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
+<a id="more"></a>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
+<h2 id="对称加密（Symmetric-Cryptography），又称私钥加密"><a href="#对称加密（Symmetric-Cryptography），又称私钥加密" class="headerlink" title="对称加密（Symmetric Cryptography），又称私钥加密"></a>对称加密（Symmetric Cryptography），又称私钥加密</h2><p>对称加密是最快速、最简单的一种加密方式，加密（encryption）与解密（decryption）用的是同样的密钥（secret key）,这种方法在密码学中叫做对称加密算法。对称加密有很多种算法，由于它效率很高，所以被广泛使用在很多加密协议的核心当中。对称加密通常使用的是相对较小的密钥，一般小于256 bit。因为密钥越大，加密越强，但加密与解密的过程越慢。如果你只用1 bit来做这个密钥，那黑客们可以先试着用0来解密，不行的话就再用1解；但如果你的密钥有1 MB大，黑客们可能永远也无法破解，但加密和解密的过程要花费很长的时间。密钥的大小既要照顾到安全性，也要照顾到效率，是一个trade-off。</p>
+<h2 id="非对称加密（Asymmetric-Cryptography），又称公钥加密"><a href="#非对称加密（Asymmetric-Cryptography），又称公钥加密" class="headerlink" title="非对称加密（Asymmetric Cryptography），又称公钥加密"></a>非对称加密（Asymmetric Cryptography），又称公钥加密</h2><p>1976年，美国学者Dime和Henman为解决信息公开传送和密钥管理问题，提出一种新的密钥交换协议，允许在不安全的媒体上的通讯双方交换信息，安全地达成一致的密钥，这就是“公开密钥系统”。相对于“对称加密算法”这种方法也叫做“非对称加密算法”。非对称加密为数据的加密与解密提供了一个非常安全的方法，它使用了一对密钥，公钥（public key）和私钥（private key）。私钥只能由一方安全保管，不能外泄，而公钥则可以发给任何请求它的人。非对称加密使用这对密钥中的一个进行加密，而解密则需要另一个密钥。比如，你向银行请求公钥，银行将公钥发给你，你使用公钥对消息加密，那么只有私钥的持有人–银行才能对你的消息解密。与对称加密不同的是，银行不需要将私钥通过网络发送出去，因此安全性大大提高。</p>
+<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><p>对称密钥加密我们从定义中应该就可以明白，它是信息的发送方和接收方都用同一个秘钥去加密和解密数据。这样做它的最大优势是加/解密速度快，适合于对大数据量进行密，但密钥管理困难，密钥在网络传输的过程种容易被窃取。</p>
+<p>非对称密钥加密，它需要使用“一对”密钥来分别完成加密和解密操作，一个公开发布，即公开密钥，另一个由用户自己秘密保存，即私用密钥。信息发送者用公开密钥去加密，而信息接收者则用私用密钥去解密。公钥机制灵活，但加密和解密速度却比对称密钥加密慢得多。<br>非对称密钥加密的使用过程：</p>
+<ol>
+<li>A要向B发送信息，A和B都要产生一对用于加密和解密的公钥和私钥。</li>
+<li>A的私钥保密，A的公钥告诉B；B的私钥保密，B的公钥告诉A。</li>
+<li>A要给B发送信息时，A用B的公钥加密信息，因为A知道B的公钥。</li>
+<li>A将这个消息发给B（已经用B的公钥加密消息）。</li>
+<li>B收到这个消息后，B用自己的私钥解密A的消息，其他所有收到这个报文的人都无法解密，因为只有B才有B的私钥。</li>
+<li>反过来，B向A发送消息也是一样。</li>
+</ol>
+<p>从上面大家应该可以看出对称加密和非对称加密的区别，下面稍微进行一下总结：</p>
+<p>（1） 对称加密加密与解密使用的是同样的密钥，所以速度快，但由于需要将密钥在网络传输，所以安全性不高。<br>（2） 非对称加密使用了一对密钥，公钥与私钥，所以安全性高，但加密与解密速度慢。<br><strong>（3） 解决的办法是混合加密——将对称加密的密钥使用非对称加密的公钥进行加密，然后发送出去，接收方使用私钥进行解密得到对称加密的密钥，然后双方可以使用对称加密来进行沟通。</strong></p>
+<p>混合加密是目前在通信方面最安全的做法。</p>
 
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
           
-  <h2 class="title">
-    <a href="/2020/09/08/%E7%AE%97%E6%B3%95%E8%80%83%E8%AF%95%E5%A4%8D%E4%B9%A0/">
-      算法考试复习
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
+            <div class='article_footer'>
               
-<div class='new-meta-item author'>
-  <a href="https://aotle.github.io" rel="nofollow">
-    <img src="http://i1.fuimg.com/721743/1074048bddff0451.png">
-    <p>F.A</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E7%AE%97%E6%B3%95/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>算法</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Sep 8, 2020</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>这是一篇算法实验课考试复习</p>
-</blockquote>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2020/09/08/%E7%AE%97%E6%B3%95%E8%80%83%E8%AF%95%E5%A4%8D%E4%B9%A0/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/06/25/%E5%B8%B8%E7%94%A8%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86/">
-      常用汇编指令整理
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="https://aotle.github.io" rel="nofollow">
-    <img src="http://i1.fuimg.com/721743/1074048bddff0451.png">
-    <p>F.A</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E6%B1%87%E7%BC%96/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>汇编</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Jun 25, 2020</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>这是一些常用汇编指令的整理。</p>
-</blockquote>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2020/06/25/%E5%B8%B8%E7%94%A8%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
-
-  
-
-
-    
-  
-</div>
-<aside class='l_side'>
-  
+                
   
     
     
 
-<section class="widget blogger shadow desktop mobile">
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
   <div class='content'>
     
-      
-        <a class='avatar flat-box' href='/about/'>
-          <img no-lazy src='http://i1.fuimg.com/721743/1074048bddff0451.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Aotle</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
+      <blockquote>
         
           
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
           
         
           
-            <a href="/1781322024@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
+            <p>本文永久链接是：<a href=https://aotle.github.io/2020/09/10/%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E5%92%8C%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/>https://aotle.github.io/2020/09/10/%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E5%92%8C%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/</a></p>
           
         
-          
-            <a href="https://github.com/Aotle"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=549195595"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
+      </blockquote>
     
   </div>
 </section>
@@ -744,83 +489,214 @@
   
     
     
+
+<section class="widget qrcode  desktop mobile">
   
 
-  <section class="widget category shadow desktop">
+  <div class='content article-entry'>
+    
+      
+        <div class='fancybox'><img src='http://i1.fuimg.com/721743/db9772f7a48ca090.png'
+        
+          height='64px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='http://i2.tiimg.com/721743/026816afe0d49896.jpg'
+        
+          height='64px'
+        ></div>
+      
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-10T22:34:35+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Sep 10, 2020</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%AE%89%E5%85%A8/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>安全</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>密码学</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://aotle.github.io/2020/09/10/%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E5%92%8C%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/&title=对称加密和非对称加密 - Aotle&summary=
+介绍了对称加密和非对称加密
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://aotle.github.io/2020/09/10/%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E5%92%8C%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/&title=对称加密和非对称加密 - Aotle&summary=
+介绍了对称加密和非对称加密
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://aotle.github.io/2020/09/10/%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E5%92%8C%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/&title=对称加密和非对称加密 - Aotle&summary=
+介绍了对称加密和非对称加密
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2020/09/10/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E5%92%8C%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/'>
+                <p class='title'>数字签名和数字证书<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>
+介绍了数字签名和数字证书
+
+
+
+散列函数和消息摘要一段信息，经过摘要算法(散列函数)得到一串哈希值，就是摘要(dijest)。
+信息是任意长度，而摘要是定长。
+摘要算法有MD5、SHA1、SH...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '对称加密和非对称加密',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/PHP/" href="/categories/PHP/"
-            id="categoriesPHP"
-            ><div class='name'>PHP</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AE%89%E5%85%A8/" href="/categories/%E5%AE%89%E5%85%A8/"
-            id="categoriesE5AE89E585A8"
-            ><div class='name'>安全</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%91%98%E6%8A%84/" href="/categories/%E6%91%98%E6%8A%84/"
-            id="categoriesE69198E68A84"
-            ><div class='name'>摘抄</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"
-            id="categoriesE695B0E68DAEE7BB93E69E84"
-            ><div class='name'>数据结构</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%B1%87%E7%BC%96/" href="/categories/%E6%B1%87%E7%BC%96/"
-            id="categoriesE6B187E7BC96"
-            ><div class='name'>汇编</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
-            id="categoriesE7AE97E6B395"
-            ><div class='name'>算法</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E9%9A%8F%E7%AC%94/" href="/categories/%E9%9A%8F%E7%AC%94/"
-            id="categoriesE99A8FE7AC94"
-            ><div class='name'>随笔</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#对称加密（Symmetric-Cryptography），又称私钥加密"><span class="toc-text">对称加密（Symmetric Cryptography），又称私钥加密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#非对称加密（Asymmetric-Cryptography），又称公钥加密"><span class="toc-text">非对称加密（Asymmetric Cryptography），又称公钥加密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#优缺点"><span class="toc-text">优缺点</span></a></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/8086%E6%B1%87%E7%BC%96/" style="font-size: 14px; color: #999">8086汇编</a> <a href="/tags/PHP/" style="font-size: 14px; color: #999">PHP</a> <a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 19px; color: #777">安全</a> <a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" style="font-size: 19px; color: #777">密码学</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/%E7%9F%AD%E5%8F%A5/" style="font-size: 14px; color: #999">短句</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 14px; color: #999">笔记</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 24px; color: #555">算法</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" style="font-size: 14px; color: #999">线性表</a> <a href="/tags/%E8%80%83%E8%AF%95/" style="font-size: 24px; color: #555">考试</a>
-    </div>
-  </section>
-
-
-  
 
   
 
@@ -1036,6 +912,60 @@
 
 
 
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick','mail','link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "B2JRC0gFBmeF5lDPxqa3TuTr-gzGzoHsz",
+    appKey: "x3BFjG0bdCFyRFGeg1QJUP8D",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'robohash',
+    lang:'zh-cn',
+    visitor: 'true',
+    highlight: 'true',
+    mathJax: 'false',
+    enableQQ: 'true',
+    requiredFields: requiredFields,
+    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+    emojiMaps: emojiMaps
+  })
+  </script>
 
 
 

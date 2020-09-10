@@ -16,13 +16,13 @@
 
   <!-- 页面元数据 -->
   
-    <title>二分与三分 - Aotle</title>
+    <title>数字签名和数字证书 - Aotle</title>
   
-    <meta name="keywords" content="算法">
+    <meta name="keywords" content="安全,密码学">
   
   
     <meta name="description" content="
-这是一篇用二分和三分求方程的根的博客
+介绍了数字签名和数字证书
 ">
   
 
@@ -358,8 +358,8 @@
         
           
   <h1 class="title">
-    <a href="/2020/09/10/%E4%BA%8C%E5%88%86%E4%B8%8E%E4%B8%89%E5%88%86/">
-      二分与三分
+    <a href="/2020/09/10/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E5%92%8C%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/">
+      数字签名和数字证书
     </a>
   </h1>
 
@@ -384,9 +384,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/%E7%AE%97%E6%B3%95/' rel="nofollow">
+    <a href='/categories/%E5%AE%89%E5%85%A8/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>算法</p>
+      <p>安全</p>
     </a>
   </div>
 
@@ -421,40 +421,56 @@
         <div class="article-entry" itemprop="articleBody">
           
           <blockquote>
-<p>这是一篇用二分和三分求方程的根的博客</p>
+<p>介绍了数字签名和数字证书</p>
 </blockquote>
 <a id="more"></a>
 
-<h2 id="二分法求方程的根"><a href="#二分法求方程的根" class="headerlink" title="二分法求方程的根"></a>二分法求方程的根</h2><p>如果有函数发<code>f(x)</code>，它在区间[a, b]上递增或者递减，并且<code>f(a)*f(b)&lt;0</code>。那么我们知道函数必然有一个等于0的解，而且这个解我们可以用二分法来求近似解。</p>
-<p>然后通过二分法缩小范围，直到区间长度足够小，这时候就说明找到了一个误差不超过区间长度的近似解。</p>
-<p>在二分法当中，我们没进行一次二分迭代，区间的长度就会缩减一半，这是一个指数级的缩减。所以即使一开始的区间很大，经过二分迭代也可以迅速缩减，得到一个非常精准的结果，并且和泰勒级数一样，除了能得到一个足够精确的值之外，还能得到误差的范围。（注：函数可以不是严格单调的，二分法只需要满足<code>f(a)*f(b)&lt;0</code>，函数连续并且只有一个零点）。</p>
-<h3 id="example"><a href="#example" class="headerlink" title="@example"></a>@example</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用二分法求f(x)&#x3D;x*x*x-7.7*x*x+19.2*x-15.3在区间[1,2]之间的根．</span><br></pre></td></tr></table></figure>
+<h2 id="散列函数和消息摘要"><a href="#散列函数和消息摘要" class="headerlink" title="散列函数和消息摘要"></a>散列函数和消息摘要</h2><p>一段信息，经过摘要算法(散列函数)得到一串哈希值，就是摘要(dijest)。</p>
+<p>信息是任意长度，而摘要是定长。</p>
+<p>摘要算法有MD5、SHA1、SHA256、SHA512等，算法把无限的映射成有限，因此可能会有碰撞（两个不同的信息，算出的摘要相同）</p>
+<p>摘要不同于加密算法，因为不存在解密，只不过从摘要反推原信息很难（可以认为能加密但无法解密还原，但可以用于比对）。类比到人的话：时间一直向前走 ，我没有办法从现在的你身上反观到你过去的样子，也没法从现在的他身上反观到他过去的样子……但你们现在的样子依然有作用，那就是在于“是否相同”：我可以通过比对现在的你和现在的他是否相同，来判断过去的你和他是否相同，而无需知道过去的你和过去的他具体是什么样子。</p>
+<p>摘要相同，信息一定相同。<strong>如果两张图片的md5相同，说明图片完全一样。</strong></p>
+<p>一个安全的摘要算法需要满足：</p>
+<blockquote>
+<p> 1、输入长度是任意的，输出是固定的<br> 2、对每一个给定的输入,计算输出是很容易的<br> 3、给定H,找到两个不同的输入，输出同一个值在计算上不可行<br> 4、给定H和一个消息x,找到另一个不同的消息y，使它们散列到同一个值在计算上不可行<br> 常见的散列算法：MD2、MD4、MD5、SHA、SHA-1</p>
+</blockquote>
+<h2 id="数字签名"><a href="#数字签名" class="headerlink" title="数字签名"></a>数字签名</h2><p>数字签名是指发送方以电子形式签名一个消息或文件，签名后的消息或文件能在网络中传输，并表示签名人对该消息或文件的内容负有责任。数字签名综合使用了消息摘要和非对称加密技术，可以保证接受者能够核实发送者对报文的签名，发送者事后不抵赖报文的签名，接受者不能篡改报文内容和伪造对报文的签名。</p>
+<h3 id="数字签名需要做到两点："><a href="#数字签名需要做到两点：" class="headerlink" title="数字签名需要做到两点："></a>数字签名需要做到两点：</h3><blockquote>
+<p> 1、确认信息是由签名者发送的；<br> 2、确认信息从签发到接受没有被修改过。</p>
+</blockquote>
+<h3 id="数字签名的过程与示意图："><a href="#数字签名的过程与示意图：" class="headerlink" title="数字签名的过程与示意图："></a>数字签名的过程与示意图：</h3><blockquote>
+<p> 1、发送方要发送消息运用散列函数（MD5、SHA-1等）形成消息摘要；<br> 2、发送方用<strong>自己的私钥</strong>对消息摘要进行加密，形成数字签名；<br> 3、发送方将数字签名附加在消息后发送给接收方；<br> 4、接受方用发送方的公钥对签名信息进行解密，得到消息摘要；<br> 5、接收方以相同的散列函数对接收到的消息进行散列，也得到一份消息摘要；<br> 6、接收方比较两个消息摘要，如果完全一致，说明数据没有被篡改，签名真实有效；否则拒绝该签名。</p>
+</blockquote>
+<img src='http://i2.tiimg.com/721743/ceb3477bdfe2dee4.png'>
 
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-6</span>; <span class="comment">//定义我们计算的精度</span></span><br><span class="line"><span class="keyword">double</span> a,b,c,d;        <span class="comment">//假定我们输入的函数是一元三次方程组，a*x*x*x+b*x*x+c*x+d=0</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">f</span><span class="params">(<span class="keyword">double</span> x)</span> <span class="comment">//定义我们的函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">return</span> a*x*x*x+b*x*x+c*x+d;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> m,n;<span class="comment">//求根区间[m,n]</span></span><br><span class="line">    <span class="keyword">double</span> i,j,sum;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"请输入一元三次方程组的系数：a,b,c,d:"</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lf%lf%lf%lf"</span>,&amp;a,&amp;b,&amp;c,&amp;d);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n请输入求根区间[m,n]:"</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lf%lf"</span>,&amp;m,&amp;n);</span><br><span class="line">    <span class="keyword">if</span>(f(m)*f(n)&lt;<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(<span class="built_in">fabs</span>(m-n)&gt;eps)</span><br><span class="line">        &#123;</span><br><span class="line">          i=(m+n)/<span class="number">2.0</span>;</span><br><span class="line">          sum=f(i);</span><br><span class="line">          <span class="built_in">printf</span>(<span class="string">"[%lf  %lf]\n"</span>,m,n);</span><br><span class="line">          <span class="keyword">if</span>(<span class="built_in">fabs</span>(sum)&lt;eps)</span><br><span class="line">           &#123;</span><br><span class="line">               <span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">//printf("\n该方程组的近似根为:x2*=%lf\n",i);</span></span><br><span class="line">            <span class="comment">//return 1;</span></span><br><span class="line">           &#125;</span><br><span class="line">          <span class="keyword">else</span> <span class="keyword">if</span>(f(i)*f(m)&lt;<span class="number">0</span>)</span><br><span class="line">          &#123;</span><br><span class="line">              n=i; <span class="comment">//修正区间，将[m,n]换成[m,i],这里的i是中点</span></span><br><span class="line">          &#125;  </span><br><span class="line">          <span class="keyword">else</span> <span class="keyword">if</span>(f(i)*f(n)&lt;<span class="number">0</span>)</span><br><span class="line">          &#123;</span><br><span class="line">              m=i;<span class="comment">//修正区间，将[m,n]换成[i,n],这里的i是中点</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lf  %lf"</span>,m,n);</span><br><span class="line">    j=(m+n)/<span class="number">2</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n该方程组的近似根为:x*=%lf\n"</span>,j);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果通信的内容是加密的，就需要采用<strong>数字信封</strong>：发送方用对称密钥加密明文，然后用对方的公钥加密对称密钥发送给对方，对方收到电子信封，用自己的私钥解密，得到对称密钥解密，还原明文。此时数字签名的过程如下：</p>
+<blockquote>
+<p> 1、发送方要发送消息运用散列函数（MD5、SHA-1等）形成消息摘要；<br> 2、发送方用<strong>自己的私钥</strong>对消息摘要进行加密，形成数字签名；<br> 3、发送方用对称加密算法对消息原文、数字签名进行加密，得到密文信息；<br> 4、发送方用<strong>接收方的公钥</strong>加密对称加密算法的密钥进行加密，形成数字信封；<br> 5、发送方将3中的密文信息和数字信封一起发给接收方；<br> 6、接收方首先用自己的私钥解密数字信封，还原对称加密算法的密钥；<br> 7、接受方用6中的密钥解密接收到的密文，得到原文信息和数字签名；<br> 8、接受方用发送方的公钥对签名信息进行解密，得到消息摘要；<br> 9、接收方以相同的散列函数对接收到的消息进行散列，也得到一份消息摘要；<br> 10、接收方比较两个消息摘要，如果完全一致，说明数据没有被篡改，签名真实有效；否则拒绝该签名。</p>
+</blockquote>
+<h2 id="数字证书"><a href="#数字证书" class="headerlink" title="数字证书"></a>数字证书</h2><p>数字签名中“公钥”可能被攻击者替换，为了保证“公钥”是可信的，数字证书应运而生。</p>
+<p>数字证书是一种权威的电子文档，由权威公正的第三方认证机构（CA）签发，广泛用于涉及需要身份认证和数据安全的领域。</p>
+<p>注意这里有两个不同的非对称算法（对应2个公钥私钥对），一个算法是发送方加密摘要的，用于生成数字签名；另一个算法是CA加密发送方公钥的，用于生成数字证书。两个算法相互独立，没有必然联系。</p>
+<p>发送时不仅发送内容、数字签名，还包含发送方的数字证书。接收方拿到后，首先从数字证书中解密出发送方公钥（用的是CA的公钥和CA解密算法），这个公钥必然是可信的。然后就是和前面一样的流程，拿发送方公钥去解密数字证书，得到摘要；最后比对摘要是否一致。</p>
+<p>CA是第三方权威机构，CA公钥是公开的，因此不可能伪造。</p>
+<h3 id="example-https"><a href="#example-https" class="headerlink" title="@example : https"></a>@example : https</h3><blockquote>
+<p>工作流程，基本分为三个阶段：<br>1、认证服务器。浏览器内置一个受信任的CA机构列表，并保存了这些CA机构的证书。第一阶段服务器会提供经CA机构认证颁发的服务器证书，如果签发该证书的CA，存在于浏览器的受信任CA列表中（也就是签发该证书的CA的根证书，能够与客户端中保存的CA根证书比对上），说明这个CA是可信任的，可以保证证书不假。然后，再进一步判断服务器证书中的信息与当前正在访问的网站（域名等）一致，那么浏览器就认为服务端是可信的，并从服务器证书中取得服务器公钥，用于后续流程。否则，浏览器将提示用户，根据用户的选择，决定是否继续。 <strong>客户端是否能够信任这个站点的证书，首先取决于客户端程序是否导入了证书颁发者的根证书。</strong></p>
+<p>2、协商会话密钥。客户端在认证完服务器，获得服务器的公钥之后，利用该公钥与服务器进行加密通信，协商出两个会话密钥，分别是用于加密客户端往服务端发送数据的客户端会话密钥，用于加密服务端往客户端发送数据的服务端会话密钥。在已有服务器公钥，可以加密通讯的前提下，还要协商两个对称密钥的原因，是因为非对称加密相对复杂度更高，在数据传输过程中，使用对称加密，可以节省计算资源。另外，会话密钥是随机生成，每次协商都会有不一样的结果，所以安全性也比较高。</p>
+<p>3、加密通讯。此时客户端服务器双方都有了本次通讯的会话密钥，之后传输的所有Http数据，都通过会话密钥加密。这样网路上的其它用户，将很难窃取和篡改客户端和服务端之间传输的数据，从而保证了数据的私密性和完整性。</p>
+</blockquote>
+<img src='http://i1.fuimg.com/721743/eedf52aad41f9fe7.jpg'>
 
-<hr>
-<h2 id="三分查找"><a href="#三分查找" class="headerlink" title="三分查找"></a>三分查找</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h3><p>在二分查找的基础上，在右区间（或左区间）再进行一次二分，这样的查找算法称为三分查找，也就是三分法。</p>
-<p>三分查找通常用来迅速确定最值。</p>
-<p>二分查找所面向的搜索序列的要求是：具有单调性（不一定严格单调）；没有单调性的序列不是使用二分查找。与二分查找不同的是，三分法所面向的搜索序列的要求是：序列为一个凸性函数。通俗来讲，就是该序列必须有一个最大值（或最小值），在最大值（最小值）的左侧序列，必须满足不严格单调递增（递减），右侧序列必须满足不严格单调递减（递增）。如下图，表示一个有最大值的凸性函数：</p>
-<img src='http://i1.fuimg.com/721743/187f9d6871e2f01b.jpg'>
-
-<h3 id="2-算法思路"><a href="#2-算法思路" class="headerlink" title="2.算法思路"></a>2.算法思路</h3><p>（1）与二分法类似，先取整个区间的中间值<code>mid</code>。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mid = (left + right) / <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
-
-<p>（2）再取右侧区间的中间值<code>midmid</code>，从而把区间分为三个小区间。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">midmid = (mid + right) / <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
-
-<p>（3）我们<code>mid</code>比<code>midmid</code>更靠近最值，我们就舍弃右区间，否则我们舍弃左区间？。</p>
-<p>比较<code>mid</code>与<code>midmid</code>谁最靠近最值，只需要确定<code>mid</code>所在的函数值与<code>midmid</code>所在的函数值的大小。当最值为最大值时，<code>mid</code>与<code>midmid</code>中较大的那个自然更为靠近最值。最值为最小值时同理。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (cal(mid) &gt; cal(midmid))</span><br><span class="line">    right = midmid;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    left = mid;</span><br></pre></td></tr></table></figure>
-
-<p>（4）重复（1）（2）（3）直至找到最值。</p>
-<p><strong>算法的正确性：</strong></p>
-<p>1、<code>mid</code>与<code>midmid</code>在最值的同一侧。由于凸性函数在最大值（最小值）任意一侧都具有单调性，因此，<code>mid</code>与<code>midmid</code>中，更大（小）的那个数自然更为靠近最值。此时，我们远离最值的那个区间不可能包含最值，因此可以舍弃。</p>
-<p>2、<code>mid</code>与<code>midmid</code>在最值的两侧。由于最值在中间的一个区间，因此我们舍弃一个区间后，并不会影响到最值。</p>
-<h3 id="example-1"><a href="#example-1" class="headerlink" title="@example"></a>@example</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> EPS = <span class="number">1e-10</span>;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">calc</span><span class="params">(<span class="keyword">double</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// f(x) = -(x-3)^2 + 2;</span></span><br><span class="line">    <span class="keyword">return</span> -(x<span class="number">-3.0</span>)*(x<span class="number">-3.0</span>) + <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">ternarySearch</span><span class="params">(<span class="keyword">double</span> low, <span class="keyword">double</span> high)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> mid, midmid;</span><br><span class="line">    <span class="keyword">while</span> (low + EPS &lt; high)</span><br><span class="line">    &#123;</span><br><span class="line">        mid = (low + high) / <span class="number">2</span>;</span><br><span class="line">        midmid = (mid + high) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">double</span> mid_value = calc(mid);</span><br><span class="line">        <span class="keyword">double</span> midmid_value = calc(midmid);</span><br><span class="line">        <span class="keyword">if</span> (mid_value &gt; midmid_value)</span><br><span class="line">            high = midmid;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            low = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> low;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+<p>IE浏览器在验证证书的时候主要从下面三个方面考察，只要有任何一个不满足都将给出警告</p>
+<ol>
+<li>证书的颁发者是否在“根受信任的证书颁发机构列表”中</li>
+<li>证书是否过期</li>
+<li>证书的持有者是否和访问的网站一致</li>
+</ol>
+<h3 id="数字证书种类："><a href="#数字证书种类：" class="headerlink" title="数字证书种类："></a>数字证书种类：</h3><blockquote>
+<p>1、服务器证书：证明服务器的身份和进行通信加密，客户端可以与服务器端建立SSL连接，然后通信数据都会被加密。<br> 2、电子邮件证书：证明电子邮件发件人的真实性，也可发送加密邮件，只有接收方才能打得开。<br> 3、客户端证书：主要用于身份验证和数字签名，安全的客户端证书经常存储的专门的USBKey中，使用的时候需要输入保护密码，以防被导出和复制，如指纹识别、语音播报、带显示器的USBKey等等。</p>
+</blockquote>
+<h3 id="数字证书功能："><a href="#数字证书功能：" class="headerlink" title="数字证书功能："></a>数字证书功能：</h3><p> 1、信息保密<br> 2、身份确认<br> 3、不可否认性<br> 4、数据完整性</p>
+<h3 id="数字证书的格式："><a href="#数字证书的格式：" class="headerlink" title="数字证书的格式："></a>数字证书的格式：</h3><p> 最简单的可以是：公钥、名称和证书授权中心的数字签名，目前 <strong>X.509</strong> 是一种通用的证书格式，它的第三个版本目前使用广泛，证书内容包括：版本、序列号、签名算法标识、签发者、有效期、主体、主体公开密钥、CA的数字签名、可选型等等</p>
+<img src='http://i2.tiimg.com/721743/9068a2df21919163.png'>
           
             <div class='article_footer'>
               
@@ -490,7 +506,7 @@
           
         
           
-            <p>本文永久链接是：<a href=https://aotle.github.io/2020/09/10/%E4%BA%8C%E5%88%86%E4%B8%8E%E4%B8%89%E5%88%86/>https://aotle.github.io/2020/09/10/%E4%BA%8C%E5%88%86%E4%B8%8E%E4%B8%89%E5%88%86/</a></p>
+            <p>本文永久链接是：<a href=https://aotle.github.io/2020/09/10/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E5%92%8C%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/>https://aotle.github.io/2020/09/10/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E5%92%8C%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/</a></p>
           
         
       </blockquote>
@@ -541,7 +557,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-10T18:52:59+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-10T23:25:42+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Sep 10, 2020</p>
@@ -553,7 +569,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%AE%97%E6%B3%95/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>算法</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%AE%89%E5%85%A8/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>安全</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>密码学</p></a></div>
 
 
         
@@ -571,8 +587,8 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://aotle.github.io/2020/09/10/%E4%BA%8C%E5%88%86%E4%B8%8E%E4%B8%89%E5%88%86/&title=二分与三分 - Aotle&summary=
-这是一篇用二分和三分求方程的根的博客
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://aotle.github.io/2020/09/10/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E5%92%8C%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/&title=数字签名和数字证书 - Aotle&summary=
+介绍了数字签名和数字证书
 "
           
           >
@@ -585,8 +601,8 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://aotle.github.io/2020/09/10/%E4%BA%8C%E5%88%86%E4%B8%8E%E4%B8%89%E5%88%86/&title=二分与三分 - Aotle&summary=
-这是一篇用二分和三分求方程的根的博客
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://aotle.github.io/2020/09/10/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E5%92%8C%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/&title=数字签名和数字证书 - Aotle&summary=
+介绍了数字签名和数字证书
 "
           
           >
@@ -599,8 +615,8 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://aotle.github.io/2020/09/10/%E4%BA%8C%E5%88%86%E4%B8%8E%E4%B8%89%E5%88%86/&title=二分与三分 - Aotle&summary=
-这是一篇用二分和三分求方程的根的博客
+          href="http://service.weibo.com/share/share.php?url=https://aotle.github.io/2020/09/10/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E5%92%8C%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/&title=数字签名和数字证书 - Aotle&summary=
+介绍了数字签名和数字证书
 "
           
           >
@@ -625,39 +641,25 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/2020/09/10/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E5%92%8C%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>数字签名和数字证书</p>
+              <a class='prev' href='/2020/09/10/%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E5%92%8C%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>对称加密和非对称加密</p>
                 <p class='content'>
-介绍了数字签名和数字证书
+介绍了对称加密和非对称加密
 
 
 
-散列函数和消息摘要一段信息，经过摘要算法(散列函数)得到一串哈希值，就是摘要(dijest)。
-信息是任意长度，而摘要是定长。
-摘要算法有MD5、SHA1、SH...</p>
+对称加密（Symmetric Cryptography），又称私钥加密对称加密是最快速、最简单的一种加密方式，加密（encryption）与解密（decryp...</p>
               </a>
             
             
-              <a class='next' href='/2020/09/10/%E9%80%92%E5%BD%92%E6%96%B9%E7%A8%8B%E6%B1%82%E8%A7%A3%E6%96%B9%E6%B3%95/'>
-                <p class='title'>递归方程求解方法<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+              <a class='next' href='/2020/09/10/%E4%BA%8C%E5%88%86%E4%B8%8E%E4%B8%89%E5%88%86/'>
+                <p class='title'>二分与三分<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
                 <p class='content'>
-这是一篇关于递归方程求解的简单方法
-
- 
+这是一篇用二分和三分求方程的根的博客
 
 
 
-
-
-
-
-
-
-
-
-
-
-</p>
+二分法求方程的根如果有函数发f(x)，它在区间[a, b]上递增或者递减，并且f(a)*f(b)&lt;0。那么我们知道函数必然有一个等于0的解，而...</p>
               </a>
             
           </div>
@@ -702,7 +704,7 @@
 
   <script>
     window.subData = {
-      title: '二分与三分',
+      title: '数字签名和数字证书',
       tools: true
     }
   </script>
@@ -729,7 +731,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#二分法求方程的根"><span class="toc-text">二分法求方程的根</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#example"><span class="toc-text">@example</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三分查找"><span class="toc-text">三分查找</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-概念"><span class="toc-text">1.概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-算法思路"><span class="toc-text">2.算法思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#example-1"><span class="toc-text">@example</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#散列函数和消息摘要"><span class="toc-text">散列函数和消息摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数字签名"><span class="toc-text">数字签名</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数字签名需要做到两点："><span class="toc-text">数字签名需要做到两点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数字签名的过程与示意图："><span class="toc-text">数字签名的过程与示意图：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数字证书"><span class="toc-text">数字证书</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#example-https"><span class="toc-text">@example : https</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数字证书种类："><span class="toc-text">数字证书种类：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数字证书功能："><span class="toc-text">数字证书功能：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数字证书的格式："><span class="toc-text">数字证书的格式：</span></a></li></ol></li></ol>
     </div>
   </section>
 
