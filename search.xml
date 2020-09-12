@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>快速跳过青年大学习</title>
+      <link href="/2020/09/12/%E5%BF%AB%E9%80%9F%E8%B7%B3%E8%BF%87%E9%9D%92%E5%B9%B4%E5%A4%A7%E5%AD%A6%E4%B9%A0/"/>
+      <url>/2020/09/12/%E5%BF%AB%E9%80%9F%E8%B7%B3%E8%BF%87%E9%9D%92%E5%B9%B4%E5%A4%A7%E5%AD%A6%E4%B9%A0/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>本教程适用于安卓手机</p></blockquote><a id="more"></a><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>既然要优雅地完成大学习，首先得让微信给我们一个输入自己的代码的机会</p><p>按照如下步骤可以打开微信的开发工具</p><p>微信浏览器网页打开<a href="http://debugx5.qq.com/" target="_blank" rel="noopener">http://debugx5.qq.com</a>打开下面两项，就可以调试了</p><p>可以将这个网址发给一个好友，就能够在微信里面打开了</p><img src='http://i2.tiimg.com/721743/69a57370ebf47880.png'><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>打开青年大学习，进入视频播放页面，会发现右下角出现一个绿色的<code>vConsole</code>图标，点击它会出现如下界面。</p><img src='http://i1.fuimg.com/721743/1601ffe829599111.jpg'><p>输入以下代码：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.section3'</span>).addClass(<span class="string">'topindex1'</span>);</span><br><span class="line">$(<span class="string">'.section4,#Cvideo'</span>).hide();</span><br></pre></td></tr></table></figure><p>点击ok即可快速跳过</p><h2 id="微信朋友圈分享"><a href="#微信朋友圈分享" class="headerlink" title="微信朋友圈分享"></a>微信朋友圈分享</h2><p>使用上面的代码快速完成大学习后，使用微信分享仍然是未完成状态</p><p>查阅资料后得知导致这一问题的原因是腾讯分享的sdk标题是网站自定义的，只好通过下面的代码来重新配置腾讯分享sdk来达到正常效果</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> title = <span class="built_in">document</span>.title;</span><br><span class="line"><span class="keyword">var</span> newtitle = title.slice(<span class="number">0</span>, <span class="number">7</span>) + <span class="string">"网上主题团课"</span> + title.slice(<span class="number">7</span>);</span><br><span class="line">$(<span class="string">"script"</span>).each(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span></span><br><span class="line"><span class="function"> </span>&#123; </span><br><span class="line">     <span class="keyword">var</span> content = $(<span class="keyword">this</span>).text();</span><br><span class="line">     <span class="keyword">if</span> (content.indexOf(title)!=<span class="number">-1</span>) &#123;</span><br><span class="line">         <span class="keyword">var</span> script = content.replace(title,<span class="string">"满分！我完成了"</span>+newtitle+<span class="string">"，你也来试试吧"</span>);</span><br><span class="line">         <span class="built_in">eval</span>(script);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>方案比较暴力，因为对应的dom元素没有id，只好查找替换了</p><p>效果</p><img src='http://i1.fuimg.com/721743/127e7fc7ba0826b9.png'><h2 id="但是为什么是这样的"><a href="#但是为什么是这样的" class="headerlink" title="但是为什么是这样的"></a>但是为什么是这样的</h2><p>要搞清楚为什么是这样的，那就得使用调试工具对源代码一探究竟了</p><p>使用usb线将手机连接到电脑，打开手机的usb调试功能，并对电脑链接进行授权</p><p>（这里可能有人想问为啥不使用桌面版chrome的开发者工具直接调试网站，博主刚开始尝试使用桌面版chrome加载该网站时无论使用任何办法都无法将其切换到移动版的学习界面，可能是本人技术不够吧）</p><p>授权在微信内复制学习页面的链接，使用移动版chrome进入到开始学习页面，使用桌面版chrome打开<code>chrome://inspect/#devices</code></p><p>稍等片刻后就可以显示出chrome打开的网站</p><img src='http://i1.fuimg.com/721743/b215e0b8e5944cb5.png'><p>点击<code>inspect</code>即可开始调试该网页</p><p>在某个script标签内找到了如下代码<br><img src='http://i1.fuimg.com/721743/d1f34d822ab5456c.png'></p><p>既然视频结束后肯定要暂停视频并且显示某个页面，那么就把代码粘贴到console试试</p><p>成功!</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> js </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> js </tag>
+            
+            <tag> 前端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>对称加密和非对称加密</title>
       <link href="/2020/09/10/%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E5%92%8C%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/"/>
       <url>/2020/09/10/%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E5%92%8C%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/</url>
