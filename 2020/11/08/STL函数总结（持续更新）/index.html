@@ -5,10 +5,6 @@
   <!-- SEO相关 -->
   
     
-      
-        <meta name="robots" content="noindex,follow">
-      
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -20,8 +16,14 @@
 
   <!-- 页面元数据 -->
   
-    <title>Aotle</title>
+    <title>STL函数总结（持续更新） - Aotle</title>
   
+    <meta name="keywords" content="STL">
+  
+  
+    <meta name="description" content="
+STL函数总结，用到不熟悉的再总结吧
+">
   
 
   <!-- feed -->
@@ -82,7 +84,7 @@
   
   <div class="cover-wrapper">
     
-      <cover class='cover  half'>
+      <cover class='cover post half'>
         <div class='cover-body'>
   <div class='a'>
     
@@ -342,14 +344,10 @@
 
 <div class='l_main'>
   
-  <section class="post-list ">
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+
   
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -359,11 +357,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/2020/09/08/%E7%AE%97%E6%B3%95%E8%80%83%E8%AF%95%E5%A4%8D%E4%B9%A0/">
-      算法考试复习
+  <h1 class="title">
+    <a href="/2020/11/08/STL%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/">
+      STL函数总结（持续更新）
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -386,9 +384,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/%E7%AE%97%E6%B3%95/' rel="nofollow">
+    <a href='/categories/STL/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>算法</p>
+      <p>STL</p>
     </a>
   </div>
 
@@ -399,14 +397,9 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Sep 8, 2020</p>
+    <p>发布于：Nov 8, 2020</p>
   </a>
 </div>
-
-            
-          
-            
-              
 
             
           
@@ -424,527 +417,85 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>这是一篇算法实验课考试复习</p>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <blockquote>
+<p>STL函数总结，用到不熟悉的再总结吧</p>
 </blockquote>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2020/09/08/%E7%AE%97%E6%B3%95%E8%80%83%E8%AF%95%E5%A4%8D%E4%B9%A0/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
+<a id="more"></a>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
+<h2 id="lower-bound"><a href="#lower-bound" class="headerlink" title="lower_bound():"></a>lower_bound():</h2><p>头文件： <code>#include&lt;algorithm&gt;</code></p>
+<p>函数模板： 如 <code>binary_search()</code></p>
+<p>函数功能： 函数<code>lower_bound()</code>在first和last中的<strong>前闭后开</strong>区间进行二分查找，返回大于或等于val的<strong>第一个元素</strong>位置。如果所有元素都小于val，则返回<strong>last</strong>的位置</p>
+<p>举例如下：</p>
+<p>一个数组number序列为：<code>4,10,11,30,69,70,96,100.</code>设要插入数字<code>3,9,111.pos</code>为要插入的位置的下标</p>
+<p>则</p>
+<p><code>pos = lower_bound( number, number + 8, 3) -number，pos = 0.</code>即<code>numbe</code>数组的下标为0的位置。</p>
+<p><code>pos = lower_bound( number, number + 8, 9) -number， pos = 1</code>，即<code>number</code>数组的下标为1的位置（即10所在的位置）。</p>
+<p><code>pos = lower_bound( number, number + 8, 111)- number， pos = 8</code>，即<code>number</code>数组的下标为8的位置（但下标上限为7，所以返回最后一个元素的下一个元素）。</p>
+<p>所以，要记住：函数<code>lower_bound()</code>在<code>first</code>和<code>last</code>中的<strong>前闭后开</strong>区间进行二分查找，返回大于或等于val的<strong>第一个元素</strong>位置。如果所有元素都小于val，则返回<strong>last</strong>的位置，且last的位置是越界的！！~</p>
+<p>返回查找元素的第一个可安插位置，也就是“元素值&gt;=查找值”的第一个元素的位置</p>
+<h2 id="upper-bound"><a href="#upper-bound" class="headerlink" title="upper_bound():"></a>upper_bound():</h2><p>头文件：<code>#include&lt;algorithm&gt;</code></p>
+<p>函数模板： 如<code>binary_search()</code></p>
+<p>函数功能：函数<code>upper_bound()</code>返回的在前闭后开区间查找的关键字的上界，返回<strong>大于val</strong>的第一个元素位置</p>
+<p>例如：一个数组number序列1,2,2,4.upper_bound(2)后，返回的位置是3（下标）也就是4所在的位置,同样，如果插入元素大于数组中全部元素，返回的是last。(注意：数组下标越界)</p>
+<p>返回查找元素的最后一个可安插位置，也就是“元素值&gt;查找值”的第一个元素的位置</p>
+<p><strong><em>注意：</em></strong></p>
+<p>   <code>lower_bound(val)</code>:返回容器中第一个值【大于或等于】val的元素的iterator位置。</p>
+<p>   <code>upper_bound(val)</code>: 返回容器中第一个值【大于】val的元素的iterator位置。</p>
+<p>lower的意义是对于给定的已经排好序的a，key最<strong>早</strong>能插入到那个位置</p>
+<p>0 1 | 2 2 3 所以2最<strong>早</strong>插入到2号位置</p>
+<p>upper的意义是对于给定的已经排好序的a，key最<strong>晚</strong>能插入到那个位置</p>
+<p>0 1 2 2 | 3 所以2最<strong>晚</strong>插入到4号位置</p>
+<h2 id="full"><a href="#full" class="headerlink" title="full():"></a>full():</h2><p>和sort差不多，full(a,a+n,number)给数组||容器赋值number</p>
+<h2 id="max-element-amp-min-element"><a href="#max-element-amp-min-element" class="headerlink" title="max_element() &amp; min_element():"></a>max_element() &amp; min_element():</h2><p>这个的话还是蛮好用的，比自己一个循环写下来要快的多了，简单用法如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">position=max_element(a,a+n)-a;</span><br></pre></td></tr></table></figure>
 
+<p>这样写的话就代表的是找到的最大元素的位置在哪里，position代表位置， 值得注意的一点是这个返回的是最大元素的位置，即指针指向第一个最大元素我们用以下方式表示找到的最大元素的值</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">"%d\n"</span>,*max_element(a,a+n));</span><br></pre></td></tr></table></figure>
 
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
+<p>同时  min_element的用法同上，但是都有一个共同点，就是找到的位置都是第一个最大（小）的元素，即存在多个相同大小的元素的时候找到的是第一个.</p>
+
           
-  <h2 class="title">
-    <a href="/2020/09/07/PHP%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">
-      PHP快速入门
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
+            <div class='article_footer'>
               
-<div class='new-meta-item author'>
-  <a href="https://aotle.github.io" rel="nofollow">
-    <img src="http://i1.fuimg.com/721743/1074048bddff0451.png">
-    <p>F.A</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/PHP/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>PHP</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Sep 7, 2020</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>这是一篇PHP快速入门的总结</p>
-</blockquote>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2020/09/07/PHP%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/06/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E8%A1%A8/">
-      数据结构--线性表
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="https://aotle.github.io" rel="nofollow">
-    <img src="http://i1.fuimg.com/721743/1074048bddff0451.png">
-    <p>F.A</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>数据结构</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Jun 29, 2020</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>数据结构之线性表</p>
-</blockquote>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2020/06/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E8%A1%A8/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/06/25/%E5%B8%B8%E7%94%A8%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86/">
-      常用汇编指令整理
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="https://aotle.github.io" rel="nofollow">
-    <img src="http://i1.fuimg.com/721743/1074048bddff0451.png">
-    <p>F.A</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E6%B1%87%E7%BC%96/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>汇编</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Jun 25, 2020</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>这是一些常用汇编指令的整理。</p>
-</blockquote>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2020/06/25/%E5%B8%B8%E7%94%A8%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/06/23/%E7%9F%AD%E5%8F%A5%E5%88%86%E4%BA%AB/">
-      短句分享
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="https://aotle.github.io" rel="nofollow">
-    <img src="http://i1.fuimg.com/721743/1074048bddff0451.png">
-    <p>F.A</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E6%91%98%E6%8A%84/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>摘抄</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Jun 23, 2020</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>摘抄了一些很美的短句</p>
-</blockquote>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2020/06/23/%E7%9F%AD%E5%8F%A5%E5%88%86%E4%BA%AB/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/page/2/">
-            <section class="post prev white-box shadow" >
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          3 / 4
-        </p>
-        
-          <a class="next" rel="next" href="/page/4/">
-            <section class="post next white-box shadow">
-              &nbsp;Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
-
-  
-
-
-</div>
-<aside class='l_side'>
-  
+                
   
     
     
 
-<section class="widget blogger shadow desktop mobile">
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
   <div class='content'>
     
-      
-        <a class='avatar flat-box' href='/about/'>
-          <img no-lazy src='http://i1.fuimg.com/721743/1074048bddff0451.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Aotle</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
+      <blockquote>
         
           
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
           
         
           
-            <a href="/1781322024@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
+            <p>本文永久链接是：<a href=https://aotle.github.io/2020/11/08/STL%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/>https://aotle.github.io/2020/11/08/STL%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/</a></p>
           
         
-          
-            <a href="https://github.com/Aotle"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=549195595"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
+      </blockquote>
     
   </div>
 </section>
@@ -954,103 +505,199 @@
   
     
     
+
+<section class="widget qrcode  desktop mobile">
   
 
-  <section class="widget category shadow desktop">
+  <div class='content article-entry'>
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-08T22:36:38+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Nov 8, 2020</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/STL/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>STL</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://aotle.github.io/2020/11/08/STL%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/&title=STL函数总结（持续更新） - Aotle&summary=
+STL函数总结，用到不熟悉的再总结吧
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://aotle.github.io/2020/11/08/STL%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/&title=STL函数总结（持续更新） - Aotle&summary=
+STL函数总结，用到不熟悉的再总结吧
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://aotle.github.io/2020/11/08/STL%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/&title=STL函数总结（持续更新） - Aotle&summary=
+STL函数总结，用到不熟悉的再总结吧
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2020/11/07/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/'>
+                <p class='title'>动态规划<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>
+动态规划入门，也算是考试复习⑧
+
+
+
+跳台阶题目描述一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法。
+输入多组测试样例。每组测试样例包含一个整数n。(...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'STL函数总结（持续更新）',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/PHP/" href="/categories/PHP/"
-            id="categoriesPHP"
-            ><div class='name'>PHP</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/STL/" href="/categories/STL/"
-            id="categoriesSTL"
-            ><div class='name'>STL</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/js/" href="/categories/js/"
-            id="categoriesjs"
-            ><div class='name'>js</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%85%B6%E4%BB%96/" href="/categories/%E5%85%B6%E4%BB%96/"
-            id="categoriesE585B6E4BB96"
-            ><div class='name'>其他</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" href="/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"
-            id="categoriesE58AA8E68081E8A784E58892"
-            ><div class='name'>动态规划</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AE%89%E5%85%A8/" href="/categories/%E5%AE%89%E5%85%A8/"
-            id="categoriesE5AE89E585A8"
-            ><div class='name'>安全</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%91%98%E6%8A%84/" href="/categories/%E6%91%98%E6%8A%84/"
-            id="categoriesE69198E68A84"
-            ><div class='name'>摘抄</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"
-            id="categoriesE695B0E68DAEE7BB93E69E84"
-            ><div class='name'>数据结构</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%B1%87%E7%BC%96/" href="/categories/%E6%B1%87%E7%BC%96/"
-            id="categoriesE6B187E7BC96"
-            ><div class='name'>汇编</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
-            id="categoriesE7AE97E6B395"
-            ><div class='name'>算法</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E9%9A%8F%E7%AC%94/" href="/categories/%E9%9A%8F%E7%AC%94/"
-            id="categoriesE99A8FE7AC94"
-            ><div class='name'>随笔</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#lower-bound"><span class="toc-text">lower_bound():</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#upper-bound"><span class="toc-text">upper_bound():</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#full"><span class="toc-text">full():</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#max-element-amp-min-element"><span class="toc-text">max_element() &amp; min_element():</span></a></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/8086%E6%B1%87%E7%BC%96/" style="font-size: 14px; color: #999">8086汇编</a> <a href="/tags/PHP/" style="font-size: 14px; color: #999">PHP</a> <a href="/tags/STL/" style="font-size: 14px; color: #999">STL</a> <a href="/tags/js/" style="font-size: 14px; color: #999">js</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" style="font-size: 14px; color: #999">动态规划</a> <a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 17.33px; color: #828282">安全</a> <a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" style="font-size: 17.33px; color: #828282">密码学</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/%E7%9F%AD%E5%8F%A5/" style="font-size: 14px; color: #999">短句</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 14px; color: #999">笔记</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 24px; color: #555">算法</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" style="font-size: 14px; color: #999">线性表</a> <a href="/tags/%E8%80%83%E8%AF%95/" style="font-size: 20.67px; color: #6c6c6c">考试</a> <a href="/tags/%E8%B5%84%E6%96%99/" style="font-size: 14px; color: #999">资料</a>
-    </div>
-  </section>
-
-
-  
 
   
 
@@ -1266,6 +913,60 @@
 
 
 
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick','mail','link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "B2JRC0gFBmeF5lDPxqa3TuTr-gzGzoHsz",
+    appKey: "x3BFjG0bdCFyRFGeg1QJUP8D",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'robohash',
+    lang:'zh-cn',
+    visitor: 'true',
+    highlight: 'true',
+    mathJax: 'false',
+    enableQQ: 'true',
+    requiredFields: requiredFields,
+    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+    emojiMaps: emojiMaps
+  })
+  </script>
 
 
 
