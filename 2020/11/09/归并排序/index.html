@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,8 +16,14 @@
 
   <!-- 页面元数据 -->
   
-    <title>Tag: js - Aotle</title>
+    <title>归并排序 - Aotle</title>
   
+    <meta name="keywords" content="算法">
+  
+  
+    <meta name="description" content="
+转载自：https://www.cnblogs.com/chengxiao/p/6194356.html
+">
   
 
   <!-- feed -->
@@ -80,7 +84,7 @@
   
   <div class="cover-wrapper">
     
-      <cover class='cover  half'>
+      <cover class='cover post half'>
         <div class='cover-body'>
   <div class='a'>
     
@@ -338,25 +342,12 @@
     <div class='body-wrapper'>
       
 
-
 <div class='l_main'>
   
-    
-      
-  <section class="post-list ">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+
   
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -366,11 +357,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/2020/09/12/%E5%BF%AB%E9%80%9F%E8%B7%B3%E8%BF%87%E9%9D%92%E5%B9%B4%E5%A4%A7%E5%AD%A6%E4%B9%A0/">
-      快速跳过青年大学习
+  <h1 class="title">
+    <a href="/2020/11/09/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/">
+      归并排序
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -393,9 +384,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/js/' rel="nofollow">
+    <a href='/categories/%E7%AE%97%E6%B3%95/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>js</p>
+      <p>算法</p>
     </a>
   </div>
 
@@ -406,14 +397,9 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Sep 12, 2020</p>
+    <p>发布于：Nov 9, 2020</p>
   </a>
 </div>
-
-            
-          
-            
-              
 
             
           
@@ -431,104 +417,67 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>本教程适用于安卓手机</p>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <blockquote>
+<p>转载自：<a href="https://www.cnblogs.com/chengxiao/p/6194356.html" target="_blank" rel="noopener">https://www.cnblogs.com/chengxiao/p/6194356.html</a></p>
 </blockquote>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2020/09/12/%E5%BF%AB%E9%80%9F%E8%B7%B3%E8%BF%87%E9%9D%92%E5%B9%B4%E5%A4%A7%E5%AD%A6%E4%B9%A0/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
+<a id="more"></a>
 
-          </div>
-        
-      
-    
-  </section>
-  
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+<h2 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h2><p>　　归并排序（MERGE-SORT）是利用<strong>归并</strong>的思想实现的排序方法，该算法采用经典的<strong>分治</strong>（divide-and-conquer）策略（分治法将问题<strong>分</strong>(divide)成一些小的问题然后递归求解，而<strong>治(conquer)</strong>的阶段则将分的阶段得到的各答案”修补”在一起，即分而治之)。</p>
+<p><strong>分而治之</strong></p>
+<p><img src="https://images2015.cnblogs.com/blog/1024555/201612/1024555-20161218163120151-452283750.png" alt="img"></p>
+<p> 　可以看到这种结构很像一棵完全二叉树，本文的归并排序我们采用递归去实现（也可采用迭代的方式去实现）。<strong>分</strong>阶段可以理解为就是递归拆分子序列的过程，递归深度为log2n。</p>
+<h2 id="合并相邻有序子序列"><a href="#合并相邻有序子序列" class="headerlink" title="合并相邻有序子序列"></a>合并相邻有序子序列</h2><p>　　再来看看<strong>治</strong>阶段，我们需要将两个已经有序的子序列合并成一个有序序列，比如上图中的最后一次合并，要将[4,5,7,8]和[1,2,3,6]两个已经有序的子序列，合并为最终序列[1,2,3,4,5,6,7,8]，来看下实现步骤。</p>
+<p><img src="https://images2015.cnblogs.com/blog/1024555/201612/1024555-20161218194508761-468169540.png" alt="img"></p>
+<p><img src="https://images2015.cnblogs.com/blog/1024555/201612/1024555-20161218194621308-588010220.png" alt="img"></p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> sortdemo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by chengxiao on 2016/12/8.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MergeSort</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String []args)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> []arr = &#123;<span class="number">9</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">6</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>&#125;;</span><br><span class="line">        sort(arr);</span><br><span class="line">        System.out.println(Arrays.toString(arr));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span> []arr)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> []temp = <span class="keyword">new</span> <span class="keyword">int</span>[arr.length];<span class="comment">//在排序前，先建好一个长度等于原数组长度的临时数组，避免递归中频繁开辟空间</span></span><br><span class="line">        sort(arr,<span class="number">0</span>,arr.length-<span class="number">1</span>,temp);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span>[] arr,<span class="keyword">int</span> left,<span class="keyword">int</span> right,<span class="keyword">int</span> []temp)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(left&lt;right)&#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (left+right)/<span class="number">2</span>;</span><br><span class="line">            sort(arr,left,mid,temp);<span class="comment">//左边归并排序，使得左子序列有序</span></span><br><span class="line">            sort(arr,mid+<span class="number">1</span>,right,temp);<span class="comment">//右边归并排序，使得右子序列有序</span></span><br><span class="line">            merge(arr,left,mid,right,temp);<span class="comment">//将两个有序子数组合并操作</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span>[] arr,<span class="keyword">int</span> left,<span class="keyword">int</span> mid,<span class="keyword">int</span> right,<span class="keyword">int</span>[] temp)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = left;<span class="comment">//左序列指针</span></span><br><span class="line">        <span class="keyword">int</span> j = mid+<span class="number">1</span>;<span class="comment">//右序列指针</span></span><br><span class="line">        <span class="keyword">int</span> t = <span class="number">0</span>;<span class="comment">//临时数组指针</span></span><br><span class="line">        <span class="keyword">while</span> (i&lt;=mid &amp;&amp; j&lt;=right)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[i]&lt;=arr[j])&#123;</span><br><span class="line">                temp[t++] = arr[i++];</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                temp[t++] = arr[j++];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;=mid)&#123;<span class="comment">//将左边剩余元素填充进temp中</span></span><br><span class="line">            temp[t++] = arr[i++];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(j&lt;=right)&#123;<span class="comment">//将右序列剩余元素填充进temp中</span></span><br><span class="line">            temp[t++] = arr[j++];</span><br><span class="line">        &#125;</span><br><span class="line">        t = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//将temp中的元素全部拷贝到原数组中</span></span><br><span class="line">        <span class="keyword">while</span>(left &lt;= right)&#123;</span><br><span class="line">            arr[left++] = temp[t++];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-  
+<p>执行结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1, 2, 3, 4, 5, 6, 7, 8, 9]</span><br></pre></td></tr></table></figure>
 
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>　　归并排序是稳定排序，它也是一种十分高效的排序，能利用完全二叉树特性的排序一般性能都不会太差。java中Arrays.sort()采用了一种名为TimSort的排序算法，就是归并排序的优化版本。从上文的图中可看出，每次合并操作的平均时间复杂度为O(n)，而完全二叉树的深度为|log2n|。总的平均时间复杂度为O(nlogn)。而且，归并排序的最好，最坏，平均时间复杂度均为O(nlogn)。</p>
 
-    
-  
-</div>
-<aside class='l_side'>
-  
+          
+            <div class='article_footer'>
+              
+                
   
     
     
 
-<section class="widget blogger shadow desktop mobile">
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
   <div class='content'>
     
-      
-        <a class='avatar flat-box' href='/about/'>
-          <img no-lazy src='http://i1.fuimg.com/721743/1074048bddff0451.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Aotle</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
+      <blockquote>
         
           
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
           
         
           
-            <a href="/1781322024@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
+            <p>本文永久链接是：<a href=https://aotle.github.io/2020/11/09/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/>https://aotle.github.io/2020/11/09/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/</a></p>
           
         
-          
-            <a href="https://github.com/Aotle"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=549195595"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
+      </blockquote>
     
   </div>
 </section>
@@ -538,103 +487,209 @@
   
     
     
+
+<section class="widget qrcode  desktop mobile">
   
 
-  <section class="widget category shadow desktop">
+  <div class='content article-entry'>
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-09T21:56:46+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Nov 9, 2020</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%AE%97%E6%B3%95/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>算法</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://aotle.github.io/2020/11/09/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/&title=归并排序 - Aotle&summary=
+转载自：https://www.cnblogs.com/chengxiao/p/6194356.html
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://aotle.github.io/2020/11/09/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/&title=归并排序 - Aotle&summary=
+转载自：https://www.cnblogs.com/chengxiao/p/6194356.html
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://aotle.github.io/2020/11/09/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/&title=归并排序 - Aotle&summary=
+转载自：https://www.cnblogs.com/chengxiao/p/6194356.html
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2020/11/09/%E5%9B%BE%E8%A7%A3%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>图解快速排序</p>
+                <p class='content'>
+转载自https://www.sohu.com/a/246785807_684445?qq-pf-to=pcqq.group
+
+
+
+
+
+————— 第二天 —————
+
+
+
+—————————...</p>
+              </a>
+            
+            
+              <a class='next' href='/2020/11/09/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/'>
+                <p class='title'>贪心算法<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'></p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '归并排序',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/PHP/" href="/categories/PHP/"
-            id="categoriesPHP"
-            ><div class='name'>PHP</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/STL/" href="/categories/STL/"
-            id="categoriesSTL"
-            ><div class='name'>STL</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/js/" href="/categories/js/"
-            id="categoriesjs"
-            ><div class='name'>js</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%85%B6%E4%BB%96/" href="/categories/%E5%85%B6%E4%BB%96/"
-            id="categoriesE585B6E4BB96"
-            ><div class='name'>其他</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" href="/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"
-            id="categoriesE58AA8E68081E8A784E58892"
-            ><div class='name'>动态规划</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AE%89%E5%85%A8/" href="/categories/%E5%AE%89%E5%85%A8/"
-            id="categoriesE5AE89E585A8"
-            ><div class='name'>安全</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%91%98%E6%8A%84/" href="/categories/%E6%91%98%E6%8A%84/"
-            id="categoriesE69198E68A84"
-            ><div class='name'>摘抄</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"
-            id="categoriesE695B0E68DAEE7BB93E69E84"
-            ><div class='name'>数据结构</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%B1%87%E7%BC%96/" href="/categories/%E6%B1%87%E7%BC%96/"
-            id="categoriesE6B187E7BC96"
-            ><div class='name'>汇编</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
-            id="categoriesE7AE97E6B395"
-            ><div class='name'>算法</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E9%9A%8F%E7%AC%94/" href="/categories/%E9%9A%8F%E7%AC%94/"
-            id="categoriesE99A8FE7AC94"
-            ><div class='name'>随笔</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本思想"><span class="toc-text">基本思想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#合并相邻有序子序列"><span class="toc-text">合并相邻有序子序列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码实现"><span class="toc-text">代码实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最后"><span class="toc-text">最后</span></a></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/8086%E6%B1%87%E7%BC%96/" style="font-size: 14px; color: #999">8086汇编</a> <a href="/tags/PHP/" style="font-size: 14px; color: #999">PHP</a> <a href="/tags/STL/" style="font-size: 14px; color: #999">STL</a> <a href="/tags/js/" style="font-size: 14px; color: #999">js</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" style="font-size: 14px; color: #999">动态规划</a> <a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 17.33px; color: #828282">安全</a> <a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" style="font-size: 17.33px; color: #828282">密码学</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/%E7%9F%AD%E5%8F%A5/" style="font-size: 14px; color: #999">短句</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 14px; color: #999">笔记</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 24px; color: #555">算法</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" style="font-size: 14px; color: #999">线性表</a> <a href="/tags/%E8%80%83%E8%AF%95/" style="font-size: 20.67px; color: #6c6c6c">考试</a> <a href="/tags/%E8%B5%84%E6%96%99/" style="font-size: 14px; color: #999">资料</a>
-    </div>
-  </section>
-
-
-  
 
   
 
@@ -850,6 +905,60 @@
 
 
 
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick','mail','link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "B2JRC0gFBmeF5lDPxqa3TuTr-gzGzoHsz",
+    appKey: "x3BFjG0bdCFyRFGeg1QJUP8D",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'robohash',
+    lang:'zh-cn',
+    visitor: 'true',
+    highlight: 'true',
+    mathJax: 'false',
+    enableQQ: 'true',
+    requiredFields: requiredFields,
+    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+    emojiMaps: emojiMaps
+  })
+  </script>
 
 
 

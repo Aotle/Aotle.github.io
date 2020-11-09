@@ -16,8 +16,14 @@
 
   <!-- 页面元数据 -->
   
-    <title>贪心算法 - Aotle</title>
+    <title>图解快速排序 - Aotle</title>
   
+    <meta name="keywords" content="算法">
+  
+  
+    <meta name="description" content="
+转载自https://www.sohu.com/a/246785807_684445?qq-pf-to=pcqq.group
+">
   
 
   <!-- feed -->
@@ -352,8 +358,8 @@
         
           
   <h1 class="title">
-    <a href="/2020/11/09/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/">
-      贪心算法
+    <a href="/2020/11/09/%E5%9B%BE%E8%A7%A3%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">
+      图解快速排序
     </a>
   </h1>
 
@@ -376,6 +382,14 @@
           
             
               
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E7%AE%97%E6%B3%95/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>算法</p>
+    </a>
+  </div>
+
 
             
           
@@ -406,7 +420,138 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           
-          <a id="more"></a>
+          <blockquote>
+<p>转载自<a href="https://www.sohu.com/a/246785807_684445?qq-pf-to=pcqq.group" target="_blank" rel="noopener">https://www.sohu.com/a/246785807_684445?qq-pf-to=pcqq.group</a></p>
+</blockquote>
+<a id="more"></a>
+
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/e4efbf68bc644e9aa9886abf34b25fcc.jpeg" alt="img"></p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/47e2882d6d2b455fa74624d2480299b3.jpeg" alt="img"></p>
+<p><strong>————— 第二天 —————</strong></p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/fe5f113faf43433fa735f59080dcc8b1.jpeg" alt="img"></p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/13fff85aaf744e4ab84688d112e7ef4d.jpeg" alt="img"></p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/4480980a18a54c338724eb12fc72dc36.jpeg" alt="img"></p>
+<p>————————————</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/3cdd1ee9c4734ec0b1c6103034b2e984.jpeg" alt="img"></p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/85e278701995447dbefef6f17e226b00.jpeg" alt="img"></p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/e2754b3d2e4649df9f3d831a648c1381.jpeg" alt="img"></p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/15027d971a32478583f5ba76d33b04b3.jpeg" alt="img"></p>
+<p>同冒泡排序一样，快速排序也属于<strong>交换排序</strong>，通过元素之间的比较和交换位置来达到排序的目的。</p>
+<p>不同的是，冒泡排序在每一轮只把一个元素冒泡到数列的一端，而快速排序<strong>在每一轮挑选一个基准元素，并让其他比它大的元素移动到数列一边，比它小的元素移动到数列的另一边，从而把数列拆解成了两个部分。</strong></p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/c41876d8e5144110b1dc21a563f582bc.png" alt="img"></p>
+<p>这种思路就叫做<strong>分治法</strong>。</p>
+<p>每次把数列分成两部分，究竟有什么好处呢？</p>
+<p>假如给定8个元素的数列，一般情况下冒泡排序需要比较8轮，每轮把一个元素移动到数列一端，时间复杂度是O（n^2）。</p>
+<p>而快速排序的流程是什么样子呢？</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/75eff632178f443e9367614a2d8bf5e0.png" alt="img"></p>
+<p>如图所示，在分治法的思想下，原数列在每一轮被拆分成两部分，每一部分在下一轮又分别被拆分成两部分，直到不可再分为止。</p>
+<p>这样一共需要多少轮呢？平均情况下需要logn轮，因此快速排序算法的平均时间复杂度是 <strong>O（nlogn）</strong>。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/fe11f22f7b044848946c93fffb9260cd.jpeg" alt="img"></p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/e06bf222aed949beba1cc1d738c8428e.jpeg" alt="img"></p>
+<p><strong>基准元素的选择</strong></p>
+<p>基准元素，英文pivot，用于在分治过程中以此为中心，把其他元素移动到基准元素的左右两边。</p>
+<p>那么基准元素如何选择呢？</p>
+<p>最简单的方式是选择数列的第一个元素：</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/0ca316487a3d4befb2cd9fa97c090d43.png" alt="img"></p>
+<p>这种选择在绝大多数情况是没有问题的。但是，假如有一个原本逆序的数列，期望排序成顺序数列，那么会出现什么情况呢？</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/ad8ad25cef8a41a1a29986df0f1bd5df.jpeg" alt="img"></p>
+<p><strong>……….</strong></p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/510d7d683732433893d084509ec4f915.jpeg" alt="img"></p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/e98e0a713cab4d74b7c369d8d6259ed8.jpeg" alt="img"></p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/9e2c1dfaf0a144dab2494b39ec4d7b93.jpeg" alt="img"></p>
+<p>我们该怎么避免这种情况发生呢？</p>
+<p>其实很简单，我们可以不选择数列的第一个元素，而是<strong>随机选择一个元素作为基准元素</strong>。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/8c728db438ec4f07a1f14527ba90d426.png" alt="img"></p>
+<p>这样一来，即使在数列完全逆序的情况下，也可以有效地将数列分成两部分。</p>
+<p>当然，即使是随机选择基准元素，每一次也有极小的几率选到数列的最大值或最小值，同样会影响到分治的效果。</p>
+<p>所以，快速排序的平均时间复杂度是 <strong>O（n**</strong>logn），<strong>最坏情况下的时间复杂度是 **O（n^2）</strong>。</p>
+<p><strong>元素的移动</strong></p>
+<p>选定了基准元素以后，我们要做的就是把其他元素当中小于基准元素的都移动到基准元素一边，大于基准元素的都移动到基准元素另一边。</p>
+<p>具体如何实现呢？有两种方法：</p>
+<p><strong>1.挖坑法</strong></p>
+<p><strong>2.指针交换法</strong></p>
+<p>何谓挖坑法？我们来看一看详细过程。</p>
+<p>给定原始数列如下，要求从小到大排序：</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/52593bc2abe04a3cb221fbe4676ff695.png" alt="img"></p>
+<p>首先，我们选定基准元素Pivot，并记住这个位置index，这个位置相当于一个“坑”。并且设置两个指针left和right，指向数列的最左和最右两个元素：</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/fb0b5c0ddfb24a3b86ca7ebb1f50246b.png" alt="img"></p>
+<p>接下来，从right指针开始，把指针所指向的元素和基准元素做比较。如果比pivot大，则right指针向左移动；如果比pivot小，则把right所指向的元素填入坑中。</p>
+<p>在当前数列中，1&lt;4，所以把1填入基准元素所在位置，也就是坑的位置。这时候，元素1本来所在的位置成为了新的坑。同时，left向右移动一位。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/8ccaeb0286af43579bf29fb06d500e6c.png" alt="img"></p>
+<p>此时，left左边绿色的区域代表着小于基准元素的区域。</p>
+<p>接下来，我们切换到left指针进行比较。如果left指向的元素小于pivot，则left指针向右移动；如果元素大于pivot，则把left指向的元素填入坑中。</p>
+<p>在当前数列中，7&gt;4，所以把7填入index的位置。这时候元素7本来的位置成为了新的坑。同时，right向左移动一位。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/6876bc45fc29440388e6fb7b27d2f7ff.png" alt="img"></p>
+<p>此时，right右边橙色的区域代表着大于基准元素的区域。</p>
+<p>下面按照刚才的思路继续排序：</p>
+<p>8&gt;4，元素位置不变，right左移</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/0d81c8b2efa3468581b0c0b679367c2d.png" alt="img"></p>
+<p>2&lt;4，用2来填坑，left右移，切换到left。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/10c351506ee44209864ee3c7a84eda2b.png" alt="img"></p>
+<p>6&gt;4，用6来填坑，right左移，切换到right。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/dd762269bab448f69da99e15a40656f9.png" alt="img"></p>
+<p>3&lt;4，用3来填坑，left右移，切换到left。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/bb79488f24914a9eae5c8b9222a87a11.png" alt="img"></p>
+<p>5&gt;4，用5来填坑，right右移。这时候left和right重合在了同一位置。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/00104df559a049cba350cc1a3190d5d3.png" alt="img"></p>
+<p>这时候，把之前的pivot元素，也就是4放到index的位置。此时数列左边的元素都小于4，数列右边的元素都大于4，这一轮交换终告结束。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/8a8fe9b8d12742459b788d8ed4763aa8.png" alt="img"></p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/dd1a7220462446668cc77e1da015e131.jpeg" alt="img"></p>
+<p>public class QuickSort {</p>
+<p>}</p>
+<p>代码中，quickSort方法通过递归的方式，实现了分而治之的思想。</p>
+<p>partition方法则实现元素的移动，让数列中的元素依据自身大小，分别移动到基准元素的左右两边。在这里，我们使用移动方式是挖坑法。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/f408abb62a0e4d87a0e4f5359caa0c79.jpeg" alt="img"></p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/32ace2bd27c94cee97e484e2b9d27504.jpeg" alt="img"></p>
+<p><strong>指针交换法</strong></p>
+<p>何谓指针交换法？我们来看一看详细过程。</p>
+<p>给定原始数列如下，要求从小到大排序：</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/a99eb3e3551d4cce91162b61487d33b5.png" alt="img"></p>
+<p>开局和挖坑法相似，我们首先选定基准元素Pivot，并且设置两个指针left和right，指向数列的最左和最右两个元素：</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/cf034716af9d459496c2169e8936bf83.png" alt="img"></p>
+<p>接下来是<strong>第一次循环</strong>，从right指针开始，把指针所指向的元素和基准元素做比较。如果<strong>大于等于</strong>pivot，则指针向<strong>左</strong>移动；如果<strong>小于</strong>pivot，则right指针停止移动，切换到<strong>left</strong>指针。</p>
+<p>在当前数列中，1&lt;4，所以right直接停止移动，换到left指针，进行下一步行动。</p>
+<p>轮到left指针行动，把指针所指向的元素和基准元素做比较。如果<strong>小于等于</strong>pivot，则指针向<strong>右</strong>移动；如果<strong>大于</strong>pivot，则left指针停止移动。</p>
+<p>由于left一开始指向的是基准元素，判断肯定相等，所以left右移一位。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/83b85177ee28420cbcd7b3943f4a8850.png" alt="img"></p>
+<p>由于7 &gt; 4，left指针在元素7的位置停下。这时候，我们让<strong>left和right指向的元素进行交换</strong>。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/049d5b9eeb764d6f90a750b467175192.png" alt="img"></p>
+<p>接下来，我们进入<strong>第二次循环</strong>，重新切换到right向左移动。right先移动到8，8&gt;2，继续左移。由于2&lt;8，停止在2的位置。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/712336c6aa96424eb25726ed18c3c2f5.png" alt="img"></p>
+<p>切换到left，6&gt;4，停止在6的位置。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/441cae5794094095a3455ff55189694b.png" alt="img"></p>
+<p>元素6和2交换。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/0acfb7017fbd41fb85a1d6e68a43c261.png" alt="img"></p>
+<p>进入<strong>第三次循环</strong>，right移动到元素3停止，left移动到元素5停止。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/479db496c4f945a3a32af3318347a92f.png" alt="img"></p>
+<p>元素5和3交换。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/bdbbb88da72d4bfea0f558656f30d7c1.png" alt="img"></p>
+<p>进入<strong>第四次循环</strong>，right移动到元素3停止，这时候请注意，left和right指针已经重合在了一起。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/9ffb2cbf5f64409d8c2c33ccdde7b3d6.png" alt="img"></p>
+<p>当left和right指针重合之时，我们让pivot元素和left与right重合点的元素进行交换。此时数列左边的元素都小于4，数列右边的元素都大于4，这一轮交换终告结束。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/efbc24c30ee44eeda06c54ef998d3b5e.png" alt="img"></p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/e67821a0a2b54bfca09cf567ecbd728c.jpeg" alt="img"></p>
+<p>public class QuickSort {</p>
+<p>}</p>
+<p>和挖坑法相比，指针交换法在partition方法中进行的元素交换次数更少。</p>
+<p><strong>非递归实现</strong></p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/7853bea6d0d1436bb600b541e9c38e36.jpeg" alt="img"></p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/c3ba7d396d4846b7a86567c4c8f5ac79.jpeg" alt="img"></p>
+<p>为什么这样说呢？</p>
+<p>因为我们代码中一层一层的方法调用，本身就是一个函数栈。每次进入一个新方法，就相当于入栈；每次有方法返回，就相当于出栈。</p>
+<p>所以，我们可以把原本的递归实现转化成一个栈的实现，在栈当中存储每一次方法调用的参数：</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/590f6f803c8d4c2d96f16b7a131dc046.png" alt="img"></p>
+<p>下面我们来看一下代码：</p>
+<p>public class QuickSortWithStack {</p>
+<p>}</p>
+<p>和刚才的递归实现相比，代码的变动仅仅在quickSort方法当中。该方法中引入了一个存储Map类型元素的栈，用于存储每一次交换时的起始下标和结束下标。</p>
+<p>每一次循环，都会让栈顶元素出栈，进行排序，并且按照基准元素的位置分成左右两部分，左右两部分再分别入栈。当栈为空时，说明排序已经完毕，退出循环。</p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/ce40850661bb4d9da7f783697472d258.jpeg" alt="img"></p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/7f5f7a90d692423cad18d0d1b0ae5196.jpeg" alt="img"></p>
+<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180813/8d2ea50d4ac24109a091d4fb7df413c4.jpeg" alt="img"></p>
+<p><strong>几点补充：</strong></p>
+<p><strong>本漫画纯属娱乐，还请大家尽量珍惜当下的工作，切勿模仿小灰的行为哦。</strong></p>
+
           
             <div class='article_footer'>
               
@@ -442,7 +587,7 @@
           
         
           
-            <p>本文永久链接是：<a href=https://aotle.github.io/2020/11/09/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/>https://aotle.github.io/2020/11/09/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/</a></p>
+            <p>本文永久链接是：<a href=https://aotle.github.io/2020/11/09/%E5%9B%BE%E8%A7%A3%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/>https://aotle.github.io/2020/11/09/%E5%9B%BE%E8%A7%A3%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</a></p>
           
         
       </blockquote>
@@ -479,7 +624,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-09T08:49:41+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-09T22:00:47+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Nov 9, 2020</p>
@@ -490,6 +635,9 @@
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%AE%97%E6%B3%95/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>算法</p></a></div>
+
 
         
       
@@ -506,7 +654,9 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://aotle.github.io/2020/11/09/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/&title=贪心算法 - Aotle&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://aotle.github.io/2020/11/09/%E5%9B%BE%E8%A7%A3%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/&title=图解快速排序 - Aotle&summary=
+转载自https://www.sohu.com/a/246785807_684445?qq-pf-to=pcqq.group
+"
           
           >
           
@@ -518,7 +668,9 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://aotle.github.io/2020/11/09/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/&title=贪心算法 - Aotle&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://aotle.github.io/2020/11/09/%E5%9B%BE%E8%A7%A3%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/&title=图解快速排序 - Aotle&summary=
+转载自https://www.sohu.com/a/246785807_684445?qq-pf-to=pcqq.group
+"
           
           >
           
@@ -530,7 +682,9 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://aotle.github.io/2020/11/09/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/&title=贪心算法 - Aotle&summary="
+          href="http://service.weibo.com/share/share.php?url=https://aotle.github.io/2020/11/09/%E5%9B%BE%E8%A7%A3%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/&title=图解快速排序 - Aotle&summary=
+转载自https://www.sohu.com/a/246785807_684445?qq-pf-to=pcqq.group
+"
           
           >
           
@@ -554,27 +708,15 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/2020/11/09/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>归并排序</p>
+            
+              <a class='next' href='/2020/11/09/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/'>
+                <p class='title'>归并排序<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
                 <p class='content'>
 转载自：https://www.cnblogs.com/chengxiao/p/6194356.html
 
 
 
 基本思想　　归并排序（MERGE-SORT）是利用归并的思想实现的排序方法，该算...</p>
-              </a>
-            
-            
-              <a class='next' href='/2020/11/08/STL%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/'>
-                <p class='title'>STL函数总结（持续更新）<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>
-STL函数总结，用到不熟悉的再总结吧
-
-
-
-lower_bound():头文件： #include&lt;algorithm&gt;
-函数模板： 如 binary_search()
-函数功能：...</p>
               </a>
             
           </div>
@@ -619,7 +761,7 @@ lower_bound():头文件： #include&lt;algorithm&gt;
 
   <script>
     window.subData = {
-      title: '贪心算法',
+      title: '图解快速排序',
       tools: true
     }
   </script>
