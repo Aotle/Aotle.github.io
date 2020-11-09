@@ -16,14 +16,8 @@
 
   <!-- 页面元数据 -->
   
-    <title>STL函数总结（持续更新） - Aotle</title>
+    <title>贪心算法 - Aotle</title>
   
-    <meta name="keywords" content="STL">
-  
-  
-    <meta name="description" content="
-STL函数总结，用到不熟悉的再总结吧
-">
   
 
   <!-- feed -->
@@ -358,8 +352,8 @@ STL函数总结，用到不熟悉的再总结吧
         
           
   <h1 class="title">
-    <a href="/2020/11/08/STL%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/">
-      STL函数总结（持续更新）
+    <a href="/2020/11/09/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/">
+      贪心算法
     </a>
   </h1>
 
@@ -382,14 +376,6 @@ STL函数总结，用到不熟悉的再总结吧
           
             
               
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/STL/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>STL</p>
-    </a>
-  </div>
-
 
             
           
@@ -397,7 +383,7 @@ STL函数总结，用到不熟悉的再总结吧
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Nov 8, 2020</p>
+    <p>发布于：Nov 9, 2020</p>
   </a>
 </div>
 
@@ -420,43 +406,7 @@ STL函数总结，用到不熟悉的再总结吧
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           
-          <blockquote>
-<p>STL函数总结，用到不熟悉的再总结吧</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="lower-bound"><a href="#lower-bound" class="headerlink" title="lower_bound():"></a>lower_bound():</h2><p>头文件： <code>#include&lt;algorithm&gt;</code></p>
-<p>函数模板： 如 <code>binary_search()</code></p>
-<p>函数功能： 函数<code>lower_bound()</code>在first和last中的<strong>前闭后开</strong>区间进行二分查找，返回大于或等于val的<strong>第一个元素</strong>位置。如果所有元素都小于val，则返回<strong>last</strong>的位置</p>
-<p>举例如下：</p>
-<p>一个数组number序列为：<code>4,10,11,30,69,70,96,100.</code>设要插入数字<code>3,9,111.pos</code>为要插入的位置的下标</p>
-<p>则</p>
-<p><code>pos = lower_bound( number, number + 8, 3) -number，pos = 0.</code>即<code>numbe</code>数组的下标为0的位置。</p>
-<p><code>pos = lower_bound( number, number + 8, 9) -number， pos = 1</code>，即<code>number</code>数组的下标为1的位置（即10所在的位置）。</p>
-<p><code>pos = lower_bound( number, number + 8, 111)- number， pos = 8</code>，即<code>number</code>数组的下标为8的位置（但下标上限为7，所以返回最后一个元素的下一个元素）。</p>
-<p>所以，要记住：函数<code>lower_bound()</code>在<code>first</code>和<code>last</code>中的<strong>前闭后开</strong>区间进行二分查找，返回大于或等于val的<strong>第一个元素</strong>位置。如果所有元素都小于val，则返回<strong>last</strong>的位置，且last的位置是越界的！！~</p>
-<p>返回查找元素的第一个可安插位置，也就是“元素值&gt;=查找值”的第一个元素的位置</p>
-<h2 id="upper-bound"><a href="#upper-bound" class="headerlink" title="upper_bound():"></a>upper_bound():</h2><p>头文件：<code>#include&lt;algorithm&gt;</code></p>
-<p>函数模板： 如<code>binary_search()</code></p>
-<p>函数功能：函数<code>upper_bound()</code>返回的在前闭后开区间查找的关键字的上界，返回<strong>大于val</strong>的第一个元素位置</p>
-<p>例如：一个数组number序列1,2,2,4.upper_bound(2)后，返回的位置是3（下标）也就是4所在的位置,同样，如果插入元素大于数组中全部元素，返回的是last。(注意：数组下标越界)</p>
-<p>返回查找元素的最后一个可安插位置，也就是“元素值&gt;查找值”的第一个元素的位置</p>
-<p><strong><em>注意：</em></strong></p>
-<p>   <code>lower_bound(val)</code>:返回容器中第一个值【大于或等于】val的元素的iterator位置。</p>
-<p>   <code>upper_bound(val)</code>: 返回容器中第一个值【大于】val的元素的iterator位置。</p>
-<p>lower的意义是对于给定的已经排好序的a，key最<strong>早</strong>能插入到那个位置</p>
-<p>0 1 | 2 2 3 所以2最<strong>早</strong>插入到2号位置</p>
-<p>upper的意义是对于给定的已经排好序的a，key最<strong>晚</strong>能插入到那个位置</p>
-<p>0 1 2 2 | 3 所以2最<strong>晚</strong>插入到4号位置</p>
-<h2 id="fill"><a href="#fill" class="headerlink" title="fill():"></a>fill():</h2><p>和sort差不多，fill(a,a+n,number)给数组||容器赋值number</p>
-<h2 id="max-element-amp-min-element"><a href="#max-element-amp-min-element" class="headerlink" title="max_element() &amp; min_element():"></a>max_element() &amp; min_element():</h2><p>这个的话还是蛮好用的，比自己一个循环写下来要快的多了，简单用法如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">position=max_element(a,a+n)-a;</span><br></pre></td></tr></table></figure>
-
-<p>这样写的话就代表的是找到的最大元素的位置在哪里，position代表位置， 值得注意的一点是这个返回的是最大元素的位置，即指针指向第一个最大元素我们用以下方式表示找到的最大元素的值</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">"%d\n"</span>,*max_element(a,a+n));</span><br></pre></td></tr></table></figure>
-
-<p>同时  min_element的用法同上，但是都有一个共同点，就是找到的位置都是第一个最大（小）的元素，即存在多个相同大小的元素的时候找到的是第一个.</p>
-
+          <a id="more"></a>
           
             <div class='article_footer'>
               
@@ -492,7 +442,7 @@ STL函数总结，用到不熟悉的再总结吧
           
         
           
-            <p>本文永久链接是：<a href=https://aotle.github.io/2020/11/08/STL%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/>https://aotle.github.io/2020/11/08/STL%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/</a></p>
+            <p>本文永久链接是：<a href=https://aotle.github.io/2020/11/09/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/>https://aotle.github.io/2020/11/09/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/</a></p>
           
         
       </blockquote>
@@ -529,7 +479,7 @@ STL函数总结，用到不熟悉的再总结吧
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-09T08:14:03+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-09T08:49:41+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Nov 9, 2020</p>
@@ -540,9 +490,6 @@ STL函数总结，用到不熟悉的再总结吧
       
         
           
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/STL/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>STL</p></a></div>
-
 
         
       
@@ -559,9 +506,7 @@ STL函数总结，用到不熟悉的再总结吧
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://aotle.github.io/2020/11/08/STL%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/&title=STL函数总结（持续更新） - Aotle&summary=
-STL函数总结，用到不熟悉的再总结吧
-"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://aotle.github.io/2020/11/09/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/&title=贪心算法 - Aotle&summary="
           
           >
           
@@ -573,9 +518,7 @@ STL函数总结，用到不熟悉的再总结吧
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://aotle.github.io/2020/11/08/STL%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/&title=STL函数总结（持续更新） - Aotle&summary=
-STL函数总结，用到不熟悉的再总结吧
-"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://aotle.github.io/2020/11/09/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/&title=贪心算法 - Aotle&summary="
           
           >
           
@@ -587,9 +530,7 @@ STL函数总结，用到不熟悉的再总结吧
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://aotle.github.io/2020/11/08/STL%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/&title=STL函数总结（持续更新） - Aotle&summary=
-STL函数总结，用到不熟悉的再总结吧
-"
+          href="http://service.weibo.com/share/share.php?url=https://aotle.github.io/2020/11/09/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/&title=贪心算法 - Aotle&summary="
           
           >
           
@@ -613,21 +554,17 @@ STL函数总结，用到不熟悉的再总结吧
         
           <div class="prev-next">
             
-              <a class='prev' href='/2020/11/09/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>贪心算法</p>
-                <p class='content'></p>
-              </a>
             
-            
-              <a class='next' href='/2020/11/07/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/'>
-                <p class='title'>动态规划<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+              <a class='next' href='/2020/11/08/STL%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/'>
+                <p class='title'>STL函数总结（持续更新）<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
                 <p class='content'>
-动态规划入门，也算是考试复习⑧
+STL函数总结，用到不熟悉的再总结吧
 
 
 
-跳台阶题目描述一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法。
-输入多组测试样例。每组测试样例包含一个整数n。(...</p>
+lower_bound():头文件： #include&lt;algorithm&gt;
+函数模板： 如 binary_search()
+函数功能：...</p>
               </a>
             
           </div>
@@ -672,7 +609,7 @@ STL函数总结，用到不熟悉的再总结吧
 
   <script>
     window.subData = {
-      title: 'STL函数总结（持续更新）',
+      title: '贪心算法',
       tools: true
     }
   </script>
@@ -688,20 +625,6 @@ STL函数总结，用到不熟悉的再总结吧
     
 
 
-
-  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
-    
-  <header>
-    
-      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#lower-bound"><span class="toc-text">lower_bound():</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#upper-bound"><span class="toc-text">upper_bound():</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fill"><span class="toc-text">fill():</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#max-element-amp-min-element"><span class="toc-text">max_element() &amp; min_element():</span></a></li></ol>
-    </div>
-  </section>
 
 
   
