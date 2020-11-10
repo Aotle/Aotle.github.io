@@ -39,7 +39,7 @@ html {
   width: 100%;
   height: 100%;
   font-family: UbuntuMono, "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
-  font-size: 16px;
+  font-size: 19px;
 }
 html >::-webkit-scrollbar {
   height: 4px;
@@ -61,7 +61,7 @@ body {
   background-color: #f4f4f4;
   text-rendering: optimizelegibility;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
-  line-height: 1.65;
+  line-height: '1.65rem';
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
@@ -420,7 +420,7 @@ div.btns {
 div.btns,
 div.btns p,
 div.btns a {
-  font-size: 0.8125rem;
+  font-size: 0.9rem;
   color: #555;
 }
 div.btns b {
@@ -1263,7 +1263,7 @@ p.p.logo {
 }
 span.p.code,
 p.p.code {
-  font-family: Menlo, UbuntuMono, Monaco, monospace, courier, sans-serif;
+  font-family: Consolas, Menlo, UbuntuMono, Monaco, monospace, courier, sans-serif;
 }
 span.p.left,
 p.p.left {
@@ -1573,8 +1573,8 @@ pre {
   margin: 0.5rem 0;
   display: block;
   background: #f6f6f6;
-  font-size: 0.8125rem;
-  font-family: Menlo, UbuntuMono, Monaco, monospace, courier, sans-serif;
+  font-size: 0.9rem;
+  font-family: Consolas, Menlo, UbuntuMono, Monaco, monospace, courier, sans-serif;
   border-radius: 4px;
   border: 1px solid #e7e7e7;
   line-height: 1.5;
@@ -1927,8 +1927,8 @@ pre {
   -webkit-user-select: none;
   user-select: none;
   -webkit-appearance: none;
-  font-family: Menlo, Menlo, UbuntuMono, Monaco, monospace, courier, sans-serif;
-  font-size: calc(0.8125rem - 1px);
+  font-family: Menlo, Consolas, Menlo, UbuntuMono, Monaco, monospace, courier, sans-serif;
+  font-size: calc(0.9rem - 1px);
   font-weight: bold;
   padding: 4px 8px;
   color: rgba(85,85,85,0.65);
@@ -2074,13 +2074,13 @@ div.gallery.stretch>p img {
   overflow: hidden;
 }
 .fancybox .image-caption {
-  font-size: 0.8125rem;
+  font-size: 0.9rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   color: rgba(85,85,85,0.65);
 }
 .article mjx-container {
-  font-family: Menlo, UbuntuMono, Monaco, monospace, courier, sans-serif;
+  font-family: Consolas, Menlo, UbuntuMono, Monaco, monospace, courier, sans-serif;
   background: rgba(255,255,255,0);
   padding: 16px 8px;
   border-radius: 4px;
@@ -2279,7 +2279,7 @@ div.gallery.stretch>p img {
 }
 .l_main #comments #valine_container .vcards .vcontent code {
   color: #555;
-  font-family: Menlo, UbuntuMono, Monaco, monospace, courier, sans-serif;
+  font-family: Consolas, Menlo, UbuntuMono, Monaco, monospace, courier, sans-serif;
 }
 .l_main #comments #valine_container .vcards .vcontent pre {
   background: #f6f6f6;
@@ -2713,8 +2713,8 @@ div.gallery.stretch>p img {
   margin-bottom: 0.5rem;
   overflow: auto;
   background: #f6f6f6;
-  font-size: 0.8125rem;
-  font-family: Menlo, UbuntuMono, Monaco, monospace, courier, sans-serif;
+  font-size: 0.9rem;
+  font-family: Consolas, Menlo, UbuntuMono, Monaco, monospace, courier, sans-serif;
   border: 1px solid #e7e7e7;
   padding: 16px;
   border-radius: 4px;
@@ -2732,12 +2732,12 @@ div.gallery.stretch>p img {
   color: rgba(85,85,85,0.9);
 }
 .article code {
-  font-family: Menlo, UbuntuMono, Monaco, monospace, courier, sans-serif;
+  font-family: Consolas, Menlo, UbuntuMono, Monaco, monospace, courier, sans-serif;
 }
 .article code:not([class]) {
   padding: 3px 4px 1px 4px;
   vertical-align: middle;
-  font-size: 0.8125rem;
+  font-size: 0.9rem;
   background: #f6f6f6;
   border-radius: 2px;
   border: 1px solid #e7e7e7;
@@ -3159,7 +3159,7 @@ footer {
 }
 footer,
 footer p {
-  font-size: 0.8125rem;
+  font-size: 0.9rem;
 }
 footer .licenses {
   color: fade(, 50%);
@@ -3173,7 +3173,7 @@ footer .social-wrapper {
   justify-content: center;
   flex-wrap: wrap;
   margin: 4px 8px;
-  font-size: 16px;
+  font-size: 19px;
 }
 footer a {
   color: rgba(102,102,102,0.75);
@@ -3294,7 +3294,7 @@ footer .copyright p {
   margin: 0;
 }
 .article.article-entry.l_friends .friends-group .friend-content .friend-card .friend-right p.friend-name {
-  font-size: 0.8125rem;
+  font-size: 0.9rem;
   padding-top: 4px;
   font-weight: bold;
 }
@@ -3375,7 +3375,7 @@ footer .copyright p {
 .l_main.no_sidebar {
   width: 100%;
   padding-right: 0;
-  max-width: 840px;
+  max-width: 1140px;
   margin: auto;
 }
 @media screen and (min-width: 2048px) {
@@ -3575,7 +3575,7 @@ footer .copyright p {
 .l_main .post section.meta .new-meta-box,
 .l_main .post section.meta .new-meta-box p,
 .l_main .post section.meta .new-meta-box i {
-  font-size: 0.8125rem;
+  font-size: 0.9rem;
 }
 .l_main .post section.meta .new-meta-box .new-meta-item {
   color: rgba(85,85,85,0.65);
@@ -3731,7 +3731,7 @@ footer .copyright p {
   position: relative;
   display: flex;
   width: 100%;
-  max-width: 1080px;
+  max-width: 1380px;
   margin: 0 auto;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -3883,7 +3883,7 @@ div.hoverbox:hover >div.target {
   height: 64px;
 }
 .l_header .nav-sub {
-  max-width: 1080px;
+  max-width: 1380px;
   margin: auto;
 }
 .l_header .nav-sub .title {
@@ -4269,7 +4269,7 @@ ul.list-v >li>a.active {
   right: calc(100% - 0.5 * 16px);
 }
 .l_header .wrapper {
-  max-width: 1080px;
+  max-width: 1380px;
   margin: auto;
 }
 @media screen and (min-width: 2048px) {
@@ -4494,7 +4494,7 @@ ul.list-v >li>a.active {
   z-index: 3;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  font-size: 16px;
+  font-size: 19px;
   box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
   background: #fff;
   transition: all 0.28s ease;
@@ -4730,7 +4730,7 @@ ul.list-v >li>a.active {
   overflow: hidden;
   word-break: break-all;
   text-overflow: ellipsis;
-  font-size: 0.8125rem;
+  font-size: 0.9rem;
   color: rgba(85,85,85,0.65);
 }
 #u-search .modal-body .modal-results .result .icon {
