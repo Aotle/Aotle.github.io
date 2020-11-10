@@ -1,0 +1,1663 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.6.6'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>常用汇编指令整理 - Aotle</title>
+  
+    <meta name="keywords" content="8086汇编,考试">
+  
+  
+    <meta name="description" content="
+这是一些常用汇编指令的整理。
+">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<!-- 样式二（飘动的彩带） -->
+<script src="https://g.joyinshare.com/hc/piao.js" type="text/javascript"></script>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/love.js"></script>
+<body>
+	<!--浏览器搞笑标题-->
+  <script type="text/javascript" src="/js/FunnyTitle.js"></script>
+  
+  <div class="cover-wrapper">
+    
+      <cover class='cover post half'>
+        <div class='cover-body'>
+  <div class='a'>
+    
+    
+      <p class="title">Aotle</p>
+    
+    
+      <p class="subtitle">你所看到的惊鸿，都曾被平庸磨练</p>
+    
+  </div>
+  <div class='b'>
+    
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="" />
+          <i class="icon fas fa-search fa-fw"></i>
+        </form>
+      </div>
+    
+    <div class='menu navigation'>
+      <ul class='cover-list-h'>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+      </cover>
+    
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+            Aotle
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/2020/06/25/ckhbxh1qh000cikum2ndhbtt6/">
+      常用汇编指令整理
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="https://aotle.github.io" rel="nofollow">
+    <img src="http://i1.fuimg.com/721743/1074048bddff0451.png">
+    <p>F.A</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E6%B1%87%E7%BC%96/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>汇编</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Jun 25, 2020</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <blockquote>
+<p>这是一些常用汇编指令的整理。</p>
+</blockquote>
+<a id="more"></a> 
+
+<h2 id="数据传送指令"><a href="#数据传送指令" class="headerlink" title="数据传送指令"></a>数据传送指令</h2><h3 id="通用数据传送指令"><a href="#通用数据传送指令" class="headerlink" title="通用数据传送指令"></a>通用数据传送指令</h3><h4 id="MOV"><a href="#MOV" class="headerlink" title="MOV"></a>MOV</h4><ul>
+<li>格式：<code>MOV dst,src</code></li>
+<li>功能：将<code>src</code>传送到<code>dst</code></li>
+<li>限制：段寄存器间不可直接相互传送，立即数不能直接送段寄存器，CS 不可作为目的操作数。</li>
+</ul>
+<h4 id="PUSH-amp-POP"><a href="#PUSH-amp-POP" class="headerlink" title="PUSH &amp; POP"></a>PUSH &amp; POP</h4><ul>
+<li>格式：<code>PUSH src</code> &amp; <code>POP dst</code></li>
+<li>功能：将 <code>src</code> 压栈 &amp; 出栈送入 <code>dst</code></li>
+<li>限制：CS 不可作目的操作数</li>
+</ul>
+<h4 id="XCHG"><a href="#XCHG" class="headerlink" title="XCHG"></a>XCHG</h4><ul>
+<li>格式：<code>XCHG dst,src</code></li>
+<li>含义：交换两个操作数内容（Exchange）</li>
+<li>限制：段寄存器不可为操作数，也不能同时为存储单元，两个操作数也不能同时为内存变量。</li>
+</ul>
+<h4 id="XLAT"><a href="#XLAT" class="headerlink" title="XLAT"></a>XLAT</h4><ul>
+<li>格式：<code>XLAT</code></li>
+<li>含义：转换表（Table Look-up Translation）</li>
+<li>功能：把待查表格（表格位于 DS:BX）的一个字节内容送到AL累加器中。在执行该指令前，应将TABLE首地址送至BX寄存器中，然后将待查字节与其在表格中距表首地址位移量送AL,即AL&lt;–((BX)+(AL)). </li>
+</ul>
+<hr>
+<h3 id="地址目标传送指令"><a href="#地址目标传送指令" class="headerlink" title="地址目标传送指令"></a>地址目标传送指令</h3><h4 id="LEA"><a href="#LEA" class="headerlink" title="LEA"></a>LEA</h4><ul>
+<li>格式：<code>LEA dst,src</code></li>
+<li>含义：把地址偏移量传送目的操作数（Load Effective Address）</li>
+<li>功能：取<code>src</code>地址偏移量送<code>dst</code></li>
+<li>注：源操作数必须是存储单元，目的操作数必须是除段寄存器之外的 16 位寄存器。</li>
+</ul>
+<h4 id="LDS-amp-LES"><a href="#LDS-amp-LES" class="headerlink" title="LDS &amp; LES"></a>LDS &amp; LES</h4><ul>
+<li>格式：<code>LDS dst,src</code> &amp; <code>LES dst,src</code></li>
+<li>含义：取双字指针送到目的寄存器和 DS/ES</li>
+<li>功能：从源操作数指定的存储单元中取出 4 字节，前两个字节送到目的寄存器，后两个字节送到 DS/ES。</li>
+</ul>
+<hr>
+<h3 id="标志传送指令"><a href="#标志传送指令" class="headerlink" title="标志传送指令"></a>标志传送指令</h3><h4 id="PUSHF-amp-POPF"><a href="#PUSHF-amp-POPF" class="headerlink" title="PUSHF &amp; POPF"></a>PUSHF &amp; POPF</h4><ul>
+<li>格式：<code>PUSHF</code> &amp; <code>POPF</code></li>
+<li>含义：将标志寄存器压栈/出栈</li>
+<li>功能：PUSHF：执行操作: SP=SP-1,(SP)=PSW的高8位, SP=SP-1, (SP)=PSW的低8位，POPF相反。</li>
+</ul>
+<h4 id="LAHF-amp-SAHF"><a href="#LAHF-amp-SAHF" class="headerlink" title="LAHF &amp; SAHF"></a>LAHF &amp; SAHF</h4><ul>
+<li>格式：<code>LAHF</code> &amp; <code>SAHF</code></li>
+<li>含义：Load(Store) AH from(into) Flags</li>
+<li>功能：将标志寄存器低字节送到 AH &amp; 将 AH 送到标志寄存器低字节</li>
+</ul>
+<hr>
+<h3 id="输入输出指令"><a href="#输入输出指令" class="headerlink" title="输入输出指令"></a>输入输出指令</h3><h4 id="IN-amp-OUT"><a href="#IN-amp-OUT" class="headerlink" title="IN &amp; OUT"></a>IN &amp; OUT</h4><ul>
+<li>格式：<code>IN AL/AX, ADDR</code> &amp; <code>OUT ADDR, AL/AX</code></li>
+<li>功能：从端口地址（寄存器）获取数据送到寄存器（端口地址）</li>
+<li>地址格式：端口地址有两种格式，小于 FFH 时可以是直接写出，否则必须先送入 DX 再使用。</li>
+</ul>
+<hr>
+<h2 id="算术运算指令"><a href="#算术运算指令" class="headerlink" title="算术运算指令"></a>算术运算指令</h2><h3 id="加减法指令"><a href="#加减法指令" class="headerlink" title="加减法指令"></a>加减法指令</h3><h4 id="ADD-amp-ADC"><a href="#ADD-amp-ADC" class="headerlink" title="ADD &amp; ADC"></a>ADD &amp; ADC</h4><ul>
+<li>格式：<code>ADD dst,src</code> &amp; <code>ADC dst,src</code></li>
+<li>含义：（带进位）加法</li>
+<li>功能：dst = src + dst (+ CF)</li>
+</ul>
+<h4 id="INC"><a href="#INC" class="headerlink" title="INC"></a>INC</h4><ul>
+<li>格式：<code>INC dst</code></li>
+<li>功能：自增 1，dst = dst + 1</li>
+</ul>
+<h4 id="SUB-amp-SBB"><a href="#SUB-amp-SBB" class="headerlink" title="SUB &amp; SBB:"></a>SUB &amp; SBB:</h4><ul>
+<li>格式：<code>SUB dst,src</code> &amp; <code>SBB dst,src</code></li>
+<li>含义：（带借位）减法</li>
+<li>功能：dst = dst - src (- CF)</li>
+</ul>
+<h4 id="DEC"><a href="#DEC" class="headerlink" title="DEC:"></a>DEC:</h4><ul>
+<li>格式：<code>DEC dst</code></li>
+<li>功能：自减 1，dst = dst + 1</li>
+</ul>
+<h4 id="NEG"><a href="#NEG" class="headerlink" title="NEG:"></a>NEG:</h4><ul>
+<li>格式：<code>NEG dst</code></li>
+<li>功能：对目的操作数取负，dst = -dst</li>
+</ul>
+<hr>
+<h3 id="乘除法指令"><a href="#乘除法指令" class="headerlink" title="乘除法指令"></a>乘除法指令</h3><h4 id="MUL-amp-IMUL"><a href="#MUL-amp-IMUL" class="headerlink" title="MUL &amp; IMUL"></a>MUL &amp; IMUL</h4><ul>
+<li>格式：<code>IMUL src</code> &amp; <code>MUL src</code></li>
+<li>含义：无符号数/整数乘法</li>
+<li>功能：只有一个源操作数，当其为 8 位时，AX = AL * src，为 16 位时，（DX,AX）= AX * src</li>
+</ul>
+<h4 id="DIV-amp-IDIV"><a href="#DIV-amp-IDIV" class="headerlink" title="DIV &amp; IDIV"></a>DIV &amp; IDIV</h4><ul>
+<li>格式：<code>IDIV src</code> &amp; <code>DIV src</code></li>
+<li>含义：无符号数/整数乘法</li>
+<li>功能：只有一个源操作数作为除数，当其为 8 位时，AX 为被除数，AL 作为商，AH 作为余数。当 src 为 16 位时，（DX,AX）作为被除数，AX 作为商，DX 作为余数。</li>
+</ul>
+<hr>
+<h2 id="逻辑运算与移位指令"><a href="#逻辑运算与移位指令" class="headerlink" title="逻辑运算与移位指令"></a>逻辑运算与移位指令</h2><h3 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h3><table>
+<thead>
+<tr>
+<th align="center">指令</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>NOT dst</code></td>
+<td align="center">取反，逻辑非</td>
+</tr>
+<tr>
+<td align="center"><code>AND dst,src</code></td>
+<td align="center">逻辑与</td>
+</tr>
+<tr>
+<td align="center"><code>OR dst,src</code></td>
+<td align="center">逻辑或</td>
+</tr>
+<tr>
+<td align="center"><code>XOR dst,src</code></td>
+<td align="center">异或</td>
+</tr>
+</tbody></table>
+<h3 id="算术逻辑移位"><a href="#算术逻辑移位" class="headerlink" title="算术逻辑移位"></a>算术逻辑移位</h3><table>
+<thead>
+<tr>
+<th align="center">指令</th>
+<th align="center">含义</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>SAL dst,cnt</code></td>
+<td align="center">Shift Arithmetic Left</td>
+<td align="center">算术左移 cnt 位</td>
+</tr>
+<tr>
+<td align="center"><code>SAR dst,cnt</code></td>
+<td align="center">Shift Arithmetic Right</td>
+<td align="center">算术右移 cnt 位</td>
+</tr>
+<tr>
+<td align="center"><code>SHL dst,cnt</code></td>
+<td align="center">Shift Logic Left</td>
+<td align="center">逻辑左移 cnt 位</td>
+</tr>
+<tr>
+<td align="center"><code>SHR dst,cnt</code></td>
+<td align="center">Shift Logic Right</td>
+<td align="center">逻辑右移 cnt 位</td>
+</tr>
+</tbody></table>
+<p>cnt 为 1 或者 CL。算术右移时补最高位，逻辑右移补 0，被移出的移入 CF。</p>
+<h3 id="循环移位"><a href="#循环移位" class="headerlink" title="循环移位"></a>循环移位</h3><table>
+<thead>
+<tr>
+<th align="center">指令</th>
+<th align="center">含义</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>ROL dst,cnt</code></td>
+<td align="center">Rotate Left</td>
+<td align="center">循环左移 cnt 位</td>
+</tr>
+<tr>
+<td align="center"><code>ROR dst,cnt</code></td>
+<td align="center">Rotate Right</td>
+<td align="center">循环右移 cnt 位</td>
+</tr>
+<tr>
+<td align="center"><code>RCL dst,cnt</code></td>
+<td align="center">Rotate through Carry Left</td>
+<td align="center">带进位左移 cnt 位</td>
+</tr>
+<tr>
+<td align="center"><code>RCR dst,cnt</code></td>
+<td align="center">Rotate through Carry Right</td>
+<td align="center">带进位右移 cnt 位</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="字符串操作指令"><a href="#字符串操作指令" class="headerlink" title="字符串操作指令"></a>字符串操作指令</h2><table>
+<thead>
+<tr>
+<th align="center">指令（字节/字）</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>MOVSB / MOVSW</code></td>
+<td align="center">字符串传送</td>
+</tr>
+<tr>
+<td align="center"><code>CMPSB / CMPSW</code></td>
+<td align="center">字符串比较</td>
+</tr>
+<tr>
+<td align="center"><code>SCASB / SCASW</code></td>
+<td align="center">字符串扫描</td>
+</tr>
+<tr>
+<td align="center"><code>LODSB / LODSW</code></td>
+<td align="center">字符串装入</td>
+</tr>
+<tr>
+<td align="center"><code>STOSB / STOSW</code></td>
+<td align="center">字符串存储</td>
+</tr>
+</tbody></table>
+<p>对于后三条指令，操作使用 AL/AX 寄存器（根据操作数类型决定）。</p>
+<ul>
+<li>源串起始地址为 DS:SI，目的串位于 ES:DI</li>
+<li>每一次操作都会自动修改 SI 和 DI</li>
+<li>DF 标志位可以控制字符串处理方向，DF = 0 递增，DF = 1 递减，可通过 <code>CLD/STD</code> 设置</li>
+<li>处理字符串长度放在 CX 中</li>
+</ul>
+<p>这些指令前可以用重复前缀 <code>REP</code> 反复执行，或是 <code>REPE/REPZ</code> 相等/为零则重复，<code>REPNE/REPNZ</code> 不相等/非零则重复。</p>
+<hr>
+<h2 id="处理器控制指令"><a href="#处理器控制指令" class="headerlink" title="处理器控制指令"></a>处理器控制指令</h2><h3 id="标志处理指令"><a href="#标志处理指令" class="headerlink" title="标志处理指令"></a>标志处理指令</h3><table>
+<thead>
+<tr>
+<th align="center">指令</th>
+<th align="center">含义</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>CLC</code></td>
+<td align="center">Clear Carry</td>
+<td align="center">CF = 0</td>
+</tr>
+<tr>
+<td align="center"><code>CMC</code></td>
+<td align="center">Complement Carry</td>
+<td align="center">CF = NOT CF</td>
+</tr>
+<tr>
+<td align="center"><code>STC</code></td>
+<td align="center">Set Carry</td>
+<td align="center">CF = 1</td>
+</tr>
+<tr>
+<td align="center"><code>CLD</code></td>
+<td align="center">Clear Direction</td>
+<td align="center">DF = 0</td>
+</tr>
+<tr>
+<td align="center"><code>STD</code></td>
+<td align="center">Set Direction</td>
+<td align="center">DF = 1</td>
+</tr>
+<tr>
+<td align="center"><code>CLI</code></td>
+<td align="center">Clear Interrupt</td>
+<td align="center">IF = 0</td>
+</tr>
+<tr>
+<td align="center"><code>STI</code></td>
+<td align="center">Set Interrupt</td>
+<td align="center">IF = 1</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="外部同步指令"><a href="#外部同步指令" class="headerlink" title="外部同步指令"></a>外部同步指令</h3><h4 id="ESC"><a href="#ESC" class="headerlink" title="ESC"></a>ESC</h4><ul>
+<li>格式：<code>ESC 外部操作码，src</code></li>
+<li>功能：用来实现对 8087 协处理器控制。</li>
+</ul>
+<h4 id="WAIT"><a href="#WAIT" class="headerlink" title="WAIT"></a>WAIT</h4><ul>
+<li>格式：<code>WAIT</code></li>
+<li>功能：往往跟在 <code>ESC</code> 后等待，直到 <code>TEST</code> 为低电平。</li>
+</ul>
+<h4 id="LOCK"><a href="#LOCK" class="headerlink" title="LOCK"></a>LOCK</h4><ul>
+<li>格式：<code>LOCK</code></li>
+<li>功能：封锁总线，禁止其他处理器使用总线。</li>
+</ul>
+<hr>
+<h3 id="停机和空操作"><a href="#停机和空操作" class="headerlink" title="停机和空操作"></a>停机和空操作</h3><h4 id="HLT"><a href="#HLT" class="headerlink" title="HLT"></a>HLT</h4><ul>
+<li>格式：<code>HLT</code></li>
+<li>功能：进入暂停状态不进行任何操作，直到复位或 NMI 引脚/INTR 引脚出现中断请求信号。</li>
+</ul>
+<h4 id="NOP"><a href="#NOP" class="headerlink" title="NOP"></a>NOP</h4><ul>
+<li>格式：<code>NOP</code></li>
+<li>功能：耗费三个时钟周期但不进行任何操作。</li>
+</ul>
+<hr>
+<h2 id="控制转移指令"><a href="#控制转移指令" class="headerlink" title="控制转移指令"></a>控制转移指令</h2><h3 id="比较指令"><a href="#比较指令" class="headerlink" title="比较指令"></a>比较指令</h3><h4 id="CMP"><a href="#CMP" class="headerlink" title="CMP"></a>CMP</h4><ul>
+<li>格式：<code>CMP dst,src</code></li>
+<li>功能：用 dst 减去 src，但结果仅反映到标志位，不送回目的操作数。</li>
+<li>常见用法：后跟<code>JZ</code>（相等跳转） &amp; <code>JNZ</code> （不相等跳转）。</li>
+</ul>
+<h4 id="TEST"><a href="#TEST" class="headerlink" title="TEST"></a>TEST</h4><ul>
+<li>格式：<code>TEST dst,src</code></li>
+<li>功能：对两个操作数作逻辑与，结果仅反映到标志位，不送回目的操作数。</li>
+<li>常见用法：测试某一位，为 1<code>JNZ</code>跳转，为 0 <code>JZ</code>跳转。</li>
+</ul>
+<hr>
+<h3 id="无条件转移"><a href="#无条件转移" class="headerlink" title="无条件转移"></a>无条件转移</h3><h4 id="JMP"><a href="#JMP" class="headerlink" title="JMP"></a>JMP</h4><ul>
+<li>格式：<code>JMP dst</code></li>
+<li>功能：无条件跳转到目的地址。</li>
+</ul>
+<p>跳转分为两种，一种是段内转移或近（NEAR）转移，跳转时仅改变 IP 的值，另一种是段间转移或远（FAR）转移，此时跳转长度超过 IP 最大值，CS 和 IP 都要改变。这两种情况都提供直接转移和间接转移两种方法，前者直接给出目的地址，后者将目的地址放在寄存器或者存储单元中。</p>
+<table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">方式</th>
+<th align="center">寻址目标</th>
+<th align="center">举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">段内</td>
+<td align="center">直接</td>
+<td align="center">立即短转移（8位）</td>
+<td align="center"><code>JMP SHORT 标号</code></td>
+</tr>
+<tr>
+<td align="center">段内</td>
+<td align="center">直接</td>
+<td align="center">立即近转移（16位）</td>
+<td align="center"><code>JMP NEAR PTR 标号</code>或<code>JMP 标号</code></td>
+</tr>
+<tr>
+<td align="center">段内</td>
+<td align="center">间接</td>
+<td align="center">寄存器（16位）</td>
+<td align="center"><code>JMP BX</code></td>
+</tr>
+<tr>
+<td align="center">段内</td>
+<td align="center">间接</td>
+<td align="center">存储器（16位）</td>
+<td align="center"><code>JMP WORD PTR 5[BX]</code></td>
+</tr>
+<tr>
+<td align="center">段间</td>
+<td align="center">直接</td>
+<td align="center">立即转移（32位）</td>
+<td align="center"><code>JMP FAR PTR 标号</code></td>
+</tr>
+<tr>
+<td align="center">段间</td>
+<td align="center">间接</td>
+<td align="center">存储器（32位）</td>
+<td align="center"><code>JMP DWORD PTR[REG]</code></td>
+</tr>
+</tbody></table>
+<h4 id="CALL"><a href="#CALL" class="headerlink" title="CALL"></a>CALL</h4><ul>
+<li>格式：<code>CALL 过程名</code></li>
+<li>功能：调用过程。</li>
+</ul>
+<p>同样有段内与段间，直接与间接的区分，指令格式与 JMP 类似。</p>
+<table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">方式</th>
+<th align="center">寻址目标</th>
+<th align="center">举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">段内</td>
+<td align="center">直接</td>
+<td align="center">立即调用</td>
+<td align="center"><code>CALL 标号</code></td>
+</tr>
+<tr>
+<td align="center">段内</td>
+<td align="center">间接</td>
+<td align="center">寄存器（16位）</td>
+<td align="center"><code>CALL BX</code></td>
+</tr>
+<tr>
+<td align="center">段内</td>
+<td align="center">间接</td>
+<td align="center">存储器（16位）</td>
+<td align="center"><code>CALL WORD PTR 5[BX]</code></td>
+</tr>
+<tr>
+<td align="center">段间</td>
+<td align="center">直接</td>
+<td align="center">立即调用（32位）</td>
+<td align="center"><code>CALL FAR PTR 标号</code></td>
+</tr>
+<tr>
+<td align="center">段间</td>
+<td align="center">间接</td>
+<td align="center">存储器（32位）</td>
+<td align="center"><code>CALL DWORD PTR[REG]</code></td>
+</tr>
+</tbody></table>
+<h4 id="RET"><a href="#RET" class="headerlink" title="RET"></a>RET</h4><ul>
+<li>格式：<code>RET (n)</code></li>
+<li>功能：过程返回。如果有 n 则在弹出返回地址后再弹出 n 个字节，这一目的是让调用过程可以传递参数。</li>
+</ul>
+<hr>
+<h3 id="条件转移"><a href="#条件转移" class="headerlink" title="条件转移"></a>条件转移</h3><ul>
+<li>格式：<code>操作符 标号</code></li>
+<li>功能：根据操作符，满足即跳转到标号。</li>
+</ul>
+<h4 id="直接标志转移"><a href="#直接标志转移" class="headerlink" title="直接标志转移"></a>直接标志转移</h4><table>
+<thead>
+<tr>
+<th align="center">指令</th>
+<th align="center">测试条件</th>
+<th align="center">判断条件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>JC</code>/<code>JNC</code></td>
+<td align="center">CF = 1 / 0</td>
+<td align="center">有 / 无进位</td>
+</tr>
+<tr>
+<td align="center"><code>JZ</code>/<code>JNZ</code></td>
+<td align="center">ZF = 1 / 0</td>
+<td align="center">相等 / 不相等</td>
+</tr>
+<tr>
+<td align="center"><code>JE</code>/<code>JNE</code></td>
+<td align="center">ZF = 1 / 0</td>
+<td align="center">相等 / 不相等</td>
+</tr>
+<tr>
+<td align="center"><code>JS</code>/<code>JNS</code></td>
+<td align="center">SF = 1 / 0</td>
+<td align="center">符号为负 / 正</td>
+</tr>
+<tr>
+<td align="center"><code>JO</code>/<code>JNO</code></td>
+<td align="center">OF = 1 / 0</td>
+<td align="center">溢出 / 无溢出</td>
+</tr>
+<tr>
+<td align="center"><code>JP</code>/<code>JNP</code></td>
+<td align="center">PF = 1 / 0</td>
+<td align="center">为偶数 / 奇数</td>
+</tr>
+<tr>
+<td align="center"><code>JPE</code>/<code>JPO</code></td>
+<td align="center">PF = 1 / 0</td>
+<td align="center">为偶数 / 奇数</td>
+</tr>
+</tbody></table>
+<h4 id="无符号数比较测试"><a href="#无符号数比较测试" class="headerlink" title="无符号数比较测试"></a>无符号数比较测试</h4><table>
+<thead>
+<tr>
+<th align="center">指令</th>
+<th align="center">测试条件</th>
+<th align="center">判断条件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>JA</code>/<code>JNBE</code></td>
+<td align="center">CF ∨∨ ZF = 0</td>
+<td align="center">高于 / 不低于等于</td>
+</tr>
+<tr>
+<td align="center"><code>JAE</code>/<code>JNB</code></td>
+<td align="center">CF = 0</td>
+<td align="center">高于等于 / 不低于</td>
+</tr>
+<tr>
+<td align="center"><code>JNAE</code>/<code>JB</code></td>
+<td align="center">CF = 1</td>
+<td align="center">不高于等于 / 低于</td>
+</tr>
+<tr>
+<td align="center"><code>JNA</code>/<code>JBE</code></td>
+<td align="center">CF ∨∨ ZF = 1</td>
+<td align="center">不高于 / 低于等于</td>
+</tr>
+</tbody></table>
+<h4 id="有符号数比较测试"><a href="#有符号数比较测试" class="headerlink" title="有符号数比较测试"></a>有符号数比较测试</h4><table>
+<thead>
+<tr>
+<th align="center">指令</th>
+<th align="center">测试条件</th>
+<th align="center">判断条件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>JG</code>/<code>JNLE</code></td>
+<td align="center">(SF XORXOR OF) ∨∨ ZF = 0</td>
+<td align="center">大于 / 不小于等于</td>
+</tr>
+<tr>
+<td align="center"><code>JGE</code>/<code>JNL</code></td>
+<td align="center">SF XORXOR OF = 0</td>
+<td align="center">大于等于 / 不小于</td>
+</tr>
+<tr>
+<td align="center"><code>JNGE</code>/<code>JL</code></td>
+<td align="center">SF XORXOR OF = 1</td>
+<td align="center">不大于等于 / 小于</td>
+</tr>
+<tr>
+<td align="center"><code>JNG</code>/<code>JLE</code></td>
+<td align="center">(SF XORXOR OF) ∨∨ ZF = 1</td>
+<td align="center">不大于 / 小于等于</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="循环控制指令"><a href="#循环控制指令" class="headerlink" title="循环控制指令"></a>循环控制指令</h3><h4 id="LOOP"><a href="#LOOP" class="headerlink" title="LOOP"></a>LOOP</h4><ul>
+<li>格式：<code>LOOP 标号</code></li>
+<li>功能：跳至标号继续循环，每执行一次 CX 减一，若减一后为零则不跳转。</li>
+</ul>
+<h4 id="LOOPE-amp-LOOPNE"><a href="#LOOPE-amp-LOOPNE" class="headerlink" title="LOOPE &amp; LOOPNE"></a>LOOPE &amp; LOOPNE</h4><ul>
+<li>格式：<code>LOOPE 标号</code> &amp; <code>LOOPNE 标号</code></li>
+<li>功能：（不）相等时循环，其他与 LOOP 相同。</li>
+</ul>
+<h4 id="LOOPZ-amp-LOOPNZ"><a href="#LOOPZ-amp-LOOPNZ" class="headerlink" title="LOOPZ &amp; LOOPNZ"></a>LOOPZ &amp; LOOPNZ</h4><ul>
+<li>格式：<code>LOOPZ 标号</code> &amp; <code>LOOPNZ 标号</code></li>
+<li>功能：结果（不）为零时循环，其他与 LOOP 相同。</li>
+</ul>
+<h4 id="JCXZ"><a href="#JCXZ" class="headerlink" title="JCXZ"></a>JCXZ</h4><ul>
+<li>格式：<code>JCXZ 标号</code></li>
+<li>功能：CX 为零则跳转，否则就往下执行， CS 不会减一。</li>
+</ul>
+<hr>
+<h3 id="中断指令"><a href="#中断指令" class="headerlink" title="中断指令"></a>中断指令</h3><h4 id="INT"><a href="#INT" class="headerlink" title="INT"></a>INT</h4><ul>
+<li>格式：<code>INT n</code></li>
+<li>功能：调用 n 对应的功能。</li>
+</ul>
+<h4 id="INTO"><a href="#INTO" class="headerlink" title="INTO"></a>INTO</h4><ul>
+<li>格式：<code>INTO</code></li>
+<li>功能：如果溢出标识 OF 为 1 则产生类型为 4 的中断，否则就继续向下执行。</li>
+</ul>
+<h4 id="IRET"><a href="#IRET" class="headerlink" title="IRET"></a>IRET</h4><ul>
+<li>格式：<code>IRET</code></li>
+<li>功能：中断返回。</li>
+</ul>
+<hr>
+<h2 id="BIOS-amp-DOS-调用"><a href="#BIOS-amp-DOS-调用" class="headerlink" title="BIOS &amp; DOS 调用"></a>BIOS &amp; DOS 调用</h2><p>调用这两者用的是 INT 中断指令。</p>
+<ul>
+<li>格式：<code>INT n</code></li>
+<li>功能：调用 n 对应的功能。</li>
+</ul>
+<p>其中 n = 21H 是最为强大的 DOS 中断。一般调用中断须先将参数放入指定寄存器，功能号放入 AH，子功能号放入 AL，例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MOV AX,4C00H </span><br><span class="line">INT 21H</span><br></pre></td></tr></table></figure>
+
+<p>常用的功能号有</p>
+<table>
+<thead>
+<tr>
+<th align="center">功能号</th>
+<th align="center">功能</th>
+<th align="center">参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">01H</td>
+<td align="center">输入一个字符</td>
+<td align="center">AL = 输入字符</td>
+</tr>
+<tr>
+<td align="center">0AH</td>
+<td align="center">输入字符串</td>
+<td align="center">DX:DX = 缓冲区首地址</td>
+</tr>
+<tr>
+<td align="center">02H</td>
+<td align="center">显示一个字符</td>
+<td align="center">DL = 显示字符</td>
+</tr>
+<tr>
+<td align="center">09H</td>
+<td align="center">显示 $ 结尾的字符串</td>
+<td align="center">DX:DX = 字符串首地址</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="常用伪指令"><a href="#常用伪指令" class="headerlink" title="常用伪指令"></a>常用伪指令</h2><h3 id="数值回送操作符"><a href="#数值回送操作符" class="headerlink" title="数值回送操作符"></a>数值回送操作符</h3><h4 id="TYPE"><a href="#TYPE" class="headerlink" title="TYPE"></a>TYPE</h4><ul>
+<li>格式：<code>TYPE expression_r(or label)</code></li>
+<li>功能：返回变量以字节数表示的类型 &amp; 返回标号类型的数值</li>
+</ul>
+<h4 id="LENGTH"><a href="#LENGTH" class="headerlink" title="LENGTH"></a>LENGTH</h4><ul>
+<li>格式：<code>TYPE variable</code></li>
+<li>功能：对于变量使用DUP的情况,将回送分配给该变量的单元数; 对其它情况则回送1</li>
+</ul>
+<h4 id="SIZE"><a href="#SIZE" class="headerlink" title="SIZE"></a>SIZE</h4><ul>
+<li>格式：<code>TYPE variable</code></li>
+<li>功能：回送分配给该变量的字节数 = TYPE * LENGTH</li>
+</ul>
+<h4 id="OFFSET"><a href="#OFFSET" class="headerlink" title="OFFSET"></a>OFFSET</h4><ul>
+<li>格式：<code>TYPE variable (or lable)</code></li>
+<li>功能：回送变量或标号的偏移地址</li>
+</ul>
+<h4 id="SEG"><a href="#SEG" class="headerlink" title="SEG"></a>SEG</h4><ul>
+<li>格式：<code>TYPE variable (or lable)</code></li>
+<li>功能：回送变量或标号的段地址</li>
+</ul>
+<h3 id="数据定义语句"><a href="#数据定义语句" class="headerlink" title="数据定义语句"></a>数据定义语句</h3><ul>
+<li>DB 定义字节,表示其后每个操作数占有一个字节(1Byte)单元</li>
+<li>DW 定义字,表示表示其后每个操作数占有一个字(2Byte)单元</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data_byte     DB      10 , 4 , 10H , ?        ;共定义了4个字节,其中 &#39;?&#39; 是保留单元</span><br><span class="line"></span><br><span class="line">data_word    DW    100 DUP(?)            ;定义100个字的存储空间</span><br></pre></td></tr></table></figure>
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://aotle.github.io/2020/06/25/ckhbxh1qh000cikum2ndhbtt6/>https://aotle.github.io/2020/06/25/ckhbxh1qh000cikum2ndhbtt6/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-13T14:36:14+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Aug 13, 2020</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/8086%E6%B1%87%E7%BC%96/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>8086汇编</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E8%80%83%E8%AF%95/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>考试</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://aotle.github.io/2020/06/25/ckhbxh1qh000cikum2ndhbtt6/&title=常用汇编指令整理 - Aotle&summary=
+这是一些常用汇编指令的整理。
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://aotle.github.io/2020/06/25/ckhbxh1qh000cikum2ndhbtt6/&title=常用汇编指令整理 - Aotle&summary=
+这是一些常用汇编指令的整理。
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://aotle.github.io/2020/06/25/ckhbxh1qh000cikum2ndhbtt6/&title=常用汇编指令整理 - Aotle&summary=
+这是一些常用汇编指令的整理。
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2020/06/29/ckhbxh1qn000tikum2mh72ree/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>数据结构--线性表</p>
+                <p class='content'>
+数据结构之线性表
+
+ 
+
+概念线性表是数据结构中最简单的数据存储结构，可以理解为“线性的表”。
+线性，是说数据在逻辑结构上具有线性关系。将具有线性关系的数据存储到计算机中所使用的存储结构称为线...</p>
+              </a>
+            
+            
+              <a class='next' href='/2020/06/23/ckhbxh1qp000wikumgi5te2vt/'>
+                <p class='title'>短句分享<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>
+摘抄了一些很美的短句
+
+
+
+1/
+四月，应该坦坦荡荡，鸽子从屋檐拥向晴空，青藤从粉墙探向枝头，新茶从瓷碗吻向老桌，传说从故纸堆里挣脱，你带着苍绿的情书，生锈的戒指，以及喑哑的晚钟，风尘仆仆 ，...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '常用汇编指令整理',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据传送指令"><span class="toc-text">数据传送指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#通用数据传送指令"><span class="toc-text">通用数据传送指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#MOV"><span class="toc-text">MOV</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PUSH-amp-POP"><span class="toc-text">PUSH &amp; POP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#XCHG"><span class="toc-text">XCHG</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#XLAT"><span class="toc-text">XLAT</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#地址目标传送指令"><span class="toc-text">地址目标传送指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#LEA"><span class="toc-text">LEA</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#LDS-amp-LES"><span class="toc-text">LDS &amp; LES</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#标志传送指令"><span class="toc-text">标志传送指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#PUSHF-amp-POPF"><span class="toc-text">PUSHF &amp; POPF</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#LAHF-amp-SAHF"><span class="toc-text">LAHF &amp; SAHF</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入输出指令"><span class="toc-text">输入输出指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#IN-amp-OUT"><span class="toc-text">IN &amp; OUT</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算术运算指令"><span class="toc-text">算术运算指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#加减法指令"><span class="toc-text">加减法指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ADD-amp-ADC"><span class="toc-text">ADD &amp; ADC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#INC"><span class="toc-text">INC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SUB-amp-SBB"><span class="toc-text">SUB &amp; SBB:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DEC"><span class="toc-text">DEC:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NEG"><span class="toc-text">NEG:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#乘除法指令"><span class="toc-text">乘除法指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#MUL-amp-IMUL"><span class="toc-text">MUL &amp; IMUL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DIV-amp-IDIV"><span class="toc-text">DIV &amp; IDIV</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#逻辑运算与移位指令"><span class="toc-text">逻辑运算与移位指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#逻辑运算"><span class="toc-text">逻辑运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算术逻辑移位"><span class="toc-text">算术逻辑移位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#循环移位"><span class="toc-text">循环移位</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串操作指令"><span class="toc-text">字符串操作指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#处理器控制指令"><span class="toc-text">处理器控制指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#标志处理指令"><span class="toc-text">标志处理指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#外部同步指令"><span class="toc-text">外部同步指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ESC"><span class="toc-text">ESC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#WAIT"><span class="toc-text">WAIT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#LOCK"><span class="toc-text">LOCK</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#停机和空操作"><span class="toc-text">停机和空操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#HLT"><span class="toc-text">HLT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NOP"><span class="toc-text">NOP</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#控制转移指令"><span class="toc-text">控制转移指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#比较指令"><span class="toc-text">比较指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CMP"><span class="toc-text">CMP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TEST"><span class="toc-text">TEST</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#无条件转移"><span class="toc-text">无条件转移</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#JMP"><span class="toc-text">JMP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CALL"><span class="toc-text">CALL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RET"><span class="toc-text">RET</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#条件转移"><span class="toc-text">条件转移</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#直接标志转移"><span class="toc-text">直接标志转移</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#无符号数比较测试"><span class="toc-text">无符号数比较测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#有符号数比较测试"><span class="toc-text">有符号数比较测试</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#循环控制指令"><span class="toc-text">循环控制指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#LOOP"><span class="toc-text">LOOP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#LOOPE-amp-LOOPNE"><span class="toc-text">LOOPE &amp; LOOPNE</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#LOOPZ-amp-LOOPNZ"><span class="toc-text">LOOPZ &amp; LOOPNZ</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JCXZ"><span class="toc-text">JCXZ</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#中断指令"><span class="toc-text">中断指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#INT"><span class="toc-text">INT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#INTO"><span class="toc-text">INTO</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IRET"><span class="toc-text">IRET</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BIOS-amp-DOS-调用"><span class="toc-text">BIOS &amp; DOS 调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用伪指令"><span class="toc-text">常用伪指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数值回送操作符"><span class="toc-text">数值回送操作符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#TYPE"><span class="toc-text">TYPE</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#LENGTH"><span class="toc-text">LENGTH</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SIZE"><span class="toc-text">SIZE</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#OFFSET"><span class="toc-text">OFFSET</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SEG"><span class="toc-text">SEG</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据定义语句"><span class="toc-text">数据定义语句</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='822934507'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="/1781322024@qq.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/Aotle"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=549195595"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://Aotle.github.io">Copyright © 2017-2020 F.A</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["http://i1.fuimg.com/721743/90478b03f49d8057.png"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('.cover') {
+          $('.cover').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick','mail','link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "B2JRC0gFBmeF5lDPxqa3TuTr-gzGzoHsz",
+    appKey: "x3BFjG0bdCFyRFGeg1QJUP8D",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'robohash',
+    lang:'zh-cn',
+    visitor: 'true',
+    highlight: 'true',
+    mathJax: 'false',
+    enableQQ: 'true',
+    requiredFields: requiredFields,
+    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+    emojiMaps: emojiMaps
+  })
+  </script>
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 标准 markdown 描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+
