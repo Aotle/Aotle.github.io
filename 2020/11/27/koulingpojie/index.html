@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,8 +16,14 @@
 
   <!-- 页面元数据 -->
   
-    <title>Tag: 数据结构 - Aotle</title>
+    <title>网络安全复习笔记-口令破解与防御 - Aotle</title>
   
+    <meta name="keywords" content="网络安全">
+  
+  
+    <meta name="description" content="
+复习笔记——口令破解与防御
+">
   
 
   <!-- feed -->
@@ -80,7 +84,7 @@
   
   <div class="cover-wrapper">
     
-      <cover class='cover  half'>
+      <cover class='cover post half'>
         <div class='cover-body'>
   <div class='a'>
     
@@ -338,25 +342,12 @@
     <div class='body-wrapper'>
       
 
-
 <div class='l_main'>
   
-    
-      
-  <section class="post-list ">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+
   
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -366,11 +357,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/2020/06/29/xianxingbiao1/">
-      数据结构--线性表
+  <h1 class="title">
+    <a href="/2020/11/27/koulingpojie/">
+      网络安全复习笔记-口令破解与防御
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -393,9 +384,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/' rel="nofollow">
+    <a href='/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>数据结构</p>
+      <p>网络安全</p>
     </a>
   </div>
 
@@ -406,14 +397,9 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Jun 29, 2020</p>
+    <p>发布于：Nov 27, 2020</p>
   </a>
 </div>
-
-            
-          
-            
-              
 
             
           
@@ -431,104 +417,94 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>数据结构之线性表</p>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <blockquote>
+<p>复习笔记——口令破解与防御</p>
 </blockquote>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2020/06/29/xianxingbiao1/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
+<a id="more"></a>
 
-          </div>
-        
-      
-    
-  </section>
+<h2 id="常用口令破解技术"><a href="#常用口令破解技术" class="headerlink" title="常用口令破解技术"></a>常用口令破解技术</h2><ul>
+<li>暴力破解</li>
+<li>字典攻击</li>
+<li>组合攻击</li>
+<li>社会工程学</li>
+</ul>
+<h3 id="暴力破解"><a href="#暴力破解" class="headerlink" title="暴力破解"></a>暴力破解</h3><ul>
+<li>彩虹表：<a href="https://www.jianshu.com/p/732d9d960411" target="_blank" rel="noopener">https://www.jianshu.com/p/732d9d960411</a></li>
+</ul>
+<p>彩虹表类似字典攻击，但是不是简单的存储明文密钥对。而是采用哈希链来存储，优化一定空间。</p>
+<h3 id="字典攻击"><a href="#字典攻击" class="headerlink" title="字典攻击"></a>字典攻击</h3><p>弱口令和根据用户信息生成的字典进行攻击。</p>
+<h3 id="组合攻击"><a href="#组合攻击" class="headerlink" title="组合攻击"></a>组合攻击</h3><p>组合攻击就是在字典攻击的基础上，增添几个数字几个字母啥的，防止字典没有包含的一些用户口令。</p>
+<h3 id="社会工程学"><a href="#社会工程学" class="headerlink" title="社会工程学"></a>社会工程学</h3><p>简而言之就是骗，进行钓鱼。常用工具kali系统的set(social engineering toolkit)</p>
+<h2 id="操作系统口令破解"><a href="#操作系统口令破解" class="headerlink" title="操作系统口令破解"></a>操作系统口令破解</h2><h3 id="Windows系统口令文件"><a href="#Windows系统口令文件" class="headerlink" title="Windows系统口令文件"></a>Windows系统口令文件</h3><p>通过sam文件保存单向散列值。通过安全标示对口令进行管理，安全标示是唯一的，即使删除用户再使用同样的用户名进行创建也会使用不同的安全标示。</p>
+<p>Windows下的两种hash算法</p>
+<ol>
+<li>Lm-hash（暴力破解即可，不安全）</li>
+<li>Not-hash（微软改进的算法）</li>
+</ol>
+<p>这种算法相对来说比较简单，将用户口令进行unicode编码，在进行md4转换得到hash值。</p>
+<h3 id="Windows用户登陆和身份验证"><a href="#Windows用户登陆和身份验证" class="headerlink" title="Windows用户登陆和身份验证"></a>Windows用户登陆和身份验证</h3><ul>
+<li>交互式登陆</li>
+</ul>
+<p>直接通过本地计算机登陆，将密码按照加密过程走一遍，对比hash值即可。</p>
+<ul>
+<li>网络登陆</li>
+</ul>
+<p>网络登陆涉及多种身份认证机制。该章节介绍了htlm机制。</p>
+<p>先把用户口令进行加密，得到hash值，明文则被丢弃，服务器发送一段16位的随机序列，用户对这段序列用hash值进行加密，然后把加密的信息发过去，服务器进行同样进行一遍加密过程，如果得到结果相同，则通过，否则不通过。</p>
+<h2 id="Linux口令"><a href="#Linux口令" class="headerlink" title="Linux口令"></a>Linux口令</h2><p><code>/etc/passwd</code>存放用户id等信息，而加密的口令存放在<code>/etc/shadow</code>中，密钥以<code>$</code>进行分割，第一段写的是加密算法对应的标号，第二段放的是盐值，第三段放的是密钥。</p>
+<p>组口令放在<code>/etc/group</code>文件中，口令信息放在<code>/etc/shadow</code>中。</p>
+<h3 id="操作系统口令破解-1"><a href="#操作系统口令破解-1" class="headerlink" title="操作系统口令破解"></a>操作系统口令破解</h3><p><strong>Windows口令破解</strong></p>
+<p>Windows运行过程sam文件被锁定，可以通过系统漏洞获取sam文件。得到sam文件之后只需要进行口令破解即可。</p>
+<p>常用工具：pwdump，l0phtcrack等</p>
+<p><strong>linux口令破解</strong></p>
+<p>先要获取root权限，在获取<code>/etc/shadow</code>文件，在进行破解。</p>
+<p>常见工具：john the ripper</p>
+<p><strong>数据库口令破解</strong></p>
+<p>mysql数据库的user表中放了用户口令等信息，获取该表之后通过工具破解即可。</p>
+<h2 id="口令防御技术"><a href="#口令防御技术" class="headerlink" title="口令防御技术"></a>口令防御技术</h2><p>使用强口令，定期更换等。</p>
+
+          
+            <div class='article_footer'>
+              
+                
   
     
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
     
-    
+
+
 
   
 
-
-    
-  
-</div>
-<aside class='l_side'>
-  
   
     
     
 
-<section class="widget blogger shadow desktop mobile">
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
   <div class='content'>
     
-      
-        <a class='avatar flat-box' href='/about/'>
-          <img no-lazy src='http://i1.fuimg.com/721743/1074048bddff0451.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Aotle</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
+      <blockquote>
         
           
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
           
         
           
-            <a href="/1781322024@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
+            <p>本文永久链接是：<a href=https://aotle.github.io/2020/11/27/koulingpojie/>https://aotle.github.io/2020/11/27/koulingpojie/</a></p>
           
         
-          
-            <a href="https://github.com/Aotle"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=549195595"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
+      </blockquote>
     
   </div>
 </section>
@@ -538,108 +514,228 @@
   
     
     
+
+<section class="widget qrcode  desktop mobile">
   
 
-  <section class="widget category shadow desktop">
+  <div class='content article-entry'>
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-27T11:10:44+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Nov 27, 2020</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>网络安全</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://aotle.github.io/2020/11/27/koulingpojie/&title=网络安全复习笔记-口令破解与防御 - Aotle&summary=
+复习笔记——口令破解与防御
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://aotle.github.io/2020/11/27/koulingpojie/&title=网络安全复习笔记-口令破解与防御 - Aotle&summary=
+复习笔记——口令破解与防御
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://aotle.github.io/2020/11/27/koulingpojie/&title=网络安全复习笔记-口令破解与防御 - Aotle&summary=
+复习笔记——口令破解与防御
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2020/11/27/webgongjifangyu/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>网络安全复习笔记-web攻击与防御</p>
+                <p class='content'>
+复习笔记——web攻击与防御
+
+
+
+sql注入攻击
+参考
+https://www.jianshu.com/p/078df7a35671
+
+
+sql注入的原理是因为用户输入的数据被作为sql命令...</p>
+              </a>
+            
+            
+              <a class='next' href='/2020/11/18/xinxishouji/'>
+                <p class='title'>网络安全复习笔记——概论与信息收集<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>
+网络安全复习笔记一概论与信息收集
+
+
+
+概论网络安全的概念基本属性：CIA三元组
+
+机密性
+完整性
+可用性
+
+安全威胁
+信息泄露
+信息破坏
+拒绝服务
+
+网络攻击
+阻断攻击
+截取攻击
+篡改攻击
+...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '网络安全复习笔记-口令破解与防御',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/PHP/" href="/categories/PHP/"
-            id="categoriesPHP"
-            ><div class='name'>PHP</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/STL/" href="/categories/STL/"
-            id="categoriesSTL"
-            ><div class='name'>STL</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/js/" href="/categories/js/"
-            id="categoriesjs"
-            ><div class='name'>js</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%85%B6%E4%BB%96/" href="/categories/%E5%85%B6%E4%BB%96/"
-            id="categoriesE585B6E4BB96"
-            ><div class='name'>其他</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" href="/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"
-            id="categoriesE58AA8E68081E8A784E58892"
-            ><div class='name'>动态规划</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AE%89%E5%85%A8/" href="/categories/%E5%AE%89%E5%85%A8/"
-            id="categoriesE5AE89E585A8"
-            ><div class='name'>安全</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%91%98%E6%8A%84/" href="/categories/%E6%91%98%E6%8A%84/"
-            id="categoriesE69198E68A84"
-            ><div class='name'>摘抄</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"
-            id="categoriesE695B0E68DAEE7BB93E69E84"
-            ><div class='name'>数据结构</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%B1%87%E7%BC%96/" href="/categories/%E6%B1%87%E7%BC%96/"
-            id="categoriesE6B187E7BC96"
-            ><div class='name'>汇编</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
-            id="categoriesE7AE97E6B395"
-            ><div class='name'>算法</div><div class='badge'>(8)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"
-            id="categoriesE7BD91E7BB9CE5AE89E585A8"
-            ><div class='name'>网络安全</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E9%9A%8F%E7%AC%94/" href="/categories/%E9%9A%8F%E7%AC%94/"
-            id="categoriesE99A8FE7AC94"
-            ><div class='name'>随笔</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#常用口令破解技术"><span class="toc-text">常用口令破解技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#暴力破解"><span class="toc-text">暴力破解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字典攻击"><span class="toc-text">字典攻击</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组合攻击"><span class="toc-text">组合攻击</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#社会工程学"><span class="toc-text">社会工程学</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操作系统口令破解"><span class="toc-text">操作系统口令破解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows系统口令文件"><span class="toc-text">Windows系统口令文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows用户登陆和身份验证"><span class="toc-text">Windows用户登陆和身份验证</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux口令"><span class="toc-text">Linux口令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#操作系统口令破解-1"><span class="toc-text">操作系统口令破解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#口令防御技术"><span class="toc-text">口令防御技术</span></a></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/8086%E6%B1%87%E7%BC%96/" style="font-size: 14px; color: #999">8086汇编</a> <a href="/tags/PHP/" style="font-size: 14px; color: #999">PHP</a> <a href="/tags/STL/" style="font-size: 14px; color: #999">STL</a> <a href="/tags/js/" style="font-size: 14px; color: #999">js</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 14px; color: #999">前端</a> <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" style="font-size: 14px; color: #999">动态规划</a> <a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 17.33px; color: #828282">安全</a> <a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" style="font-size: 17.33px; color: #828282">密码学</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/%E7%9F%AD%E5%8F%A5/" style="font-size: 14px; color: #999">短句</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 14px; color: #999">笔记</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 24px; color: #555">算法</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" style="font-size: 14px; color: #999">线性表</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" style="font-size: 20.67px; color: #6c6c6c">网络安全</a> <a href="/tags/%E8%80%83%E8%AF%95/" style="font-size: 20.67px; color: #6c6c6c">考试</a> <a href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">贪心算法</a> <a href="/tags/%E8%B5%84%E6%96%99/" style="font-size: 14px; color: #999">资料</a>
-    </div>
-  </section>
-
-
-  
 
   
 
@@ -849,6 +945,60 @@
 
 
 
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick','mail','link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "B2JRC0gFBmeF5lDPxqa3TuTr-gzGzoHsz",
+    appKey: "x3BFjG0bdCFyRFGeg1QJUP8D",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'robohash',
+    lang:'zh-cn',
+    visitor: 'true',
+    highlight: 'true',
+    mathJax: 'false',
+    enableQQ: 'true',
+    requiredFields: requiredFields,
+    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+    emojiMaps: emojiMaps
+  })
+  </script>
 
 
 
