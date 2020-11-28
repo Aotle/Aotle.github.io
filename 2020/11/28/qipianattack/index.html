@@ -515,8 +515,6 @@
 <p>二<strong>、IP欺骗的理论根据：</strong></p>
 <p>  由于TCP是面向连接的协议，所以在双方正式传输数据之前，需要用“三次握手”来建立一个稳重的连接。</p>
 <p>这里的ip欺骗是tcp会话劫持</p>
-<p>附上计算机网络教材上图片：</p>
-<p><a href="https://img-blog.csdn.net/20140522075000531" target="_blank" rel="noopener">https://img-blog.csdn.net/20140522075000531</a></p>
 <p>假设hosta和hostb两台主机进行通信，hostb首先发送带有SYN标志的数据段通知hosta建立TCP连接，TCP的可靠性就是由数据包中的多位控制字来提供的，其中最重要的是数据序列SYN和数据确认标志ACK。B将TCP报头中的SYN设为自己本次连接中的初始值（ISN）。</p>
 <p>  当hosta收到hostb的SYN包之后，会发送给hostb一个带有SYN+ACK标志的数据段，告之自己的ISN，并确认hostb发送来的第一个数据段，将ACK设置成hostb的SYN+1。</p>
 <p>  当hostb确认收到hosta的SYN+ACK数据包后，将ACK设置成hosta的SYN+1。Hosta收到hostb的ACK后，连接成功建立，双方可以正式传输数据了。</p>
@@ -566,11 +564,11 @@
 <p>(1) SSLStrip简介</p>
 <p>在分析完HTTPS协议流程以及一种HTTPS中间人方法SSLSniff后，文中介绍一种新的HTTPS中间人会话劫持方法SSLStrip[5]。SSLStrip所能达成的目标是在客户端与服务器建立连接时，在MITM与Server之间形成HTTPS连接，而在Client与MITM之间形成HTTP连接，即将SSL层从原HTTPS连接中“剥离”。这样，既避免了在客户端验证证书时难以避免的弹框问题，又能够劫持HTTP明文数据，并同时保证客户端HTTP数据的传输，达到欺骗服务器与客户端的效果。</p>
 <p>(2) SSLStrip的原理和实现</p>
-<p>现实生活中，在浏览器地址栏中输入网址时，多数用户会采用直接输入网址的方式，而忽略了传输所采用的协议。例如，在登录gmail过程中，大多数用户会直接在地址栏中输入<a href="http://www.gmail.com，向Google服务器发送一个HTTP连接请求，而不是输入https：//www.gmail.com，向服务器发送一个HTTPS连接请求。因此，用户通常接触到HTTPS的方式有两种：一种是">www.gmail.com，向Google服务器发送一个HTTP连接请求，而不是输入https：//www.gmail.com，向服务器发送一个HTTPS连接请求。因此，用户通常接触到HTTPS的方式有两种：一种是</a> Web上的连接，比如当用户在gmail上输入用户名和密码后，点击的登录键，将用户的用户名和密码以HTTPS的形式POST到服务器。另一种是通过HTTP的302状态。当客户端向gmail提出HTTP连接请求时，gmail服务器会返回一个REDIRECT网址，https：//<a href="http://www.google.com/accounts/ServiceLogin?service=mail...，用户端在接收到这个URL后，将页面重定位到该网页，并请求HTTPS连接。" target="_blank" rel="noopener">www.google.com/accounts/ServiceLogin?service=mail...，用户端在接收到这个URL后，将页面重定位到该网页，并请求HTTPS连接。</a></p>
+<p>现实生活中，在浏览器地址栏中输入网址时，多数用户会采用直接输入网址的方式，而忽略了传输所采用的协议。例如，在登录gmail过程中，大多数用户会直接在地址栏中输入<code>www.gmail.com</code>，向Google服务器发送一个HTTP连接请求，而不是输入<code>https://www.gmail.com</code>，向服务器发送一个HTTPS连接请求。因此，用户通常接触到HTTPS的方式有两种：一种是 Web上的连接，比如当用户在gmail上输入用户名和密码后，点击的登录键，将用户的用户名和密码以HTTPS的形式POST到服务器。另一种是通过HTTP的302状态。当客户端向gmail提出HTTP连接请求时，gmail服务器会返回一个REDIRECT网址，<code>https://www.google.com/accounts/ServiceLogin?service=mail...</code>，用户端在接收到这个URL后，将页面重定位到该网页，并请求HTTPS连接。</p>
 <p>从另外一个角度讲，用户通常是通过HTTP向服务器发起HTTPS连接的。而HTTP本身是以明文的形式对外传送，并不能保证数据的安全。因此，可以考虑通过对HTTP进行劫持，来实现对HTTPS劫持的目的。整个SSLStrip过程包括如下几个步骤(见图1)：</p>
 <p>① 客户端Client向服务器Server发起HTTP连接请求；</p>
 <p>② 中间人MITM监听客户端与服务器的HTTP数据；</p>
-<p>③ 服务器返回给客户端的HTTP数据包被在客户端与服务器之间的中间人截获。中间人解析原HTTP数据包，将其中<a href="https：//...">替换成<a href="http：//...">，将Location：https：//… 替换成Location：http：//..，同时记录下所修改的URL，并保存；</p>
+<p>③ 服务器返回给客户端的HTTP数据包被在客户端与服务器之间的中间人截获。中间人解析原HTTP数据包，将其中<code>&lt;a href=&quot;https：//...&quot;&gt;</code>替换成<code>&lt;a href=&quot;http：//...&quot;&gt;</code>，将<code>Location:https://..</code>. 替换成<code>Location:http://..</code>，同时记录下所修改的URL，并保存；</p>
 <p>④ 中间人将修改后的HTTP数据发送给客户端；</p>
 <p>⑤ 客户端Client向服务器Server发起HTTP连接请求；</p>
 <p>⑥ 中间人计算机解析客户端的HTTP连接请求，并与保存文件相比较。当发现存在有已修改过的HTTP URL时，将其替换成原HTTPS URL，并发送给服务器；</p>
@@ -587,8 +585,8 @@
 <p>在整个域名下，建议都使用基于SSL的HTTPS连接，不要在已经不属于SSL的对话页面上提供注册服务，以防止中间人以HTTP中间人的方式劫持HTTPS。</p>
 <p>(2)针对客户端[6]</p>
 <p>针对客户端的防御有以下步骤：</p>
-<p>① 在输入涉密网站的网址时，尽量加上“https：//”，以防止中间人篡改HTTP重定向后的URL；</p>
-<p>② 对于使用IE作为浏览器的用户，在登录涉密网站时，若地址栏没有变成黄色时加以注意；对于使用其他浏览器的用户，在登录涉密网站时，注意是否显示为https：//…，均可在一定程度上防范当前的中间人和网络钓鱼攻击；</p>
+<p>① 在输入涉密网站的网址时，尽量加上“https://”，以防止中间人篡改HTTP重定向后的URL；</p>
+<p>② 对于使用IE作为浏览器的用户，在登录涉密网站时，若地址栏没有变成黄色时加以注意；对于使用其他浏览器的用户，在登录涉密网站时，注意是否显示为https://…，均可在一定程度上防范当前的中间人和网络钓鱼攻击；</p>
 <p>③ 下载最新版高安全度的网络浏览器；</p>
 <p>④ 对敏感账号采用认证证书，如令牌和其他形式的双因素认证；</p>
 <p>⑤ 对来自未知发件人发出的电子邮件要高度警惕，不要以点击链接的方式接入涉密网站(而应在浏览器中输入网址)。</p>
@@ -597,8 +595,8 @@
 <p>DNS即Domain Name System 的缩写，域名系统以分布式数据库的形式将域名和IP地址相互映射。DNS协议即域名解析协议，简单的说：DNS是用来将域名解析成对应ip地址的协议。</p>
 </blockquote>
 <h3 id="2、工作原理"><a href="#2、工作原理" class="headerlink" title="2、工作原理"></a><strong>2、工作原理</strong></h3><ol>
-<li>访问 www.baidu.com ，首先要向本地DNS服务器发出DNS请求，查询 www.baidu.com 的IP地址，如果本地DNS服务器没有在自己的DNS缓存表中发现该网址的记录，就会向根服务器发起查询，根服务器收到请求后，将com域服务器的地址返回给本地DNS服务器，本地DNS服务器则继续向com域发出查询请求，域服务器将 baidu.com 授权域名服务器的地址返回给本地DNS服务器，本地DNS服务器继续向 baidu.com 发起查询，得到 www.baidu.com 的IP地址。</li>
-<li>本地DNS服务器得到 www.baidu.com 对应的IP地址后以dns应答包的方式传递给用户，并且在本地建立DNS缓存表。</li>
+<li>访问<code>www.baidu.com</code> ，首先要向本地DNS服务器发出DNS请求，查询 <code>www.baidu.com</code> 的IP地址，如果本地DNS服务器没有在自己的DNS缓存表中发现该网址的记录，就会向根服务器发起查询，根服务器收到请求后，将com域服务器的地址返回给本地DNS服务器，本地DNS服务器则继续向com域发出查询请求，域服务器将 baidu.com 授权域名服务器的地址返回给本地DNS服务器，本地DNS服务器继续向 baidu.com 发起查询，得到<code>www.baidu.com</code>的IP地址。</li>
+<li>本地DNS服务器得到<code>www.baidu.com</code>对应的IP地址后以dns应答包的方式传递给用户，并且在本地建立DNS缓存表。</li>
 <li>Windows下查看和刷清空DNS缓存表的命令</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ipconfig /displaydns    </span><br><span class="line">ipconfig /flushdns1</span><br></pre></td></tr></table></figure>
@@ -608,7 +606,7 @@
 </blockquote>
 <ul>
 <li><p>参考：</p>
-<p>https://blog.csdn.net/xg_ren/article/details/79154965</p>
+<p><a href="https://blog.csdn.net/xg_ren/article/details/79154965" target="_blank" rel="noopener">https://blog.csdn.net/xg_ren/article/details/79154965</a></p>
 </li>
 </ul>
 <h2 id="电子邮件欺骗"><a href="#电子邮件欺骗" class="headerlink" title="电子邮件欺骗"></a>电子邮件欺骗</h2><p>主要是伪造发送地址，回复地址，和钓鱼链接，附件等。</p>
@@ -692,7 +690,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-28T15:40:11+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-28T16:48:35+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Nov 28, 2020</p>
