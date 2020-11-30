@@ -16,13 +16,13 @@
 
   <!-- 页面元数据 -->
   
-    <title>快速跳过青年大学习 - Aotle</title>
+    <title>密码学笔记1-2 - Aotle</title>
   
-    <meta name="keywords" content="js,前端">
+    <meta name="keywords" content="密码学">
   
   
     <meta name="description" content="
-本教程适用于安卓手机
+密码学课程笔记1，2章
 ">
   
 
@@ -452,8 +452,8 @@
         
           
   <h1 class="title">
-    <a href="/2020/09/12/qingniandaxuexi/">
-      快速跳过青年大学习
+    <a href="/2020/11/30/mima1/">
+      密码学笔记1-2
     </a>
   </h1>
 
@@ -478,9 +478,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/js/' rel="nofollow">
+    <a href='/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>js</p>
+      <p>密码学</p>
     </a>
   </div>
 
@@ -491,7 +491,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Sep 12, 2020</p>
+    <p>发布于：Nov 30, 2020</p>
   </a>
 </div>
 
@@ -515,38 +515,81 @@
         <div class="article-entry" itemprop="articleBody">
           
           <blockquote>
-<p>本教程适用于安卓手机</p>
+<p>密码学课程笔记1，2章</p>
 </blockquote>
 <a id="more"></a>
 
-<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>既然要优雅地完成大学习，首先得让微信给我们一个输入自己的代码的机会</p>
-<p>按照如下步骤可以打开微信的开发工具</p>
-<p>微信浏览器网页打开<a href="http://debugx5.qq.com/" target="_blank" rel="noopener">http://debugx5.qq.com</a>打开下面两项，就可以调试了</p>
-<p>可以将这个网址发给一个好友，就能够在微信里面打开了</p>
-<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/69a57370ebf47880.png" alt="img"></p>
-<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>打开青年大学习，进入视频播放页面，会发现右下角出现一个绿色的<code>vConsole</code>图标，点击它会出现如下界面。</p>
-<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/1601ffe829599111.jpg" alt="img"></p>
-<p>输入以下代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.section3'</span>).addClass(<span class="string">'topindex1'</span>);</span><br><span class="line">$(<span class="string">'.section4,#Cvideo'</span>).hide();</span><br></pre></td></tr></table></figure>
-
-<p>点击ok即可快速跳过</p>
-<h2 id="微信朋友圈分享"><a href="#微信朋友圈分享" class="headerlink" title="微信朋友圈分享"></a>微信朋友圈分享</h2><p>使用上面的代码快速完成大学习后，使用微信分享仍然是未完成状态</p>
-<p>查阅资料后得知导致这一问题的原因是腾讯分享的sdk标题是网站自定义的，只好通过下面的代码来重新配置腾讯分享sdk来达到正常效果</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> title = <span class="built_in">document</span>.title;</span><br><span class="line"><span class="keyword">var</span> newtitle = title.slice(<span class="number">0</span>, <span class="number">7</span>) + <span class="string">"网上主题团课"</span> + title.slice(<span class="number">7</span>);</span><br><span class="line">$(<span class="string">"script"</span>).each(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span></span><br><span class="line"><span class="function"> </span>&#123; </span><br><span class="line">     <span class="keyword">var</span> content = $(<span class="keyword">this</span>).text();</span><br><span class="line">     <span class="keyword">if</span> (content.indexOf(title)!=<span class="number">-1</span>) &#123;</span><br><span class="line">         <span class="keyword">var</span> script = content.replace(title,<span class="string">"满分！我完成了"</span>+newtitle+<span class="string">"，你也来试试吧"</span>);</span><br><span class="line">         <span class="built_in">eval</span>(script);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p>方案比较暴力，因为对应的dom元素没有id，只好查找替换了</p>
-<p>效果</p>
-<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/127e7fc7ba0826b9.png" alt="img"></p>
-<h2 id="但是为什么是这样的"><a href="#但是为什么是这样的" class="headerlink" title="但是为什么是这样的"></a>但是为什么是这样的</h2><p>要搞清楚为什么是这样的，那就得使用调试工具对源代码一探究竟了</p>
-<p>使用usb线将手机连接到电脑，打开手机的usb调试功能，并对电脑链接进行授权</p>
-<p>（这里可能有人想问为啥不使用桌面版chrome的开发者工具直接调试网站，博主刚开始尝试使用桌面版chrome加载该网站时无论使用任何办法都无法将其切换到移动版的学习界面，可能是本人技术不够吧）</p>
-<p>授权在微信内复制学习页面的链接，使用移动版chrome进入到开始学习页面，使用桌面版chrome打开<code>chrome://inspect/#devices</code></p>
-<p>稍等片刻后就可以显示出chrome打开的网站</p>
-<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/b215e0b8e5944cb5.png" alt="img"></p>
-<p>点击<code>inspect</code>即可开始调试该网页</p>
-<p>在某个script标签内找到了如下代码<br><img src="https://aotle.oss-cn-beijing.aliyuncs.com/d1f34d822ab5456c.png" alt="img"></p>
-<p>既然视频结束后肯定要暂停视频并且显示某个页面，那么就把代码粘贴到console试试</p>
-<p>成功!</p>
+<h1 id="密码学笔记1-amp-2"><a href="#密码学笔记1-amp-2" class="headerlink" title="密码学笔记1&amp;2"></a>密码学笔记1&amp;2</h1><h2 id="密码学术语："><a href="#密码学术语：" class="headerlink" title="密码学术语："></a>密码学术语：</h2><ol>
+<li>明文 P</li>
+<li>密文 C</li>
+<li>密钥 K</li>
+<li>加密 E</li>
+<li>加密算法</li>
+<li>解密 D</li>
+<li>解密算法</li>
+</ol>
+<p>加密：E(P)=C</p>
+<p>解密：D(C)=P</p>
+<ul>
+<li>明文空间M 全体明文的集合</li>
+<li>密文空间C 全体密文的集合</li>
+<li>密钥空间K 全体密钥的集合</li>
+<li>加密算法E</li>
+<li>解密算法D</li>
+</ul>
+<p>密码攻击种类：</p>
+<ul>
+<li>惟密文攻击 -被动攻击 只有截获的密文</li>
+<li>已知明文攻击 -被动攻击 除了截获的密文 还有一些已知的明文密文对</li>
+<li>选择明文攻击 -主动攻击 除了上面的条件之外，还可以选择明文，获得加密的密文</li>
+<li>选择密文攻击 -主动攻击 选择密文获得明文</li>
+</ul>
+<h2 id="经典密码学："><a href="#经典密码学：" class="headerlink" title="经典密码学："></a>经典密码学：</h2><p>古典密码都是对称密码体制。</p>
+<p>分类：</p>
+<ol>
+<li><p>替换密码/代换密码  用一个符号代替另外一个符号</p>
+<p>单表替换</p>
+<ul>
+<li>移位代换密码</li>
+<li>乘数密码</li>
+<li>仿射密码</li>
+</ul>
+<p>多表替换</p>
+</li>
+<li><p>置换密码/换位密码  对符号进行重新排序</p>
+</li>
+</ol>
+<h3 id="替换密码"><a href="#替换密码" class="headerlink" title="替换密码"></a>替换密码</h3><ul>
+<li><input disabled="" type="checkbox"> 单表替换</li>
+</ul>
+<p>通过预先建立的替换表，通过查表，将明文替换成密文。</p>
+<p>密钥就是替换表。</p>
+<p><strong>移位密码（凯撒密码）</strong></p>
+<p>加上偏移量然后 mod</p>
+<p>c=(m+k)mod p</p>
+<p>m=(C-k)mod p</p>
+<p>example：</p>
+<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201130183630454.png" alt="image-20201130183630454"></p>
+<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201130183705477.png" alt="image-20201130183705477"></p>
+<p><strong>乘数密码</strong></p>
+<p>乘以偏移量，然后取mod，这里偏移量k和模p要互素，即(k,p)=1</p>
+<p>c=(m*k)mod p</p>
+<p>m=(c*k^-1)mod p</p>
+<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201130183800940.png" alt="image-20201130183800940"></p>
+<p><strong>仿射密码</strong></p>
+<p>就是移位密码和乘数密码结合</p>
+<p>c=(m*k1+k2)mod p</p>
+<p>m=(c-k2)*k1^-1 mod p</p>
+<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201130183910514.png" alt="image-20201130183910514"></p>
+<p>例：playfair密码，ADFGX密码。</p>
+<ul>
+<li><input disabled="" type="checkbox"> 多表替换</li>
+</ul>
+<p>有多个替换表依次对符号进行加密。</p>
+<p>例：维吉尼亚密码，（Hill密码 *没讲）</p>
+<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201130184027725.png" alt="image-20201130184027725"></p>
+<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201130184043844.png" alt="image-20201130184043844"></p>
+<p>周期多表替换，替换表是有限的，循环使用。</p>
 
           
             <div class='article_footer'>
@@ -583,7 +626,7 @@
           
         
           
-            <p>本文永久链接是：<a href=http://aotle.top/2020/09/12/qingniandaxuexi/>http://aotle.top/2020/09/12/qingniandaxuexi/</a></p>
+            <p>本文永久链接是：<a href=http://aotle.top/2020/11/30/mima1/>http://aotle.top/2020/11/30/mima1/</a></p>
           
         
       </blockquote>
@@ -620,7 +663,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-30T19:06:43+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-30T18:50:36+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Nov 30, 2020</p>
@@ -632,7 +675,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/js/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>js</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%89%8D%E7%AB%AF/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>前端</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>密码学</p></a></div>
 
 
         
@@ -650,8 +693,8 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://aotle.top/2020/09/12/qingniandaxuexi/&title=快速跳过青年大学习 - Aotle&summary=
-本教程适用于安卓手机
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://aotle.top/2020/11/30/mima1/&title=密码学笔记1-2 - Aotle&summary=
+密码学课程笔记1，2章
 "
           
           >
@@ -664,8 +707,8 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://aotle.top/2020/09/12/qingniandaxuexi/&title=快速跳过青年大学习 - Aotle&summary=
-本教程适用于安卓手机
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://aotle.top/2020/11/30/mima1/&title=密码学笔记1-2 - Aotle&summary=
+密码学课程笔记1，2章
 "
           
           >
@@ -678,8 +721,8 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://aotle.top/2020/09/12/qingniandaxuexi/&title=快速跳过青年大学习 - Aotle&summary=
-本教程适用于安卓手机
+          href="http://service.weibo.com/share/share.php?url=http://aotle.top/2020/11/30/mima1/&title=密码学笔记1-2 - Aotle&summary=
+密码学课程笔记1，2章
 "
           
           >
@@ -704,25 +747,17 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/2020/10/28/algorithm2/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>算法考试复习2</p>
-                <p class='content'>
-借鉴了学长们的研究成果
-
-
-
-0x01 单词排序题目描述小红学会了很多英文单词，妈妈为了帮小红加强记忆，拿出纸、笔，把 N 个单词写在纸上的一行里，小红看了几秒钟后，将这张纸扣在桌子上。妈妈问...</p>
-              </a>
             
-            
-              <a class='next' href='/2020/09/10/jiami1/'>
-                <p class='title'>对称加密和非对称加密<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+              <a class='next' href='/2020/11/28/qipianattack/'>
+                <p class='title'>网络安全复习笔记——欺骗攻击与防御<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
                 <p class='content'>
-介绍了对称加密和非对称加密
+复习笔记——欺骗攻击与防御
 
 
 
-对称加密（Symmetric Cryptography），又称私钥加密对称加密是最快速、最简单的一种加密方式，加密（encryption）与解密（decryp...</p>
+Arp欺骗arp协议，地址解析协议，目的是实现IP地址到mac地址到转换。
+
+PC1依据OSI模型①依次从上至下对数据进行封装，包括对ICMP Date加IP...</p>
               </a>
             
           </div>
@@ -767,7 +802,7 @@
 
   <script>
     window.subData = {
-      title: '快速跳过青年大学习',
+      title: '密码学笔记1-2',
       tools: true
     }
   </script>
@@ -794,7 +829,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备"><span class="toc-text">准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开始"><span class="toc-text">开始</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#微信朋友圈分享"><span class="toc-text">微信朋友圈分享</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#但是为什么是这样的"><span class="toc-text">但是为什么是这样的</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#密码学术语："><span class="toc-text">密码学术语：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#经典密码学："><span class="toc-text">经典密码学：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#替换密码"><span class="toc-text">替换密码</span></a></li></ol></li></ol>
     </div>
   </section>
 

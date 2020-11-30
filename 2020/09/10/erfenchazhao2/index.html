@@ -530,8 +530,7 @@
 <h2 id="三分查找"><a href="#三分查找" class="headerlink" title="三分查找"></a>三分查找</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h3><p>在二分查找的基础上，在右区间（或左区间）再进行一次二分，这样的查找算法称为三分查找，也就是三分法。</p>
 <p>三分查找通常用来迅速确定最值。</p>
 <p>二分查找所面向的搜索序列的要求是：具有单调性（不一定严格单调）；没有单调性的序列不是使用二分查找。与二分查找不同的是，三分法所面向的搜索序列的要求是：序列为一个凸性函数。通俗来讲，就是该序列必须有一个最大值（或最小值），在最大值（最小值）的左侧序列，必须满足不严格单调递增（递减），右侧序列必须满足不严格单调递减（递增）。如下图，表示一个有最大值的凸性函数：</p>
-<img src='http://i1.fuimg.com/721743/187f9d6871e2f01b.jpg'>
-
+<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/187f9d6871e2f01b.jpg" alt="img"></p>
 <h3 id="2-算法思路"><a href="#2-算法思路" class="headerlink" title="2.算法思路"></a>2.算法思路</h3><p>（1）与二分法类似，先取整个区间的中间值<code>mid</code>。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mid = (left + right) / <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
 
@@ -621,10 +620,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-15T21:31:27+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-30T19:06:39+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Nov 15, 2020</p>
+    <p>更新于：Nov 30, 2020</p>
   </a>
 </div>
 
@@ -724,11 +723,6 @@
 这是一篇关于递归方程求解的简单方法
 
  
-
-
-
-
-
 
 
 
