@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://aotle.top/2020/12/01/whatmime/</loc>
+    
+    <lastmod>2020-12-01</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://aotle.top/about/index.html</loc>
     
     <lastmod>2020-12-01</lastmod>
@@ -346,6 +353,13 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>http://aotle.top/tags/%E7%BD%91%E7%BB%9C/</loc>
+    <lastmod>2020-12-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -434,6 +448,13 @@
   
   <url>
     <loc>http://aotle.top/categories/%E5%85%B6%E4%BB%96/</loc>
+    <lastmod>2020-12-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://aotle.top/categories/%E7%BD%91%E7%BB%9C/</loc>
     <lastmod>2020-12-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
