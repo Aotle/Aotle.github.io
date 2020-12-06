@@ -526,12 +526,15 @@ java集合
 <p>主要接口：iterator，listiterator(图片有错误)，collection，map，list，set，queue，sortedmap，sortedset……</p>
 <p>抽象类：abstractcollection，abstractlist，abstractset，abstractmap，abstractsequentiallist</p>
 <p>实现类（主要掌握）：arraylist，linkedlist，hashset，treeset，linkedhashset，hashmap，treemap，linkedhashmap。</p>
-<h2 id="二：详解"><a href="#二：详解" class="headerlink" title="二：详解"></a>二：详解</h2><h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><h4 id="iterator接口"><a href="#iterator接口" class="headerlink" title="iterator接口"></a>iterator接口</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Iterator</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">hasNext</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">E <span class="title">next</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="二：详解"><a href="#二：详解" class="headerlink" title="二：详解"></a>二：详解</h2><h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201206142132130.png" alt="image-20201206142132130"></p>
+<h4 id="iterator接口"><a href="#iterator接口" class="headerlink" title="iterator接口"></a>iterator接口</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Iterator</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">hasNext</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">E <span class="title">next</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//请求一个迭代器</span></span><br><span class="line">Collection&lt;String&gt; c = . . .;</span><br><span class="line">Iterator&lt;String&gt; iter = c.iteratorO；</span><br><span class="line"><span class="keyword">while</span> (iter.hasNextO)</span><br><span class="line">&#123;</span><br><span class="line">String element = iter.next0；</span><br><span class="line"><span class="keyword">do</span> something with element</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//使用for each 必须实现Iterable接口</span></span><br><span class="line"><span class="keyword">for</span> (String element : c)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">do</span> something with element</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//使用lambda表达式</span></span><br><span class="line">iterator.forEachRemaining(element -&gt; dosomething with element);</span><br></pre></td></tr></table></figure>
 
-<p>hasNext –判断是否还有下一个对象，如果有，则返回true，否则false </p>
-<p>next –返回集合的下个值，此方法只能在hasNext方法返回true时调用 </p>
-<p>remove –删除集合的当前值，此方法也只能在hasNext方法返回true时调用</p>
+<blockquote>
+<p>• boolean hasNext()<br>如果存在可访问的元素， 返回 true。<br>• E next()<br>返回将要访问的下一个对象。 如果已经到达了集合的尾部， 将拋出一个 NoSuchElementException。<br>• void remove( )<br>删除上次访问的对象。这个方法必须紧跟在访问一个元素之后执行。如果上次访问之后，集合已经发生了变化， 这个方法将抛出一个 IllegalStateException。</p>
+</blockquote>
+<p>iterator 接口的 remove 方法将会删除上次调用 next 方法时返回的元素。</p>
 <p>只能向前遍历，无法反向。</p>
+<p>应该将 Java 迭代器认为是位于两个元素之间。 当调用 next 时，迭代器就越过下<br>一个元素，并返回刚刚越过的那个元素的引用。</p>
 <h4 id="Iterable接口"><a href="#Iterable接口" class="headerlink" title="Iterable接口"></a>Iterable接口</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Iterable</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function">Iterator&lt;T&gt; <span class="title">iterator</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>所有的集合类（List、Set…）都实现自Collection 接口，而Collection 接口又继承于Iterable 接口，因此可以说所有的集合类（List、Set…）都实现了Iterable 接口。</p>
@@ -571,7 +574,7 @@ java集合
 <p>它从Java 1.2开始提供。</p>
 <p>它扩展了<code>Iterator</code>接口。</p>
 <p>它仅对<code>List</code>实现的类有用。</p>
-<p>与<code>Iterator</code>不同，它支持所有四种操作：CRUD(CREATE，READ，UPDATE和DELETE)。</p>
+<p>与<code>Iterator</code>不同，它支持所有四种操作：CRUD(CREATE，READ，UPDATE和DELETE)。支持<code>add</code>操作。<code>add</code>方法只依赖于迭代器的位置(在光标前插入)， 而 <code>remove</code> 方法依赖于迭代器的状态(删除刚刚越过的元素)。<code>set</code> 方法用一个新元素取代调用 next 或 previous 方法返回的上一个元素。</p>
 <p>与<code>Iterator</code>不同，它支持正向和反向迭代。</p>
 <p>它是一个双向迭代器。</p>
 <p>它没有当前元素; 它的光标位置总是位于调用<code>previous()</code>返回的元素和调用<code>next()</code>返回的元素之间。</p>
@@ -630,13 +633,32 @@ java集合
 <td>用指定的元素替换由<code>next()</code>或<code>previous()</code>返回的最后一个元素。</td>
 </tr>
 </tbody></table>
+<h4 id="RandomAccess接口"><a href="#RandomAccess接口" class="headerlink" title="RandomAccess接口"></a>RandomAccess接口</h4><p>这个接口不包含任何方法， 不过可以用它来测试一个特定的集合是否支持高效的随机访问：</p>
 <h4 id="Collection-接口"><a href="#Collection-接口" class="headerlink" title="Collection 接口"></a>Collection 接口</h4><blockquote>
 <p>详细可参考：<a href="https://www.jianshu.com/p/b878a4e1c762" target="_blank" rel="noopener">https://www.jianshu.com/p/b878a4e1c762</a></p>
 </blockquote>
 <p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201203210332782.png" alt="image-20201203210332782"></p>
 <p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201203210212790.png" alt="image-20201203210212790"></p>
+<blockquote>
+<p>• Iterator <E> iterator()<br>返回一个用于访问集合中每个元素的迭代器。<br>• int size()<br>返回当前存储在集合中的元素个数。<br>• boolean isEmpty()<br>如果集合中没有元素， 返回 true。<br>• boolean contains(Object obj)<br>如果集合中包含了一个与 obj 相等的对象， 返回 true。<br>• boolean containsAl 1(Collection<?> other)
+如果这个集合包含 other 集合中的所有元素， 返回 trueo
+• boolean add(Object element)
+将一个元素添加到集合中。如果由于这个调用改变了集合，返回 true。
+• boolean addAl 1(Col 1 ection<? extends E> other)
+将 other 集合中的所有元素添加到这个集合。 如果由于这个调用改变了集合， 返回 true。
+• boolean remove(Object obj)
+从这个集合中删除等于 obj 的对象。 如果有匹配的对象被删除， 返回 true。
+• boolean removeAl 1(Col 1ection<?> other)<br>从这个集合中删除 other 集合中存在的所有元素。如果由于这个调用改变了集合，返回 true。<br>• default boolean removelf(Predicate<? super E> filter)8
+从这个集合删除 filter 返回 true 的所有元素。 如果由于这个调用改变了集合， 则返回 true。
+• void clear()
+从这个集合中删除所有的元素。
+• boolean retainAl 1(Collection<?> other)<br>从这个集合中删除所有与 other 集合中的元素不同的元素。 如果由于这个调用改变了<br>集合， 返回 true。<br>• Object[]toArray()<br>返回这个集合的对象数组。<br>• <T> T[]toArray(T[] arrayToFi11)<br>返回这个集合的对象数组。 如果 arrayToFill 足够大， 就将集合中的元素填入这个数组<br>中。剩余空间填补 null ; 否则， 分配一个新数组， 其成员类型与 arrayToFill 的成员类<br>型相同， 其长度等于集合的大小， 并填充集合元素。</p>
+</blockquote>
 <h4 id="list接口"><a href="#list接口" class="headerlink" title="list接口"></a>list接口</h4><p>在collection的基础上添加了扩展方法，</p>
 <p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201203211452261.png" alt="image-20201203211452261"></p>
+<blockquote>
+<p>• ListIterator<E> 1istIterator( )<br>返回一个列表迭代器， 以便用来访问列表中的元素。<br>• ListIterator<E> 1istIterator(int index )<br>返回一个列表迭代器， 以便用来访问列表中的元素， 这个元素是第一次调用 next 返回的给定索引的元素。<br>• void add( int i ,E element )<br>在给定位置添加一个元素。<br>• void addAll ( int i ,Collection&lt;? extends E&gt; elements )<br>将某个集合中的所有元素添加到给定位置。<br>• E remove( int i )<br>删除给定位置的元素并返回这个元素。<br>• E get( int i )<br>获取给定位置的元素。<br>• E set(int i ,E element )<br>用新元素取代给定位置的元素， 并返回原来那个元素。<br>• int indexOf( Object element )<br>返回与指定元素相等的元素在列表中第一次出现的位置， 如果没有这样的元素将返回-1。<br>• int 1 astlndexOf(Object element)<br>返回与指定元素相等的元素在列表中最后一次出现的位置， 如果没有这样的元素将返<br>回 -U</p>
+</blockquote>
 <h4 id="set接口"><a href="#set接口" class="headerlink" title="set接口"></a>set接口</h4><blockquote>
 <p>参考：<a href="https://www.yiibai.com/java/java_set_interface.html" target="_blank" rel="noopener">https://www.yiibai.com/java/java_set_interface.html</a></p>
 </blockquote>
@@ -655,7 +677,7 @@ java集合
 <tbody><tr>
 <td>1</td>
 <td><code>add()</code></td>
-<td>添加一个对象到集合中。</td>
+<td>添加一个对象到集合中，禁止添加相同的元素。</td>
 </tr>
 <tr>
 <td>2</td>
@@ -696,6 +718,7 @@ java集合
 <p>参考：<a href="https://www.yiibai.com/java/java_sortedset_interface.html" target="_blank" rel="noopener">https://www.yiibai.com/java/java_sortedset_interface.html</a></p>
 </blockquote>
 <p><code>SortedSet</code>接口扩展<code>Set</code>接口并声明按升序排序的集合的行为。除了<code>Set</code>定义的那些方法之外，<code>SortedSet</code>接口还声明了一些自己的方法。</p>
+<p>SortedSet 和 SortedMap 接口会提供用于排序的比较器对象，这两个接口定义了可以得到<br>集合子集视图的方法。</p>
 <p>当调用集中没有包含任何项时，有几种方法抛出<code>NoSuchElementException</code>异常。当对象与集合中的元素不兼容时，抛出<code>ClassCastException</code>异常。</p>
 <p>如果尝试使用<code>null</code>对象并且集合中不允许<code>null</code>，则抛出<code>NullPointerException</code>异常。</p>
 <table>
@@ -737,8 +760,14 @@ java集合
 <td>返回一个<code>SortedSet</code>对象，其中包含有序集合中包含的大于或等于<code>start</code>的元素。返回集中的元素也是调用对象引用。</td>
 </tr>
 </tbody></table>
+<h4 id="NavigableSet接口"><a href="#NavigableSet接口" class="headerlink" title="NavigableSet接口"></a>NavigableSet接口</h4><blockquote>
+<p>• E higher(E value)<br>• E lower(E value)<br>返回大于 value 的最小元素或小于 value 的最大元素，如果没有这样的元素则返回 null。<br>• E ceiling(E value)<br>• E floor(E value)<br>返回大于等于 vaiue 的最小元素或小于等于 value 的最大元素， 如果没有这样的元素<br>则返回 null。<br>• E pollFirst()<br>• E pollLast<br>删除并返回这个集中的最大元素或最小元素， 这个集为空时返回 null。<br>• Iterator<E> descendingIterator()<br>返回一个按照递减顺序遍历集中元素的迭代器。</p>
+</blockquote>
 <h4 id="queue接口"><a href="#queue接口" class="headerlink" title="queue接口"></a>queue接口</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Queue</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">Collection</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line">    <span class="comment">//....</span></span><br><span class="line">    <span class="comment">//extend correction 具有集合的基本功能</span></span><br><span class="line">    <span class="comment">// 添加一个元素到队列，在先进先出队列中，是添加到队列尾部</span></span><br><span class="line">    <span class="comment">// 如果由于容量不足插入失败，则抛出异常，不会返回false</span></span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E e)</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 和add方法一样，不过不同之处在于，这个方法添加失败一般是返回false，而不是抛出异常</span></span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">offer</span><span class="params">(E e)</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 移除队列尾部的元素（最后进来的元素），如果队列为空，则抛出异常，不返回false</span></span><br><span class="line">    <span class="function">E <span class="title">remove</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 和remove方法一样，不过这个方法在队列为空时会返回false，不抛出异常</span></span><br><span class="line">    <span class="function">E <span class="title">poll</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 查看队列头部的元素（最先进来的元素），如果队列为空，则抛出异常，不返回null</span></span><br><span class="line">    <span class="function">E <span class="title">element</span><span class="params">()</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 和element方法一样，不过这个在队列为空时，返回null，不抛出异常</span></span><br><span class="line">    <span class="function">E <span class="title">peek</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<blockquote>
+<p>• boolean add(E element )<br>• boolean offer(E element )<br>如果队列没有满，将给定的元素添加到这个双端队列的尾部并返回 true。如果队列满<br>了，第一个方法将拋出一个 IllegalStateException, 而第二个方法返回 false。<br>• E remove( )<br>• E poll ( )<br>假如队列不空， 删除并返回这个队列头部的元素。 如果队列是空的，第一个方法抛出<br>NoSuchElementException, 而第二个方法返回 null。<br>• E element( )<br>• E peek( )<br>如果队列不空，返回这个队列头部的元素， 但不删除。 如果队列空，第一个方法将拋<br>出一个 NoSuchElementException, 而第二个方法返回 null。</p>
+</blockquote>
 <p>在JDK里面没有一个队列的实现是仅仅实现Queue接口定义的功能。可能是因为具有基本功能的队列实现比较简单而且实际的用途有点少。队列的实现基本可以分为：1.并发队列(ConcurrentLinkedQueue); 2.阻塞队列（ArrayBlockingQueue， LinkedBlockingQueue）； 3.双端队列（Deque, ArrayDeque, LinkedList, ConcurrentLinkedDeque）; 4:优先级队列(PriorityQueue, PriorityBlockingQueue) 每种类型的队列都是针对不同的应用场景的，所以还是需要仔细区分来选择合适的队列实现。</p>
 <h4 id="deque接口"><a href="#deque接口" class="headerlink" title="deque接口"></a>deque接口</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Deque</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">Queue</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line">    <span class="comment">// *** Deque methods ***</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">addFirst</span><span class="params">(E e)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">addLast</span><span class="params">(E e)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">offerFirst</span><span class="params">(E e)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">offerLast</span><span class="params">(E e)</span></span>;</span><br><span class="line">    <span class="function">E <span class="title">removeFirst</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">E <span class="title">removeLast</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">E <span class="title">pollFirst</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">E <span class="title">pollLast</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">E <span class="title">getFirst</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">E <span class="title">getLast</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">E <span class="title">peekFirst</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">E <span class="title">peekLast</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">removeFirstOccurrence</span><span class="params">(Object o)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">removeLastOccurrence</span><span class="params">(Object o)</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// *** Queue methods ***</span></span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E e)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">offer</span><span class="params">(E e)</span></span>;</span><br><span class="line">    <span class="function">E <span class="title">remove</span><span class="params">()</span></span>;        </span><br><span class="line">    <span class="function">E <span class="title">poll</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">E <span class="title">element</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">E <span class="title">peek</span><span class="params">()</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// *** Stack methods ***</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(E e)</span></span>;</span><br><span class="line">    <span class="function">E <span class="title">pop</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// *** Collection methods ***</span></span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">remove</span><span class="params">(Object o)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(Object o)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">size</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">Iterator&lt;E&gt; <span class="title">iterator</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">Iterator&lt;E&gt; <span class="title">descendingIterator</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -812,7 +841,7 @@ java集合
 </tr>
 <tr>
 <td>2</td>
-<td>boolean containsKey(Object k) 如果此映射包含指定键的映射关系，则返回 true。</td>
+<td>boolean containsKey(Object k) 如果此映射包含指定键，则返回 true。</td>
 </tr>
 <tr>
 <td>3</td>
@@ -862,8 +891,13 @@ java集合
 <td>14</td>
 <td>Collection values( ) 返回此映射中包含的值的 Collection 视图。</td>
 </tr>
+<tr>
+<td>15</td>
+<td>default V getOrDefault(Object key, V defaultValue) 获得与键关联的值； 返回与键关联的对象， 或者如果未在映射中找到这个键， 则返回defaultValue。</td>
+</tr>
 </tbody></table>
-<h4 id="sortedmap接口"><a href="#sortedmap接口" class="headerlink" title="sortedmap接口"></a>sortedmap接口</h4><p><code>TreeMap</code>实现了<code>SortedMap</code>接口，保证了有序性。默认的排序是根据<code>key</code>值进行升序排序，也可以重写<code>comparator</code>方法来根据<code>value</code>进行排序。</p>
+<h4 id="sortedmap接口"><a href="#sortedmap接口" class="headerlink" title="sortedmap接口"></a>sortedmap接口</h4><p>SortedSet 和 SortedMap 接口会提供用于排序的比较器对象，这两个接口定义了可以得到<br>集合子集视图的方法。</p>
+<p><code>TreeMap</code>实现了<code>SortedMap</code>接口，保证了有序性。默认的排序是根据<code>key</code>值进行升序排序，也可以重写<code>comparator</code>方法来根据<code>value</code>进行排序。</p>
 <p><code>SortedMap</code>接口扩展了<code>Map</code>接口，它确保条目按升序键维护。</p>
 <p>当调用映射中没有项时，有几种方法会抛出<code>NoSuchElementException</code>异常。当对象与映射中的元素不兼容时，抛出<code>ClassCastException</code>异常。如果在映射中不允许<code>null</code>时，如果尝试使用<code>null</code>对象，则抛出<code>NullPointerException</code>异常。</p>
 <p><code>SortedMap</code>接口声明的方法如下表中所示 - </p>
@@ -982,10 +1016,10 @@ java集合
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-04T14:47:45+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-06T20:02:49+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Dec 4, 2020</p>
+    <p>更新于：Dec 6, 2020</p>
   </a>
 </div>
 
@@ -1073,7 +1107,7 @@ java集合抽象类
 
 
 
-抽象类abstractcollectionabstractlistabstractsetabstractmapabstractsequentiallist实现类arr...</p>
+抽象类abstractcollection1public abstract class AbstractCollection&lt;E&gt; implements ...</p>
               </a>
             
             
@@ -1156,7 +1190,7 @@ sqlmap常用命令
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一：总览"><span class="toc-text">一：总览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二：详解"><span class="toc-text">二：详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#接口"><span class="toc-text">接口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#iterator接口"><span class="toc-text">iterator接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Iterable接口"><span class="toc-text">Iterable接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#listiterator接口"><span class="toc-text">listiterator接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Collection-接口"><span class="toc-text">Collection 接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#list接口"><span class="toc-text">list接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#set接口"><span class="toc-text">set接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sortedset接口"><span class="toc-text">sortedset接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#queue接口"><span class="toc-text">queue接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#deque接口"><span class="toc-text">deque接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#map接口"><span class="toc-text">map接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sortedmap接口"><span class="toc-text">sortedmap接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#navigablemap接口"><span class="toc-text">navigablemap接口</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一：总览"><span class="toc-text">一：总览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二：详解"><span class="toc-text">二：详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#接口"><span class="toc-text">接口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#iterator接口"><span class="toc-text">iterator接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Iterable接口"><span class="toc-text">Iterable接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#listiterator接口"><span class="toc-text">listiterator接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RandomAccess接口"><span class="toc-text">RandomAccess接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Collection-接口"><span class="toc-text">Collection 接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#list接口"><span class="toc-text">list接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#set接口"><span class="toc-text">set接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sortedset接口"><span class="toc-text">sortedset接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NavigableSet接口"><span class="toc-text">NavigableSet接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#queue接口"><span class="toc-text">queue接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#deque接口"><span class="toc-text">deque接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#map接口"><span class="toc-text">map接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sortedmap接口"><span class="toc-text">sortedmap接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#navigablemap接口"><span class="toc-text">navigablemap接口</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 
