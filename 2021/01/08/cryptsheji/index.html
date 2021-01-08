@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.6.6'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>密码学课程设计 - Aotle</title>
+  
+    <meta name="keywords" content="密码学">
+  
+  
+    <meta name="description" content="
+CUMT密码学课程设计建议随缘做，做的好也不一定能得高分
+">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<!-- 样式二（飘动的彩带） -->
+<script src="https://g.joyinshare.com/hc/piao.js" type="text/javascript"></script>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/love.js"></script>
+<body>
+	<!--浏览器搞笑标题-->
+  <script type="text/javascript" src="/js/FunnyTitle.js"></script>
+  
+  <div class="cover-wrapper">
+    
+      <cover class='cover post half'>
+        <div class='cover-body'>
+  <div class='a'>
+    
+    
+      <p class="title">Aotle</p>
+    
+    
+      <p class="subtitle">你所看到的惊鸿，都曾被平庸磨练</p>
+    
+  </div>
+  <div class='b'>
+    
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="" />
+          <i class="icon fas fa-search fa-fw"></i>
+        </form>
+      </div>
+    
+    <div class='menu navigation'>
+      <ul class='cover-list-h'>
+        
+          
+            <li>
+              <a class="nav home"
+                href="/"
+                
+                
+                id="home">
+                <i class='fas fa-rss fa-fw'></i>博客
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/categories/"
+                
+                
+                id="categories">
+                <i class='fas fa-folder-open fa-fw'></i>分类
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/tags/"
+                
+                
+                id="tags">
+                <i class='fas fa-tags fa-fw'></i>标签
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/archives/"
+                
+                
+                id="archives">
+                <i class='fas fa-archive fa-fw'></i>归档
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/friends/"
+                
+                
+                id="friends">
+                <i class='fas fa-link fa-fw'></i>友链
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/about/"
+                
+                
+                id="about">
+                <i class='fas fa-info-circle fa-fw'></i>关于
+              </a>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+      </cover>
+    
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+            Aotle
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/2021/01/08/cryptsheji/">
+      密码学课程设计
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="https://aotle.github.io" target="_blank" rel="nofollow noopener">
+    <img src="https://aotle.oss-cn-beijing.aliyuncs.com/QQ图片20201201191142.jpg">
+    <p>F.A</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>密码学</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Jan 8, 2021</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <blockquote>
+<p>CUMT密码学课程设计建议随缘做，做的好也不一定能得高分</p>
+</blockquote>
+<a id="more"></a>
+
+<p>源码：</p>
+<p>链接：<a href="https://pan.baidu.com/s/1ZCJAwJwCHhwEwEpvkxmSmA" target="_blank" rel="noopener">https://pan.baidu.com/s/1ZCJAwJwCHhwEwEpvkxmSmA</a><br>提取码：cumt<br>复制这段内容后打开百度网盘手机App，操作更方便哦–来自百度网盘超级会员V3的分享</p>
+<h1 id="维吉尼亚密码"><a href="#维吉尼亚密码" class="headerlink" title="维吉尼亚密码"></a>维吉尼亚密码</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>实质上是周期多表替换，减少了密钥量。</p>
+<p>置换表：</p>
+<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201221165605487.png" alt="image-20201221165605487"></p>
+<p>明文映射到行，密钥映射到列，通过（明文，密钥）坐标查表可以输出密文。</p>
+<h2 id="算法实现："><a href="#算法实现：" class="headerlink" title="算法实现："></a>算法实现：</h2><ul>
+<li>替换表</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String VIRGINIA_PASSWORD_TABLE_ARRAY[] = &#123;<span class="string">"A"</span>,<span class="string">"B"</span>,<span class="string">"C"</span>,<span class="string">"D"</span>,<span class="string">"E"</span>,<span class="string">"F"</span>,<span class="string">"G"</span>,<span class="string">"H"</span>,<span class="string">"I"</span>,<span class="string">"J"</span>,<span class="string">"K"</span>,<span class="string">"L"</span>,<span class="string">"M"</span>,<span class="string">"N"</span>,<span class="string">"O"</span>,<span class="string">"P"</span>,<span class="string">"Q"</span>,<span class="string">"R"</span>,<span class="string">"S"</span>,<span class="string">"T"</span>,<span class="string">"U"</span>,<span class="string">"V"</span>,<span class="string">"W"</span>,<span class="string">"X"</span>,<span class="string">"Y"</span>,<span class="string">"Z"</span>&#125;;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> List&lt;String&gt; VIRGINIA_PASSWORD_TABLE_ARRAY_LIST = Arrays.asList(VIRGINIA_PASSWORD_TABLE_ARRAY);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>判断字符串是否为空</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isNotNull</span><span class="params">(Object object)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Optional.ofNullable(object).isPresent();</span><br><span class="line">    &#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isStringNotEmpty</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> isNotNull(str)&amp;&amp;!str.trim().equals(<span class="string">""</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>获取密钥集合</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> List&lt;Integer&gt; <span class="title">getSecretKeyList</span><span class="params">(<span class="keyword">char</span>[] secretCharArray, <span class="keyword">int</span> length)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> c : secretCharArray) &#123;</span><br><span class="line">            <span class="keyword">int</span> index = VIRGINIA_PASSWORD_TABLE_ARRAY_LIST.indexOf(String.valueOf(c).toUpperCase());</span><br><span class="line">            list.add(index);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(list.size()&gt;length) &#123;</span><br><span class="line">            <span class="comment">//截取和目标原文或密文相同长度的集合</span></span><br><span class="line">            list = list.subList(<span class="number">0</span>, length);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            Integer[] keyArray = list.toArray(<span class="keyword">new</span> Integer[<span class="number">0</span>]);</span><br><span class="line">            <span class="keyword">int</span> keySize = list.size();</span><br><span class="line">            <span class="comment">//整除</span></span><br><span class="line">            <span class="keyword">int</span> count = length/keySize;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=count;i++) &#123;</span><br><span class="line">                list.addAll(Arrays.asList(keyArray));</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//求余</span></span><br><span class="line">            <span class="keyword">int</span> mold = length%keySize;</span><br><span class="line">            <span class="keyword">if</span>(mold&gt;<span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;mold;j++) &#123;</span><br><span class="line">                    list.add(keyArray[j]);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>维吉尼亚加密</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">virginiaEncode</span><span class="params">(String original,String secretKey)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(isStringNotEmpty(secretKey)&amp;&amp;isStringNotEmpty(original))&#123;</span><br><span class="line">            <span class="keyword">char</span>[] secretCharArray = secretKey.toCharArray();</span><br><span class="line">            <span class="keyword">char</span>[] originalCharArray = original.toCharArray();</span><br><span class="line">            <span class="keyword">int</span> length = originalCharArray.length;</span><br><span class="line"></span><br><span class="line">            List&lt;Integer&gt; list = getSecretKeyList(secretCharArray, length);</span><br><span class="line"></span><br><span class="line">            StringBuffer sb = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> m=<span class="number">0</span>;m&lt;length;m++) &#123;</span><br><span class="line">                <span class="keyword">char</span> ch = originalCharArray[m];</span><br><span class="line">                <span class="keyword">int</span> charIndex = VIRGINIA_PASSWORD_TABLE_ARRAY_LIST.indexOf(String.valueOf(ch).toUpperCase());</span><br><span class="line">                <span class="keyword">if</span>(charIndex==-<span class="number">1</span>) &#123;</span><br><span class="line">                    <span class="comment">//不是26个英文字母的情况，原样加入</span></span><br><span class="line">                    sb.append(ch);</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">int</span> size = VIRGINIA_PASSWORD_TABLE_ARRAY_LIST.size();</span><br><span class="line">                <span class="comment">//C = P + K (mod 26). 获取偏移量索引</span></span><br><span class="line">                <span class="keyword">int</span> tmpIndex = (charIndex + list.get(m))%size;</span><br><span class="line">                sb.append(VIRGINIA_PASSWORD_TABLE_ARRAY_LIST.get(tmpIndex));</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> sb.toString();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>维吉尼亚解密</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">virginiaDecode</span><span class="params">(String cipherText,String secretKey)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(isStringNotEmpty(cipherText)&amp;&amp;isStringNotEmpty(secretKey)) &#123;</span><br><span class="line">            <span class="keyword">char</span>[] secretCharArray = secretKey.toCharArray();</span><br><span class="line">            <span class="keyword">char</span>[] cipherCharArray = cipherText.toCharArray();</span><br><span class="line">            <span class="keyword">int</span> length = cipherCharArray.length;</span><br><span class="line"></span><br><span class="line">            List&lt;Integer&gt; list = getSecretKeyList(secretCharArray, length);</span><br><span class="line">            StringBuffer sb = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> m=<span class="number">0</span>;m&lt;length;m++) &#123;</span><br><span class="line">                <span class="keyword">char</span> ch = cipherCharArray[m];</span><br><span class="line">                <span class="keyword">int</span> charIndex = VIRGINIA_PASSWORD_TABLE_ARRAY_LIST.indexOf(String.valueOf(ch).toUpperCase());</span><br><span class="line">                <span class="keyword">if</span>(charIndex==-<span class="number">1</span>) &#123;</span><br><span class="line">                    sb.append(String.valueOf(ch));</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">int</span> size = VIRGINIA_PASSWORD_TABLE_ARRAY_LIST.size();</span><br><span class="line">                <span class="comment">//P = C - K (mod 26). 模逆运算求索引</span></span><br><span class="line">                <span class="keyword">int</span> len = (charIndex - list.get(m))%size;</span><br><span class="line">                <span class="comment">//索引小于零，加模得正索引</span></span><br><span class="line">                <span class="keyword">int</span> tmpIndex = len&lt;<span class="number">0</span>?len+size:len;</span><br><span class="line">                sb.append(VIRGINIA_PASSWORD_TABLE_ARRAY_LIST.get(tmpIndex));</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> sb.toString();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="维吉尼亚密码攻击"><a href="#维吉尼亚密码攻击" class="headerlink" title="维吉尼亚密码攻击"></a>维吉尼亚密码攻击</h2><p>英语或者说任何自然语言都有固有的统计特性。可以根据字母频率进行破译。</p>
+<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201221171737521.png" alt="image-20201221171737521"></p>
+<p>同样，字母组合也有其统计特性。</p>
+<p>可以根据其统计特性猜测置换的密文对应的明文。</p>
+<p><strong>多表替换统计分析</strong></p>
+<p>多表替换在一定程度上隐藏了明文消息的一些统计特性分析，破译相对比较困难。</p>
+<ul>
+<li>主要包括两个步骤：</li>
+</ul>
+<ol>
+<li>确定密钥的长度d（就是确定使用的加密表个数）</li>
+<li>确定具体的密钥字</li>
+</ol>
+<ul>
+<li>确定密钥的长度两种方法：</li>
+</ul>
+<ol>
+<li>Kasiski测试法</li>
+<li>重合指数法</li>
+</ol>
+<h3 id="第一步：确定密钥字"><a href="#第一步：确定密钥字" class="headerlink" title="第一步：确定密钥字"></a>第一步：确定密钥字</h3><p><strong>Kasiski测试法基本原理</strong></p>
+<blockquote>
+<p>若用给定的<em>d</em>个密钥表周期地对明文字母加密，则当明文中两个相同字母组的间隔为<em>d</em>的倍数时，这两个明文字母组对应的密文字母组必相同</p>
+<p>两个相同的密文段，对应的明文段不一定相同，但相同的可能性大。将密文中相同的字母组找出来，并找出相同字母组距离的<strong>最大公因子</strong>，就有可能提取出密钥的长度d</p>
+</blockquote>
+<p><strong>过程：</strong></p>
+<p>搜索长度至少为2的相邻的一对对相同的密文段，记下它们之间的距离。而密钥长度d可能就是这些距离的最大公因子。</p>
+<p><strong>重合指数法基本原理</strong></p>
+<blockquote>
+<p><strong>重合指数</strong>：设$x＝x_1;x_2;…;x_n$是n个字母的串，x的重合指数是指x中两个随机元素相同的概率，记为$I_c ( x )$</p>
+</blockquote>
+<p>$$<br>I_c(x)={\sum^{25}_{i=0}f_i(f_i-1)\over n(n-1)}<br>$$</p>
+<p>$$<br>期望值：I_c(x)=\sum_{i=0}^{25}p_i^2=0.065<br>$$</p>
+<p>假定$y＝y_1;y_2;…;y_n$是<code>Vigenere</code>密码的密文串。把$y$分成$d$个长为$n/d$的子串，记为$Y_1, Y_2,⋯Y_d$<br>$$<br>\begin{array}{c}<br>Y_1=y_1y_{d+1}y_{2d+1}y_{3d+1}…\<br>Y_2=y_2y_{d+2}y_{2d+2}y_{3d+2}…\<br>……\<br>Y_d=y_dy_{2d}y_{3d}y_{4d}…<br>\end{array}<br>$$<br>如果d是密钥字长度，那么每个$Y_i$都可以看作单表置换密码每个$I_c(y_i);(1≤i≤d)$都会趋近于0.065</p>
+<p>如果不是，那么会更加随机一点。</p>
+<p>维吉尼亚密码重合指数法分析密钥字长度：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">Friedman</span><span class="params">(String ciphertext)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> keyLength = <span class="number">1</span>; <span class="comment">// 猜测密钥长度</span></span><br><span class="line">        <span class="keyword">double</span>[] Ic; <span class="comment">// 重合指数</span></span><br><span class="line">        <span class="keyword">double</span> avgIc; <span class="comment">// 平均重合指数</span></span><br><span class="line">        ArrayList&lt;String&gt; cipherGroup; <span class="comment">// 密文分组</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            Ic = <span class="keyword">new</span> <span class="keyword">double</span>[keyLength];</span><br><span class="line">            cipherGroup = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">            avgIc = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 1 先根据密钥长度分组</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; keyLength; ++i) &#123;</span><br><span class="line">                StringBuilder tempGroup = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; i + j * keyLength &lt; ciphertext.length(); ++j) &#123;</span><br><span class="line">                    tempGroup.append(ciphertext.charAt(i + j * keyLength));</span><br><span class="line">                &#125;</span><br><span class="line">                cipherGroup.add(tempGroup.toString());</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 2 再计算每一组的重合指数</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; keyLength; ++i) &#123;</span><br><span class="line">                String subCipher = cipherGroup.get(i); <span class="comment">// 子串</span></span><br><span class="line">                HashMap&lt;Character, Integer&gt; occurrenceNumber = <span class="keyword">new</span> HashMap&lt;&gt;(); <span class="comment">// 字母及其出现的次数</span></span><br><span class="line"></span><br><span class="line">                <span class="comment">// 2.1 初始化字母及其次数键值对</span></span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> h = <span class="number">0</span>; h &lt; <span class="number">26</span>; ++h) &#123;</span><br><span class="line">                    occurrenceNumber.put((<span class="keyword">char</span>) (h + <span class="number">65</span>), <span class="number">0</span>);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 2.2 统计每个字母出现的次数</span></span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; subCipher.length(); ++j) &#123;</span><br><span class="line">                    <span class="keyword">if</span>(!Character.isLowerCase(subCipher.charAt(j)) &amp;&amp; !Character.isUpperCase(subCipher.charAt(j)))</span><br><span class="line">                        <span class="keyword">continue</span>;</span><br><span class="line">                    occurrenceNumber.put(subCipher.charAt(j), occurrenceNumber.get(subCipher.charAt(j)) + <span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 2.3 计算重合指数</span></span><br><span class="line">                <span class="comment">//double denominator = Math.pow((double) subCipher.length(), 2);</span></span><br><span class="line">                <span class="keyword">double</span> denominator = subCipher.length()*(subCipher.length()-<span class="number">1</span>);</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">26</span>; ++k) &#123;</span><br><span class="line">                    <span class="keyword">double</span> o = (<span class="keyword">double</span>) occurrenceNumber.get((<span class="keyword">char</span>) (k + <span class="number">65</span>));</span><br><span class="line">                    Ic[i] += o * (o - <span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                Ic[i] /= denominator;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 3 判断退出条件,重合指数的平均值是否大于0.065</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; keyLength; ++i) &#123;</span><br><span class="line">                avgIc += Ic[i];</span><br><span class="line">            &#125;</span><br><span class="line">            avgIc /= (<span class="keyword">double</span>) keyLength;</span><br><span class="line">            <span class="keyword">if</span> (avgIc &gt;= <span class="number">0.04</span>) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                keyLength++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="comment">// while--end</span></span><br><span class="line">    	 System.out.println(<span class="string">"\n平均重合指数为： "</span> + String.valueOf(avgIc));</span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> keyLength;</span><br><span class="line">&#125;<span class="comment">// Friedman--end</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="第二步：确定具体密钥字"><a href="#第二步：确定具体密钥字" class="headerlink" title="第二步：确定具体密钥字"></a>第二步：确定具体密钥字</h3><p>这里已经退化成了凯撒密码，可以使用穷举法得到密钥字。</p>
+<p>维吉尼亚密码确定密钥字：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">decryptCipher</span><span class="params">(<span class="keyword">int</span> keyLength, String ciphertext)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] key = <span class="keyword">new</span> <span class="keyword">int</span>[keyLength];</span><br><span class="line">        ArrayList&lt;String&gt; cipherGroup = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">double</span>[] probability = <span class="keyword">new</span> <span class="keyword">double</span>[]&#123;<span class="number">0.082</span>, <span class="number">0.015</span>, <span class="number">0.028</span>, <span class="number">0.043</span>, <span class="number">0.127</span>, <span class="number">0.022</span>, <span class="number">0.02</span>, <span class="number">0.061</span>, <span class="number">0.07</span>, <span class="number">0.002</span>, <span class="number">0.008</span>,</span><br><span class="line">                <span class="number">0.04</span>, <span class="number">0.024</span>, <span class="number">0.067</span>, <span class="number">0.075</span>, <span class="number">0.019</span>, <span class="number">0.001</span>, <span class="number">0.06</span>, <span class="number">0.063</span>, <span class="number">0.091</span>, <span class="number">0.028</span>, <span class="number">0.01</span>, <span class="number">0.023</span>, <span class="number">0.001</span>, <span class="number">0.02</span>, <span class="number">0.001</span>&#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 1 先根据密钥长度分组</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; keyLength; ++i) &#123;</span><br><span class="line">            StringBuilder temporaryGroup = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; i + j * keyLength &lt; ciphertext.length(); ++j) &#123;</span><br><span class="line">                temporaryGroup.append(ciphertext.charAt(i + j * keyLength));</span><br><span class="line">            &#125;</span><br><span class="line">            cipherGroup.add(temporaryGroup.toString());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 2 确定密钥</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; keyLength; ++i) &#123;</span><br><span class="line">            <span class="keyword">double</span> maxMg=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">double</span> MG; <span class="comment">// 重合指数</span></span><br><span class="line">            <span class="keyword">int</span> flag; <span class="comment">// 移动位置</span></span><br><span class="line">            <span class="keyword">int</span> g = <span class="number">0</span>; <span class="comment">// 密文移动g个位置</span></span><br><span class="line">            HashMap&lt;Character, Integer&gt; occurrenceNumber; <span class="comment">// 字母出现次数</span></span><br><span class="line">            String subCipher; <span class="comment">// 子串</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> (g&lt;<span class="number">26</span>) &#123;</span><br><span class="line">                MG = <span class="number">0</span>;</span><br><span class="line">                flag = <span class="number">65</span> + g;</span><br><span class="line">                subCipher = cipherGroup.get(i);</span><br><span class="line">                occurrenceNumber = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 2.1 初始化字母及其次数</span></span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> h = <span class="number">0</span>; h &lt; <span class="number">26</span>; ++h) &#123;</span><br><span class="line">                    occurrenceNumber.put((<span class="keyword">char</span>) (h + <span class="number">65</span>), <span class="number">0</span>);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 2.2 统计字母出现次数</span></span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; subCipher.length(); ++j) &#123;</span><br><span class="line">                    <span class="keyword">if</span>(!Character.isLowerCase(subCipher.charAt(j)) &amp;&amp; !Character.isUpperCase(subCipher.charAt(j)))</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">continue</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    occurrenceNumber.put(subCipher.charAt(j), occurrenceNumber.get(subCipher.charAt(j)) + <span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 2.3 计算重合指数</span></span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">26</span>; ++k,flag++) &#123;</span><br><span class="line">                    <span class="keyword">double</span> p = probability[k];</span><br><span class="line">                    flag = (flag &gt;= <span class="number">91</span>) ? <span class="number">65</span>+((flag-<span class="number">65</span>)%<span class="number">26</span>) : flag;</span><br><span class="line">                    <span class="comment">//System.out.println("flag"+flag);</span></span><br><span class="line">                    <span class="keyword">double</span> f = (<span class="keyword">double</span>) occurrenceNumber.get((<span class="keyword">char</span>) flag) / subCipher.length();</span><br><span class="line">                    MG += p * f ;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 2.4 密钥字是值最大的那个</span></span><br><span class="line">                <span class="keyword">if</span>(MG&gt;maxMg)&#123;</span><br><span class="line">                    key[i] = g;</span><br><span class="line">                    maxMg=MG;</span><br><span class="line">                &#125;</span><br><span class="line">                g++;</span><br><span class="line">            &#125; <span class="comment">// while--end</span></span><br><span class="line">        &#125; <span class="comment">// for--end</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 3 打印密钥</span></span><br><span class="line">        StringBuilder keyString = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; keyLength; ++i) &#123;</span><br><span class="line">            keyString.append((<span class="keyword">char</span>) (key[i] + <span class="number">65</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//System.out.println("\n密钥为: " + keyString.toString());</span></span><br><span class="line">        <span class="keyword">return</span> keyString.toString();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="线性反馈移位寄存器"><a href="#线性反馈移位寄存器" class="headerlink" title="线性反馈移位寄存器"></a>线性反馈移位寄存器</h1><h2 id="密钥流的要求"><a href="#密钥流的要求" class="headerlink" title="密钥流的要求"></a>密钥流的要求</h2><ul>
+<li><strong>极大的周期：</strong>随机序列是非周期的，而按任何算法产生的序列都是周期的，因此应要求密钥流具有尽可能大的周期</li>
+<li><strong>良好的统计特性：</strong>随机序列有均匀的游程分布</li>
+</ul>
+<blockquote>
+<p>游程：指序列中相同符号的连续段，其前后均为异种符号。</p>
+<p>例如：……0 111 0000 10……</p>
+<p><strong>注意</strong>：计算游程的时候要首尾相连计算，头和尾的两个0合在一起构成长度为2的0游程。</p>
+<p>有长为3的1游程、长为4的0游程、长为1的1游程，长为2的0游程。一般要求其在周期内满足：同样长度的0游程和1游程的个数相等，或近似相等。</p>
+</blockquote>
+<ul>
+<li><strong>很高的线性复杂度：</strong>不能用级数较小的线性移位寄存器LFSR近似代替</li>
+<li>用统计方法由密钥序列$k_0k_1k_2…ki…$提取密钥生成器结构或种子密钥在计算上不可行</li>
+</ul>
+<h2 id="密钥流生成器"><a href="#密钥流生成器" class="headerlink" title="密钥流生成器"></a>密钥流生成器</h2><p>密钥流生成器可以分为：</p>
+<ol>
+<li>驱动部分</li>
+<li>非线性组合部分</li>
+</ol>
+<p><strong>驱动部分：</strong>控制生成器的状态序列，为非线性组合部分提供统计性能良好的序列</p>
+<ul>
+<li><p>周期很大</p>
+</li>
+<li><p>分布较随机</p>
+</li>
+</ul>
+<p><strong>非线性部分：</strong>将驱动部分提供的序列组合成密码特性好的序列</p>
+<ul>
+<li>可隐蔽驱动序列与密钥k之间明显的依赖关系</li>
+</ul>
+<p>目前密钥流生成器大都基于移位寄存器FSR</p>
+<p>通常由线性移位寄存器(LFSR)和一个非线性组合函数即布尔函数组合，构成一个密钥流生成器</p>
+<p>（a）由一个线性移位寄存器和一个滤波器构成</p>
+<p>（b）由多个线性移位寄存器和一个组合器构成</p>
+<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201221215738451.png" alt="image-20201221215738451"></p>
+<p><strong>LSFR的优点：</strong></p>
+<ol>
+<li>非常适合硬件实现</li>
+<li>能产生大的周期序列</li>
+<li>能产生统计特性好的序列</li>
+<li>能够应用代数方法进行很好的分析</li>
+</ol>
+<h2 id="反馈移位寄存器"><a href="#反馈移位寄存器" class="headerlink" title="反馈移位寄存器"></a>反馈移位寄存器</h2><p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201221221349679.png" alt="image-20201221221349679"></p>
+<p>GF(2)上一个n级反馈移位寄存器由n个二元存储器与一个反馈函数$f(a_1a_2 … a_n)$组成</p>
+<ul>
+<li><p>每个存储器称为移位寄存器的一级</p>
+</li>
+<li><p>在任一时刻，这些级的内容构成该FSR的状态;对应于一个GF(2)上的n维向量，共有$2^n$种可能的状态</p>
+</li>
+<li><p>状态可用n长序列$a_1, a_2, a_3, …, a_n$或n维行向量$(a_1, a_2, a_3, …, a_n)$表示</p>
+</li>
+<li><p>每一级存储器$a_i$将其内容向下一级$a_{i－1}$传递，并根据存储器当前状态计算$f(a_1, a_2, a_3, …, a_n)$作为$a_n$下一时间的内容</p>
+</li>
+</ul>
+<p><strong>example:</strong></p>
+<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201221222458573.png" alt="image-20201221222458573"></p>
+<p>初始状态为$(a_1,a_2,a_3)＝(1,0,1)$，输出可由上表求出，其输出序列为$10111011101…$，周期为4</p>
+<p>如果反馈函数$f(a_1, a_2, …, a_n)$是$a_1, a_2, …, a_n$的线性函数，则称为线性反馈移位寄存器（LFSR）<br>$$<br>f(a_1,a_2…a_n)=c_na_1⊕c_{n-1}a_2⊕…⊕c_2a_{n-1}⊕c_1a_n<br>$$<br><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201221223018332.png" alt="image-20201221223018332"></p>
+<p>n级LFSR最多有$2^n$个不同的状态</p>
+<p>初始状态为零，则其状态恒为零</p>
+<p>若其初始状态非0，则其后继状态不会为0</p>
+<p>因此n级LFSR的状态周期$≤2^n-1$</p>
+<p>输出序列的周期与状态周期相等，所以$≤2^n-1 $</p>
+<p>选择合适反馈函数可使序列周期达到最大值$2^n -1$，周期达到最大值的序列称为<strong>m序列</strong></p>
+<p>特征多项式表示：<br>$$<br>p(x)=1+c_1x+…+c_{n-1}x^{n-1}+c_nx^n<br>$$<br>1是必须写的，$c_i$的取值和上面一一对应</p>
+<blockquote>
+<p><strong>定理：</strong>n级LFSR产生的序列有最大周期$2^n-1$的必要条件是其特征多项式为不可约的</p>
+<p><strong>定义：</strong>若n次不可约多项式$p(x)$的阶为$2^n－1$，则称$p(x)$是n次本原多项式，使得$p(x)|(x^p-1)$的最小p称为$p(x)$的<strong>阶</strong></p>
+<p><strong>定理：</strong>设${a_i}∈G(p(x))$，${a_i}$为m序列的<strong>充要条件</strong>是$p(x)$为本原多项式</p>
+</blockquote>
+<h2 id="算法实现LSFR"><a href="#算法实现LSFR" class="headerlink" title="算法实现LSFR"></a>算法实现LSFR</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LSFR</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">newLsfr</span><span class="params">(List&lt;Integer&gt; lst, <span class="keyword">int</span> k, List&lt;Integer&gt; key)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp=<span class="number">0</span>;</span><br><span class="line">        List&lt;Integer&gt; temp1 = <span class="keyword">new</span> ArrayList&lt;&gt;(lst);</span><br><span class="line">        List&lt;Integer&gt; temp2 = <span class="keyword">new</span> ArrayList&lt;&gt;(key);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; k; ++i)&#123;</span><br><span class="line">            <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</span><br><span class="line">            Integer kOut=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; <span class="number">20</span>;++j)&#123;</span><br><span class="line">                <span class="keyword">if</span>(temp2.get(j).equals(<span class="number">1</span>))</span><br><span class="line">                    kOut = (Integer) ((kOut + temp1.get(j) ^ temp2.get(j)) % <span class="number">2</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            temp1.remove(<span class="number">0</span>);</span><br><span class="line">            temp1.add(kOut);</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> q = <span class="number">0</span>;q &lt; <span class="number">20</span>;q++)&#123;</span><br><span class="line">                <span class="keyword">if</span> (!temp1.get(q).equals(lst.get(q))) &#123;</span><br><span class="line">                    flag = <span class="keyword">true</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(temp1.toString()+<span class="string">"第"</span>+(i+<span class="number">1</span>)+<span class="string">"次"</span>);</span><br><span class="line">            <span class="keyword">if</span>(!flag)</span><br><span class="line">                temp = i+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(temp!=<span class="number">0</span>)</span><br><span class="line">            System.out.println(<span class="string">"周期是："</span>+temp);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="安全性分析"><a href="#安全性分析" class="headerlink" title="安全性分析"></a>安全性分析</h2><p>对于m-序列（周期为$2^n-1$），如果攻击者知道了$2n$位明密文对，则可确定反馈多项式的系数，从而确定该LFSR接下来的状态，也就能得到余下的密钥序列，具体过程如下：</p>
+<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201230141140051.png" alt="image-20201230141140051"></p>
+<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201230141229012.png" alt="image-20201230141229012"></p>
+<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201230141248038.png" alt="image-20201230141248038"></p>
+<h1 id="DES"><a href="#DES" class="headerlink" title="DES"></a>DES</h1><h2 id="分组密码设计思想✨"><a href="#分组密码设计思想✨" class="headerlink" title="分组密码设计思想✨"></a>分组密码设计思想✨</h2><ol>
+<li><strong>扩散原则</strong></li>
+</ol>
+<ul>
+<li>密钥或明文的每一比特变化影响密文的许多比特的变化，以便隐蔽明文的统计特性(雪崩效应)</li>
+</ul>
+<ol start="2">
+<li><strong>混淆原则</strong></li>
+</ol>
+<ul>
+<li>混乱原则，指密钥和明文以及密文之间的依赖关系尽可能的复杂化，以防通过统计分析法进行破译</li>
+</ul>
+<p>S盒和P盒：</p>
+<blockquote>
+<p>S盒(代替)混淆，P盒(换位)扩散</p>
+</blockquote>
+<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201230145318044.png" alt="image-20201230145318044"></p>
+<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201230151106643.png" alt="image-20201230151106643"></p>
+<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201230151131294.png" alt="image-20201230151131294"></p>
+<h2 id="DES详解"><a href="#DES详解" class="headerlink" title="DES详解"></a>DES详解</h2><p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201230152015348.png" alt="image-20201230152015348"></p>
+<p>明文分组和密文分组均为64比特<strong>，</strong>有效密钥56比特</p>
+<p>DES基于加密的两个基本属性：替换（也称为混乱）和置换（也称为扩散）。DES由16个步骤组成，每个步骤称为一个回合。每轮执行替换和转位的步骤。现在让我们讨论DES中的广泛步骤：</p>
+<ol>
+<li>第一步，将64位纯文本块移交给初始置换（IP）功能。</li>
+<li>初始置换是对纯文本执行的。</li>
+<li>接下来，初始置换（IP）产生置换块的两半；称为左纯文本（LPT）和右纯文本（RPT）。</li>
+<li>现在，每个LPT和RPT都要经过16轮加密过程。</li>
+<li>最后，重新合并LPT和RPT，并在组合块上执行最终置换（FP）</li>
+<li>该过程的结果将产生64位密文。</li>
+</ol>
+<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201230152937242.png" alt="image-20201230152937242"></p>
+<h3 id="初始置换（IP）"><a href="#初始置换（IP）" class="headerlink" title="初始置换（IP）"></a>初始置换（IP）</h3><p>如前所述，初始置换（IP）仅发生一次，并且在第一轮之前发生。如图所示，它建议了IP转换应该如何进行。</p>
+<p>例如，它说IP将原始纯文本块的第一位替换为原始纯文本的第58位，将第二位替换为原始纯文本块的第50位，依此类推。</p>
+<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201230153141556.png" alt="image-20201230153141556"></p>
+<h3 id="16轮迭代"><a href="#16轮迭代" class="headerlink" title="16轮迭代"></a>16轮迭代</h3><p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201230153505582.png" alt="image-20201230153505582"><br>$$<br>\begin{array}{c}<br>L_i=R_{i-1}\R_i=L_{i-1}⊕F(R_{i-1},K_i)<br>\end{array}<br>$$</p>
+<h3 id="F函数"><a href="#F函数" class="headerlink" title="F函数"></a>F函数</h3><p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201230153950578.png" alt="image-20201230153950578"></p>
+<h3 id="E扩展"><a href="#E扩展" class="headerlink" title="E扩展"></a>E扩展</h3><blockquote>
+<p>每个输入分组的4位作为6位输出分组的中间4位，6位输出分组中的第1、6位分别由相邻两个4位分组的最外面两位<strong>扩散</strong>进入到本分组，其中第1个分组的左侧相邻分组为最后1个分组。</p>
+</blockquote>
+<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201230160535860.png" alt="image-20201230160535860"></p>
+<p>将E盒扩展得到的48位输出与子密钥Ki进行<strong>异或</strong>运算</p>
+<h3 id="S盒"><a href="#S盒" class="headerlink" title="S盒"></a>S盒</h3><ul>
+<li><p>由8个S-盒构成, 每个S-盒都是<strong>6比特的输入，4比特的输出</strong></p>
+</li>
+<li><p>$s_i(h_1h_2h_3h_4h_5h_6)$的值是对应表$s_i$中$(h_1h_6)$行和$(h_2h_3h_4h_5)$列上的值</p>
+</li>
+</ul>
+<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201230192157172.png" alt="image-20201230192157172"></p>
+<p><strong>S盒设计准则</strong></p>
+<ul>
+<li><p>具有良好的非线性(输出的每个比特与全部输入比特有关)</p>
+</li>
+<li><p>每一行包括所有16种4位二进制</p>
+</li>
+<li><p>两个输入相差1比特时，输出相差2比特</p>
+</li>
+<li><p>如果两个输入刚好在中间两个比特上不同，则输出至少有两个比特不同</p>
+</li>
+<li><p>如果两个输入前两位不同而最后两位相同，则输出一定不同</p>
+</li>
+<li><p>相差6比特的输入共有32对，这32对中有不超过8对的输出相同</p>
+</li>
+</ul>
+<h3 id="P盒"><a href="#P盒" class="headerlink" title="P盒"></a>P盒</h3><p>P-置换对8个S-盒的输出进行变换</p>
+<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201230192803887.png" alt="image-20201230192803887"></p>
+<p><strong>DES子密钥生成</strong></p>
+<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201230193749778.png" alt="image-20201230193749778"></p>
+<h3 id="DES的缺陷"><a href="#DES的缺陷" class="headerlink" title="DES的缺陷"></a>DES的缺陷</h3><ol>
+<li><p>DES存在一些弱密钥和半弱密钥</p>
+</li>
+<li><p>DES的56位密钥无法抵抗穷举攻击</p>
+</li>
+<li><p>代数结构存在互补对称性</p>
+</li>
+</ol>
+<h3 id="DES改进"><a href="#DES改进" class="headerlink" title="DES改进"></a>DES改进</h3><p>三重DES</p>
+<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20201230195407579.png" alt="image-20201230195407579"></p>
+<p>DES代码实现</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> top.aotle.password;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@program</span>: weijinina</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: DES算法</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: Fu ao</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span>: 2020-12-16 15:16</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DES</span> </span>&#123;</span><br><span class="line">    <span class="comment">//初始置换</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] IP=&#123;<span class="number">58</span>,<span class="number">50</span>,<span class="number">42</span>,<span class="number">34</span>,<span class="number">26</span>,<span class="number">18</span>,<span class="number">10</span>,<span class="number">2</span>,</span><br><span class="line">            <span class="number">60</span>,<span class="number">52</span>,<span class="number">44</span>,<span class="number">36</span>,<span class="number">28</span>,<span class="number">20</span>,<span class="number">12</span>,<span class="number">4</span>,</span><br><span class="line">            <span class="number">62</span>,<span class="number">54</span>,<span class="number">46</span>,<span class="number">38</span>,<span class="number">30</span>,<span class="number">22</span>,<span class="number">14</span>,<span class="number">6</span>,</span><br><span class="line">            <span class="number">64</span>,<span class="number">56</span>,<span class="number">48</span>,<span class="number">40</span>,<span class="number">32</span>,<span class="number">24</span>,<span class="number">16</span>,<span class="number">8</span>,</span><br><span class="line">            <span class="number">57</span>,<span class="number">49</span>,<span class="number">41</span>,<span class="number">33</span>,<span class="number">25</span>,<span class="number">17</span>,<span class="number">9</span>,<span class="number">1</span>,</span><br><span class="line">            <span class="number">59</span>,<span class="number">51</span>,<span class="number">43</span>,<span class="number">35</span>,<span class="number">27</span>,<span class="number">19</span>,<span class="number">11</span>,<span class="number">3</span>,</span><br><span class="line">            <span class="number">61</span>,<span class="number">53</span>,<span class="number">45</span>,<span class="number">37</span>,<span class="number">29</span>,<span class="number">21</span>,<span class="number">13</span>,<span class="number">5</span>,</span><br><span class="line">            <span class="number">63</span>,<span class="number">55</span>,<span class="number">47</span>,<span class="number">39</span>,<span class="number">31</span>,<span class="number">23</span>,<span class="number">15</span>,<span class="number">7</span>&#125;;</span><br><span class="line">    <span class="comment">//逆初始置换</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] IP_1=&#123;<span class="number">40</span>,<span class="number">8</span>,<span class="number">48</span>,<span class="number">16</span>,<span class="number">56</span>,<span class="number">24</span>,<span class="number">64</span>,<span class="number">32</span>,</span><br><span class="line">            <span class="number">39</span>,<span class="number">7</span>,<span class="number">47</span>,<span class="number">15</span>,<span class="number">55</span>,<span class="number">23</span>,<span class="number">63</span>,<span class="number">31</span>,</span><br><span class="line">            <span class="number">38</span>,<span class="number">6</span>,<span class="number">46</span>,<span class="number">14</span>,<span class="number">54</span>,<span class="number">22</span>,<span class="number">62</span>,<span class="number">30</span>,</span><br><span class="line">            <span class="number">37</span>,<span class="number">5</span>,<span class="number">45</span>,<span class="number">13</span>,<span class="number">53</span>,<span class="number">21</span>,<span class="number">61</span>,<span class="number">29</span>,</span><br><span class="line">            <span class="number">36</span>,<span class="number">4</span>,<span class="number">44</span>,<span class="number">12</span>,<span class="number">52</span>,<span class="number">20</span>,<span class="number">60</span>,<span class="number">28</span>,</span><br><span class="line">            <span class="number">35</span>,<span class="number">3</span>,<span class="number">43</span>,<span class="number">11</span>,<span class="number">51</span>,<span class="number">19</span>,<span class="number">59</span>,<span class="number">27</span>,</span><br><span class="line">            <span class="number">34</span>,<span class="number">2</span>,<span class="number">42</span>,<span class="number">10</span>,<span class="number">50</span>,<span class="number">18</span>,<span class="number">58</span>,<span class="number">26</span>,</span><br><span class="line">            <span class="number">33</span>,<span class="number">1</span>,<span class="number">41</span>,<span class="number">9</span>,<span class="number">49</span>,<span class="number">17</span>,<span class="number">57</span>,<span class="number">25</span>&#125;;<span class="comment">//手残，数组数据没写全</span></span><br><span class="line">    <span class="comment">//E扩展</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] E=&#123;<span class="number">32</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,</span><br><span class="line">            <span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,</span><br><span class="line">            <span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>,<span class="number">13</span>,</span><br><span class="line">            <span class="number">12</span>,<span class="number">13</span>,<span class="number">14</span>,<span class="number">15</span>,<span class="number">16</span>,<span class="number">17</span>,</span><br><span class="line">            <span class="number">16</span>,<span class="number">17</span>,<span class="number">18</span>,<span class="number">19</span>,<span class="number">20</span>,<span class="number">21</span>,</span><br><span class="line">            <span class="number">20</span>,<span class="number">21</span>,<span class="number">22</span>,<span class="number">23</span>,<span class="number">24</span>,<span class="number">25</span>,</span><br><span class="line">            <span class="number">24</span>,<span class="number">25</span>,<span class="number">26</span>,<span class="number">27</span>,<span class="number">28</span>,<span class="number">29</span>,</span><br><span class="line">            <span class="number">28</span>,<span class="number">29</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">32</span>,<span class="number">1</span>&#125;;</span><br><span class="line">    <span class="comment">//P置换</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] P=&#123;<span class="number">16</span>,<span class="number">7</span>,<span class="number">20</span>,<span class="number">21</span>,<span class="number">29</span>,<span class="number">12</span>,<span class="number">28</span>,<span class="number">17</span>,</span><br><span class="line">            <span class="number">1</span>,<span class="number">15</span>,<span class="number">23</span>,<span class="number">26</span>,<span class="number">5</span>,<span class="number">18</span>,<span class="number">31</span>,<span class="number">10</span>,</span><br><span class="line">            <span class="number">2</span>,<span class="number">8</span>,<span class="number">24</span>,<span class="number">14</span>,<span class="number">32</span>,<span class="number">27</span>,<span class="number">3</span>,<span class="number">9</span>,</span><br><span class="line">            <span class="number">19</span>,<span class="number">13</span>,<span class="number">30</span>,<span class="number">6</span>,<span class="number">22</span>,<span class="number">11</span>,<span class="number">4</span>,<span class="number">25</span>&#125;;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span>[][][] S_Box = &#123;</span><br><span class="line">            &#123;</span><br><span class="line">                    &#123; <span class="number">14</span>, <span class="number">4</span>, <span class="number">13</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">15</span>, <span class="number">11</span>, <span class="number">8</span>, <span class="number">3</span>, <span class="number">10</span>, <span class="number">6</span>, <span class="number">12</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">0</span>, <span class="number">7</span> &#125;,</span><br><span class="line">                    &#123; <span class="number">0</span>, <span class="number">15</span>, <span class="number">7</span>, <span class="number">4</span>, <span class="number">14</span>, <span class="number">2</span>, <span class="number">13</span>, <span class="number">1</span>, <span class="number">10</span>, <span class="number">6</span>, <span class="number">12</span>, <span class="number">11</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">8</span> &#125;,</span><br><span class="line">                    &#123; <span class="number">4</span>, <span class="number">1</span>, <span class="number">14</span>, <span class="number">8</span>, <span class="number">13</span>, <span class="number">6</span>, <span class="number">2</span>, <span class="number">11</span>, <span class="number">15</span>, <span class="number">12</span>, <span class="number">9</span>, <span class="number">7</span>, <span class="number">3</span>, <span class="number">10</span>, <span class="number">5</span>, <span class="number">0</span> &#125;,</span><br><span class="line">                    &#123; <span class="number">15</span>, <span class="number">12</span>, <span class="number">8</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">5</span>, <span class="number">11</span>, <span class="number">3</span>, <span class="number">14</span>, <span class="number">10</span>, <span class="number">0</span>, <span class="number">6</span>, <span class="number">13</span> &#125; &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                    &#123; <span class="number">15</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">14</span>, <span class="number">6</span>, <span class="number">11</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">7</span>, <span class="number">2</span>, <span class="number">13</span>, <span class="number">12</span>, <span class="number">0</span>, <span class="number">5</span>, <span class="number">10</span> &#125;,</span><br><span class="line">                    &#123; <span class="number">3</span>, <span class="number">13</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">15</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">14</span>, <span class="number">12</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">10</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">11</span>, <span class="number">5</span> &#125;,</span><br><span class="line">                    &#123; <span class="number">0</span>, <span class="number">14</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">10</span>, <span class="number">4</span>, <span class="number">13</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">12</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">15</span> &#125;,</span><br><span class="line">                    &#123; <span class="number">13</span>, <span class="number">8</span>, <span class="number">10</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">15</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">11</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">12</span>, <span class="number">0</span>, <span class="number">5</span>, <span class="number">14</span>, <span class="number">9</span> &#125; &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                    &#123; <span class="number">10</span>, <span class="number">0</span>, <span class="number">9</span>, <span class="number">14</span>, <span class="number">6</span>, <span class="number">3</span>, <span class="number">15</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">13</span>, <span class="number">12</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">8</span> &#125;,</span><br><span class="line">                    &#123; <span class="number">13</span>, <span class="number">7</span>, <span class="number">0</span>, <span class="number">9</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">10</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">5</span>, <span class="number">14</span>, <span class="number">12</span>, <span class="number">11</span>, <span class="number">15</span>, <span class="number">1</span> &#125;,</span><br><span class="line">                    &#123; <span class="number">13</span>, <span class="number">6</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">8</span>, <span class="number">15</span>, <span class="number">3</span>, <span class="number">0</span>, <span class="number">11</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">12</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">14</span>, <span class="number">7</span> &#125;,</span><br><span class="line">                    &#123; <span class="number">1</span>, <span class="number">10</span>, <span class="number">13</span>, <span class="number">0</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">4</span>, <span class="number">15</span>, <span class="number">14</span>, <span class="number">3</span>, <span class="number">11</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">12</span> &#125; &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                    &#123; <span class="number">7</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">3</span>, <span class="number">0</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">5</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">4</span>, <span class="number">15</span> &#125;,</span><br><span class="line">                    &#123; <span class="number">13</span>, <span class="number">8</span>, <span class="number">11</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">15</span>, <span class="number">0</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">2</span>, <span class="number">12</span>, <span class="number">1</span>, <span class="number">10</span>, <span class="number">14</span>, <span class="number">9</span> &#125;,</span><br><span class="line">                    &#123; <span class="number">10</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">0</span>, <span class="number">12</span>, <span class="number">11</span>, <span class="number">7</span>, <span class="number">13</span>, <span class="number">15</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">14</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">4</span> &#125;,</span><br><span class="line">                    &#123; <span class="number">3</span>, <span class="number">15</span>, <span class="number">0</span>, <span class="number">6</span>, <span class="number">10</span>, <span class="number">1</span>, <span class="number">13</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">7</span>, <span class="number">2</span>, <span class="number">14</span> &#125; &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                    &#123; <span class="number">2</span>, <span class="number">12</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">15</span>, <span class="number">13</span>, <span class="number">0</span>, <span class="number">14</span>, <span class="number">9</span> &#125;,</span><br><span class="line">                    &#123; <span class="number">14</span>, <span class="number">11</span>, <span class="number">2</span>, <span class="number">12</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">13</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">0</span>, <span class="number">15</span>, <span class="number">10</span>, <span class="number">3</span>, <span class="number">9</span>, <span class="number">8</span>, <span class="number">6</span> &#125;,</span><br><span class="line">                    &#123; <span class="number">4</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">11</span>, <span class="number">10</span>, <span class="number">13</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">15</span>, <span class="number">9</span>, <span class="number">12</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">3</span>, <span class="number">0</span>, <span class="number">14</span> &#125;,</span><br><span class="line">                    &#123; <span class="number">11</span>, <span class="number">8</span>, <span class="number">12</span>, <span class="number">7</span>, <span class="number">1</span>, <span class="number">14</span>, <span class="number">2</span>, <span class="number">13</span>, <span class="number">6</span>, <span class="number">15</span>, <span class="number">0</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">3</span> &#125; &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                    &#123; <span class="number">12</span>, <span class="number">1</span>, <span class="number">10</span>, <span class="number">15</span>, <span class="number">9</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">0</span>, <span class="number">13</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">14</span>, <span class="number">7</span>, <span class="number">5</span>, <span class="number">11</span> &#125;,</span><br><span class="line">                    &#123; <span class="number">10</span>, <span class="number">15</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">7</span>, <span class="number">12</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">1</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">0</span>, <span class="number">11</span>, <span class="number">3</span>, <span class="number">8</span> &#125;,</span><br><span class="line">                    &#123; <span class="number">9</span>, <span class="number">14</span>, <span class="number">15</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">12</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="number">0</span>, <span class="number">4</span>, <span class="number">10</span>, <span class="number">1</span>, <span class="number">13</span>, <span class="number">11</span>, <span class="number">6</span> &#125;,</span><br><span class="line">                    &#123; <span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">12</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">15</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">14</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">0</span>, <span class="number">8</span>, <span class="number">13</span> &#125; &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                    &#123; <span class="number">4</span>, <span class="number">11</span>, <span class="number">2</span>, <span class="number">14</span>, <span class="number">15</span>, <span class="number">0</span>, <span class="number">8</span>, <span class="number">13</span>, <span class="number">3</span>, <span class="number">12</span>, <span class="number">9</span>, <span class="number">7</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">6</span>, <span class="number">1</span> &#125;,</span><br><span class="line">                    &#123; <span class="number">13</span>, <span class="number">0</span>, <span class="number">11</span>, <span class="number">7</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">10</span>, <span class="number">14</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">12</span>, <span class="number">2</span>, <span class="number">15</span>, <span class="number">8</span>, <span class="number">6</span> &#125;,</span><br><span class="line">                    &#123; <span class="number">1</span>, <span class="number">4</span>, <span class="number">11</span>, <span class="number">13</span>, <span class="number">12</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="number">14</span>, <span class="number">10</span>, <span class="number">15</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">0</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">2</span> &#125;,</span><br><span class="line">                    &#123; <span class="number">6</span>, <span class="number">11</span>, <span class="number">13</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">10</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">0</span>, <span class="number">15</span>, <span class="number">14</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">12</span> &#125; &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                    &#123; <span class="number">13</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">15</span>, <span class="number">11</span>, <span class="number">1</span>, <span class="number">10</span>, <span class="number">9</span>, <span class="number">3</span>, <span class="number">14</span>, <span class="number">5</span>, <span class="number">0</span>, <span class="number">12</span>, <span class="number">7</span> &#125;,</span><br><span class="line">                    &#123; <span class="number">1</span>, <span class="number">15</span>, <span class="number">13</span>, <span class="number">8</span>, <span class="number">10</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="number">4</span>, <span class="number">12</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">11</span>, <span class="number">0</span>, <span class="number">14</span>, <span class="number">9</span>, <span class="number">2</span> &#125;,</span><br><span class="line">                    &#123; <span class="number">7</span>, <span class="number">11</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">9</span>, <span class="number">12</span>, <span class="number">14</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">6</span>, <span class="number">10</span>, <span class="number">13</span>, <span class="number">15</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">8</span> &#125;,</span><br><span class="line">                    &#123; <span class="number">2</span>, <span class="number">1</span>, <span class="number">14</span>, <span class="number">7</span>, <span class="number">4</span>, <span class="number">10</span>, <span class="number">8</span>, <span class="number">13</span>, <span class="number">15</span>, <span class="number">12</span>, <span class="number">9</span>, <span class="number">0</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">11</span> &#125; &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">//PC-1</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] PC1=&#123;<span class="number">57</span>,<span class="number">49</span>,<span class="number">41</span>,<span class="number">33</span>,<span class="number">25</span>,<span class="number">17</span>,<span class="number">9</span>,</span><br><span class="line">            <span class="number">1</span>,<span class="number">58</span>,<span class="number">50</span>,<span class="number">42</span>,<span class="number">34</span>,<span class="number">26</span>,<span class="number">18</span>,</span><br><span class="line">            <span class="number">10</span>,<span class="number">2</span>,<span class="number">59</span>,<span class="number">51</span>,<span class="number">43</span>,<span class="number">35</span>,<span class="number">27</span>,</span><br><span class="line">            <span class="number">19</span>,<span class="number">11</span>,<span class="number">3</span>,<span class="number">60</span>,<span class="number">52</span>,<span class="number">44</span>,<span class="number">36</span>,</span><br><span class="line">            <span class="number">63</span>,<span class="number">55</span>,<span class="number">47</span>,<span class="number">39</span>,<span class="number">31</span>,<span class="number">23</span>,<span class="number">15</span>,</span><br><span class="line">            <span class="number">7</span>,<span class="number">62</span>,<span class="number">54</span>,<span class="number">46</span>,<span class="number">38</span>,<span class="number">30</span>,<span class="number">22</span>,</span><br><span class="line">            <span class="number">14</span>,<span class="number">6</span>,<span class="number">61</span>,<span class="number">53</span>,<span class="number">45</span>,<span class="number">37</span>,<span class="number">29</span>,</span><br><span class="line">            <span class="number">21</span>,<span class="number">13</span>,<span class="number">5</span>,<span class="number">28</span>,<span class="number">20</span>,<span class="number">12</span>,<span class="number">4</span>&#125;;</span><br><span class="line">    <span class="comment">//PC-2</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] PC2=&#123;<span class="number">14</span>,<span class="number">17</span>,<span class="number">11</span>,<span class="number">24</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">28</span>,</span><br><span class="line">            <span class="number">15</span>,<span class="number">6</span>,<span class="number">21</span>,<span class="number">10</span>,<span class="number">23</span>,<span class="number">19</span>,<span class="number">12</span>,<span class="number">4</span>,</span><br><span class="line">            <span class="number">26</span>,<span class="number">8</span>,<span class="number">16</span>,<span class="number">7</span>,<span class="number">27</span>,<span class="number">20</span>,<span class="number">13</span>,<span class="number">2</span>,</span><br><span class="line">            <span class="number">41</span>,<span class="number">52</span>,<span class="number">31</span>,<span class="number">37</span>,<span class="number">47</span>,<span class="number">55</span>,<span class="number">30</span>,<span class="number">40</span>,</span><br><span class="line">            <span class="number">51</span>,<span class="number">45</span>,<span class="number">33</span>,<span class="number">48</span>,<span class="number">44</span>,<span class="number">49</span>,<span class="number">39</span>,<span class="number">56</span>,</span><br><span class="line">            <span class="number">34</span>,<span class="number">53</span>,<span class="number">46</span>,<span class="number">42</span>,<span class="number">50</span>,<span class="number">36</span>,<span class="number">29</span>,<span class="number">32</span>&#125;;</span><br><span class="line">    <span class="comment">//Schedule of Left Shifts</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] LFT=&#123;<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>&#125;;</span><br><span class="line">    <span class="comment">/**加密轮数**/</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> LOOP_NUM=<span class="number">16</span>;</span><br><span class="line">    <span class="keyword">private</span> String [] keys=<span class="keyword">new</span> String[LOOP_NUM];</span><br><span class="line">    <span class="keyword">private</span> String [] pContent;</span><br><span class="line">    <span class="keyword">private</span> String [] cContent;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> origin_length;</span><br><span class="line">    <span class="comment">/**16个子密钥**/</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[][] sub_key=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">16</span>][<span class="number">48</span>];</span><br><span class="line">    <span class="keyword">private</span> String content;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> p_origin_length;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DES</span><span class="params">(String key,String content)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">this</span>.content=content;</span><br><span class="line">        p_origin_length=content.getBytes().length;</span><br><span class="line">        generateKeys(key);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        String origin=<span class="string">"woaichixigua"</span>;</span><br><span class="line">        System.out.println(<span class="string">"原文：\n"</span>+origin);</span><br><span class="line">        DES customDES=<span class="keyword">new</span> DES(<span class="string">"我爱吃西瓜"</span>,origin);</span><br><span class="line">        <span class="keyword">byte</span>[] c=customDES.deal(origin.getBytes(),<span class="number">1</span>);</span><br><span class="line">        System.out.println(<span class="string">"密文：\n"</span>+<span class="keyword">new</span> String(c));</span><br><span class="line">        <span class="keyword">byte</span>[] p=customDES.deal(c,<span class="number">0</span>);</span><br><span class="line">        System.out.println(<span class="string">"明文：\n"</span>+<span class="keyword">new</span> String(p));</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/****拆分分组****/</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">byte</span>[] deal(<span class="keyword">byte</span>[] p ,<span class="keyword">int</span> flag)&#123;</span><br><span class="line">        origin_length=p.length;</span><br><span class="line">        <span class="keyword">int</span> g_num;</span><br><span class="line">        <span class="keyword">int</span> r_num;</span><br><span class="line">        g_num=origin_length/<span class="number">8</span>;</span><br><span class="line">        r_num=<span class="number">8</span>-(origin_length-g_num*<span class="number">8</span>);<span class="comment">//8不填充，这是需要填充的长度</span></span><br><span class="line">        <span class="keyword">byte</span>[] p_padding;</span><br><span class="line">        <span class="comment">/****填充****/</span></span><br><span class="line">        <span class="keyword">if</span> (r_num&lt;<span class="number">8</span>)&#123;</span><br><span class="line">            p_padding=<span class="keyword">new</span> <span class="keyword">byte</span>[origin_length+r_num];</span><br><span class="line">            System.arraycopy(p,<span class="number">0</span>,p_padding,<span class="number">0</span>,origin_length);</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;r_num;i++)&#123;</span><br><span class="line">                p_padding[origin_length+i]=(<span class="keyword">byte</span>)r_num;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            p_padding=p;</span><br><span class="line">        &#125;</span><br><span class="line">        g_num=p_padding.length/<span class="number">8</span>;</span><br><span class="line">        <span class="keyword">byte</span>[] f_p=<span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">8</span>];</span><br><span class="line">        <span class="keyword">byte</span>[] result_data=<span class="keyword">new</span> <span class="keyword">byte</span>[p_padding.length];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;g_num;i++)&#123;</span><br><span class="line">            System.arraycopy(p_padding,i*<span class="number">8</span>,f_p,<span class="number">0</span>,<span class="number">8</span>);</span><br><span class="line">            System.arraycopy(descryUnit(f_p,sub_key,flag),<span class="number">0</span>,result_data,i*<span class="number">8</span>,<span class="number">8</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (flag==<span class="number">0</span>)&#123;<span class="comment">//解密</span></span><br><span class="line">            <span class="keyword">byte</span>[] p_result_data=<span class="keyword">new</span> <span class="keyword">byte</span>[p_origin_length];</span><br><span class="line">            System.arraycopy(result_data,<span class="number">0</span>,p_result_data,<span class="number">0</span>,p_origin_length);</span><br><span class="line">            <span class="keyword">return</span>  p_result_data;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result_data;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**加密**/</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">byte</span>[] descryUnit(<span class="keyword">byte</span>[] p,<span class="keyword">int</span> k[][],<span class="keyword">int</span> flag)&#123;</span><br><span class="line">        <span class="keyword">int</span>[] p_bit=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">64</span>];</span><br><span class="line">        StringBuilder stringBuilder=<span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">8</span>;i++)&#123;</span><br><span class="line">            String p_b=Integer.toBinaryString(p[i]&amp;<span class="number">0xff</span>);</span><br><span class="line">            <span class="keyword">while</span> (p_b.length()%<span class="number">8</span>!=<span class="number">0</span>)&#123;</span><br><span class="line">                p_b=<span class="string">"0"</span>+p_b;</span><br><span class="line">            &#125;</span><br><span class="line">            stringBuilder.append(p_b);</span><br><span class="line">        &#125;</span><br><span class="line">        String p_str=stringBuilder.toString();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">64</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> p_t= (<span class="keyword">int</span>) p_str.charAt(i);</span><br><span class="line">            <span class="keyword">if</span>(p_t==<span class="number">48</span>)&#123;</span><br><span class="line">                p_t=<span class="number">0</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(p_t==<span class="number">49</span>)&#123;</span><br><span class="line">                p_t=<span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"To bit error!"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            p_bit[i]=p_t;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/***IP置换***/</span></span><br><span class="line">        <span class="keyword">int</span> [] p_IP=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">64</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">64</span>;i++)&#123;</span><br><span class="line">            p_IP[i]=p_bit[IP[i]-<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (flag == <span class="number">1</span>) &#123; <span class="comment">// 加密</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">16</span>; i++) &#123;</span><br><span class="line">                L(p_IP, i, flag, k[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (flag == <span class="number">0</span>) &#123; <span class="comment">// 解密</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">15</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">                L(p_IP, i, flag, k[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span>[] c=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">64</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;IP_1.length;i++)&#123;</span><br><span class="line">            c[i]=p_IP[IP_1[i]-<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">byte</span>[] c_byte=<span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">8</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">8</span>;i++)&#123;</span><br><span class="line">            c_byte[i]=(<span class="keyword">byte</span>) ((c[<span class="number">8</span>*i]&lt;&lt;<span class="number">7</span>)+(c[<span class="number">8</span>*i+<span class="number">1</span>]&lt;&lt;<span class="number">6</span>)+(c[<span class="number">8</span>*i+<span class="number">2</span>]&lt;&lt;<span class="number">5</span>)+(c[<span class="number">8</span>*i+<span class="number">3</span>]&lt;&lt;<span class="number">4</span>)+(c[<span class="number">8</span>*i+<span class="number">4</span>]&lt;&lt;<span class="number">3</span>)+(c[<span class="number">8</span>*i+<span class="number">5</span>]&lt;&lt;<span class="number">2</span>)+(c[<span class="number">8</span>*i+<span class="number">6</span>]&lt;&lt;<span class="number">1</span>)+(c[<span class="number">8</span>*i+<span class="number">7</span>]));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> c_byte;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">L</span><span class="params">(<span class="keyword">int</span>[] M, <span class="keyword">int</span> times, <span class="keyword">int</span> flag, <span class="keyword">int</span>[] keyArray)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] L0=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">32</span>];</span><br><span class="line">        <span class="keyword">int</span>[] R0=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">32</span>];</span><br><span class="line">        <span class="keyword">int</span>[] L1;</span><br><span class="line">        <span class="keyword">int</span>[] R1=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">32</span>];</span><br><span class="line">        <span class="keyword">int</span>[] f;</span><br><span class="line">        System.arraycopy(M,<span class="number">0</span>,L0,<span class="number">0</span>,<span class="number">32</span>);</span><br><span class="line">        System.arraycopy(M,<span class="number">32</span>,R0,<span class="number">0</span>,<span class="number">32</span>);</span><br><span class="line">        L1=R0;</span><br><span class="line">        f= fFunction(R0,keyArray);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">32</span>;j++)&#123;</span><br><span class="line">            R1[j]=L0[j]^f[j];</span><br><span class="line">            <span class="comment">//最后一轮不交换</span></span><br><span class="line">            <span class="keyword">if</span> (((flag == <span class="number">0</span>) &amp;&amp; (times == <span class="number">0</span>)) || ((flag == <span class="number">1</span>) &amp;&amp; (times == <span class="number">15</span>))) &#123;</span><br><span class="line">                System.arraycopy(R1,<span class="number">0</span>,M,<span class="number">0</span>,<span class="number">32</span>);</span><br><span class="line">                System.arraycopy(L1,<span class="number">0</span>,M,<span class="number">32</span>,<span class="number">32</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                System.arraycopy(L1,<span class="number">0</span>,M,<span class="number">0</span>,<span class="number">32</span>);</span><br><span class="line">                System.arraycopy(R1,<span class="number">0</span>,M,<span class="number">32</span>,<span class="number">32</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] fFunction(<span class="keyword">int</span> [] r_content, <span class="keyword">int</span> [] key)&#123;</span><br><span class="line">        <span class="keyword">int</span>[] result=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">32</span>];</span><br><span class="line">        <span class="keyword">int</span>[] e_k=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">48</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;E.length;i++)&#123;</span><br><span class="line">            e_k[i]=r_content[E[i]-<span class="number">1</span>]^key[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/********S盒替换:由48位变32位，现分割e_k，然后再进行替换*********/</span></span><br><span class="line">        <span class="keyword">int</span>[][] s=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">8</span>][<span class="number">6</span>];</span><br><span class="line">        <span class="keyword">int</span>[]s_after=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">32</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">8</span>;i++)&#123;</span><br><span class="line">            System.arraycopy(e_k,i*<span class="number">6</span>,s[i],<span class="number">0</span>,<span class="number">6</span>);</span><br><span class="line">            <span class="keyword">int</span> r=(s[i][<span class="number">0</span>]&lt;&lt;<span class="number">1</span>)+ s[i][<span class="number">5</span>];<span class="comment">//横坐标</span></span><br><span class="line">            <span class="keyword">int</span> c=(s[i][<span class="number">1</span>]&lt;&lt;<span class="number">3</span>)+(s[i][<span class="number">2</span>]&lt;&lt;<span class="number">2</span>)+(s[i][<span class="number">3</span>]&lt;&lt;<span class="number">1</span>)+s[i][<span class="number">4</span>];<span class="comment">//纵坐标</span></span><br><span class="line">            String str=Integer.toBinaryString(S_Box[i][r][c]);</span><br><span class="line">            <span class="keyword">while</span> (str.length()&lt;<span class="number">4</span>)&#123;</span><br><span class="line">                str=<span class="string">"0"</span>+str;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">4</span>;j++)&#123;</span><br><span class="line">                <span class="keyword">int</span> p= (<span class="keyword">int</span>) str.charAt(j);</span><br><span class="line">                <span class="keyword">if</span>(p==<span class="number">48</span>)&#123;</span><br><span class="line">                    p=<span class="number">0</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(p==<span class="number">49</span>)&#123;</span><br><span class="line">                    p=<span class="number">1</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    System.out.println(<span class="string">"To bit error!"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                s_after[<span class="number">4</span>*i+j]=p;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/******S盒替换结束*******/</span></span><br><span class="line">        <span class="comment">/****P盒替代****/</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;P.length;i++)&#123;</span><br><span class="line">            result[i]=s_after[P[i]-<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**生成子密钥**/</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">generateKeys</span><span class="params">(String key)</span></span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (key.length()&lt;<span class="number">8</span>)&#123;</span><br><span class="line">            key=key+key;</span><br><span class="line">        &#125;</span><br><span class="line">        key=key.substring(<span class="number">0</span>,<span class="number">8</span>);</span><br><span class="line">        <span class="keyword">byte</span>[] keys=key.getBytes();</span><br><span class="line">        <span class="comment">//8字节就是64位</span></span><br><span class="line">        <span class="keyword">int</span>[] k_bit=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">64</span>];</span><br><span class="line">        <span class="comment">//取位值</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">8</span>;i++)&#123;</span><br><span class="line">            String k_str=Integer.toBinaryString(keys[i]&amp;<span class="number">0xff</span>);</span><br><span class="line">            <span class="keyword">if</span>(k_str.length()&lt;<span class="number">8</span>)&#123;<span class="comment">//不足8位，前面补0</span></span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> t=<span class="number">0</span>;t&lt;<span class="number">8</span>-k_str.length();t++)&#123;</span><br><span class="line">                    k_str=<span class="string">"0"</span>+k_str;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">8</span>;j++)&#123;</span><br><span class="line">                <span class="keyword">int</span> p= (<span class="keyword">int</span>) k_str.charAt(j);</span><br><span class="line">                <span class="keyword">if</span>(p==<span class="number">48</span>)&#123; <span class="comment">// 数字0的asc码</span></span><br><span class="line">                    p=<span class="number">0</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(p==<span class="number">49</span>)&#123;</span><br><span class="line">                    p=<span class="number">1</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    System.out.println(<span class="string">"To bit error!"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                k_bit[i*<span class="number">8</span>+j]=p;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//k_bit是初始的64位长密钥，下一步开始进行替换</span></span><br><span class="line">        <span class="comment">//PC-1压缩</span></span><br><span class="line">        <span class="keyword">int</span> [] k_new_bit=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">56</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;PC1.length;i++)&#123;</span><br><span class="line">            k_new_bit[i]=k_bit[PC1[i]-<span class="number">1</span>];<span class="comment">//这个减1是因为数组下标的关系</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//分成左右两边各56/2</span></span><br><span class="line">        <span class="keyword">int</span>[] c0=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">28</span>];</span><br><span class="line">        <span class="keyword">int</span>[] d0=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">28</span>];</span><br><span class="line">        System.arraycopy(k_new_bit,<span class="number">0</span>,c0,<span class="number">0</span>,<span class="number">28</span>);</span><br><span class="line">        System.arraycopy(k_new_bit,<span class="number">28</span>,d0,<span class="number">0</span>,<span class="number">28</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">16</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span>[] c1=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">28</span>];</span><br><span class="line">            <span class="keyword">int</span>[] d1=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">28</span>];</span><br><span class="line">            <span class="keyword">if</span>(LFT[i]==<span class="number">1</span>)&#123;</span><br><span class="line">                System.arraycopy(c0,<span class="number">1</span>,c1,<span class="number">0</span>,<span class="number">27</span>);</span><br><span class="line">                c1[<span class="number">27</span>]=c0[<span class="number">0</span>];</span><br><span class="line">                System.arraycopy(d0,<span class="number">1</span>,d1,<span class="number">0</span>,<span class="number">27</span>);</span><br><span class="line">                d1[<span class="number">27</span>]=d0[<span class="number">0</span>];</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(LFT[i]==<span class="number">2</span>)&#123;</span><br><span class="line">                System.arraycopy(c0,<span class="number">2</span>,c1,<span class="number">0</span>,<span class="number">26</span>);</span><br><span class="line">                c1[<span class="number">26</span>]=c0[<span class="number">0</span>];</span><br><span class="line">                c1[<span class="number">27</span>]=c0[<span class="number">1</span>];</span><br><span class="line">                System.arraycopy(d0,<span class="number">2</span>,d1,<span class="number">0</span>,<span class="number">26</span>);</span><br><span class="line">                d1[<span class="number">26</span>]=d0[<span class="number">0</span>];</span><br><span class="line">                d1[<span class="number">27</span>]=d0[<span class="number">1</span>];</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"LFT Error!"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">int</span>[] tmp=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">56</span>];</span><br><span class="line">            System.arraycopy(c1,<span class="number">0</span>,tmp,<span class="number">0</span>,<span class="number">28</span>);</span><br><span class="line">            System.arraycopy(d1,<span class="number">0</span>,tmp,<span class="number">28</span>,<span class="number">28</span>);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;PC2.length;j++)&#123;<span class="comment">//PC2压缩置换</span></span><br><span class="line">                sub_key[i][j]= tmp[PC2[j]-<span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            c0=c1;</span><br><span class="line">            d0=d1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Hash函数"><a href="#Hash函数" class="headerlink" title="Hash函数"></a>Hash函数</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>Hash函数(杂凑函数/散列函数)是将任意长的消息变换为较短的、固定长度的值$H(M)$的不可逆的单向密码体制。</p>
+<p><strong>基本特征</strong></p>
+<ul>
+<li><p>算法公开，不需要密钥</p>
+</li>
+<li><p>数据压缩：可将任意长度的输入数据变换成一个固定长度的输出</p>
+</li>
+<li><p>易于计算：对任何给定的$m，h(m)$易于计算</p>
+</li>
+<li><p>单向性（抗原像性，Pre-image Resistance）：给定消息的散列值$h(m)$，要得到消息m在计算上不可行</p>
+</li>
+</ul>
+<p><strong>安全性要求</strong></p>
+<ul>
+<li>抗弱碰撞性（Weak Collision Resistance；抗第二原像（Second Pre-image Resistance））：</li>
+</ul>
+<p>对任意给定的消息$m$，寻找与$m$不同的消息$m’$，使得$h(m)=h(m’)$在计算上不可行</p>
+<ul>
+<li>抗强碰撞性（Strong Collision Resistance)：</li>
+</ul>
+<p>寻找任意两个不同的消息$m$和$m’$,使得$h(m)=h(m’)$在计算上不可行</p>
+<h2 id="MD5分析"><a href="#MD5分析" class="headerlink" title="MD5分析"></a>MD5分析</h2><p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20210106194546539.png" alt="image-20210106194546539"></p>
+<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20210106195423079.png" alt="image-20210106195423079"></p>
+<p>MD5主循环</p>
+<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20210106195500347.png" alt="image-20210106195500347"></p>
+<p>MD5步操作</p>
+<p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20210106195531038.png" alt="image-20210106195531038"></p>
+<p>算法实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MD5</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     *四个链接变量</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> A = <span class="number">0x67452301</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> B = <span class="number">0xefcdab89</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> C = <span class="number">0x98badcfe</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> D = <span class="number">0x10325476</span>;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     *ABCD的临时变量</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> Atemp, Btemp, Ctemp, Dtemp;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     *常量ti</span></span><br><span class="line"><span class="comment">     *公式:floor(abs(sin(i+1))×(2pow32)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> K[] = &#123;</span><br><span class="line">            <span class="number">0xd76aa478</span>, <span class="number">0xe8c7b756</span>, <span class="number">0x242070db</span>, <span class="number">0xc1bdceee</span>,</span><br><span class="line">            <span class="number">0xf57c0faf</span>, <span class="number">0x4787c62a</span>, <span class="number">0xa8304613</span>, <span class="number">0xfd469501</span>, <span class="number">0x698098d8</span>,</span><br><span class="line">            <span class="number">0x8b44f7af</span>, <span class="number">0xffff5bb1</span>, <span class="number">0x895cd7be</span>, <span class="number">0x6b901122</span>, <span class="number">0xfd987193</span>,</span><br><span class="line">            <span class="number">0xa679438e</span>, <span class="number">0x49b40821</span>, <span class="number">0xf61e2562</span>, <span class="number">0xc040b340</span>, <span class="number">0x265e5a51</span>,</span><br><span class="line">            <span class="number">0xe9b6c7aa</span>, <span class="number">0xd62f105d</span>, <span class="number">0x02441453</span>, <span class="number">0xd8a1e681</span>, <span class="number">0xe7d3fbc8</span>,</span><br><span class="line">            <span class="number">0x21e1cde6</span>, <span class="number">0xc33707d6</span>, <span class="number">0xf4d50d87</span>, <span class="number">0x455a14ed</span>, <span class="number">0xa9e3e905</span>,</span><br><span class="line">            <span class="number">0xfcefa3f8</span>, <span class="number">0x676f02d9</span>, <span class="number">0x8d2a4c8a</span>, <span class="number">0xfffa3942</span>, <span class="number">0x8771f681</span>,</span><br><span class="line">            <span class="number">0x6d9d6122</span>, <span class="number">0xfde5380c</span>, <span class="number">0xa4beea44</span>, <span class="number">0x4bdecfa9</span>, <span class="number">0xf6bb4b60</span>,</span><br><span class="line">            <span class="number">0xbebfbc70</span>, <span class="number">0x289b7ec6</span>, <span class="number">0xeaa127fa</span>, <span class="number">0xd4ef3085</span>, <span class="number">0x04881d05</span>,</span><br><span class="line">            <span class="number">0xd9d4d039</span>, <span class="number">0xe6db99e5</span>, <span class="number">0x1fa27cf8</span>, <span class="number">0xc4ac5665</span>, <span class="number">0xf4292244</span>,</span><br><span class="line">            <span class="number">0x432aff97</span>, <span class="number">0xab9423a7</span>, <span class="number">0xfc93a039</span>, <span class="number">0x655b59c3</span>, <span class="number">0x8f0ccc92</span>,</span><br><span class="line">            <span class="number">0xffeff47d</span>, <span class="number">0x85845dd1</span>, <span class="number">0x6fa87e4f</span>, <span class="number">0xfe2ce6e0</span>, <span class="number">0xa3014314</span>,</span><br><span class="line">            <span class="number">0x4e0811a1</span>, <span class="number">0xf7537e82</span>, <span class="number">0xbd3af235</span>, <span class="number">0x2ad7d2bb</span>, <span class="number">0xeb86d391</span>&#125;;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     *向左位移数,计算方法未知</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> s[] = &#123;<span class="number">7</span>, <span class="number">12</span>, <span class="number">17</span>, <span class="number">22</span>, <span class="number">7</span>, <span class="number">12</span>, <span class="number">17</span>, <span class="number">22</span>, <span class="number">7</span>, <span class="number">12</span>, <span class="number">17</span>, <span class="number">22</span>, <span class="number">7</span>,</span><br><span class="line">            <span class="number">12</span>, <span class="number">17</span>, <span class="number">22</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">14</span>, <span class="number">20</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">14</span>, <span class="number">20</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">14</span>, <span class="number">20</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">14</span>, <span class="number">20</span>,</span><br><span class="line">            <span class="number">4</span>, <span class="number">11</span>, <span class="number">16</span>, <span class="number">23</span>, <span class="number">4</span>, <span class="number">11</span>, <span class="number">16</span>, <span class="number">23</span>, <span class="number">4</span>, <span class="number">11</span>, <span class="number">16</span>, <span class="number">23</span>, <span class="number">4</span>, <span class="number">11</span>, <span class="number">16</span>, <span class="number">23</span>, <span class="number">6</span>, <span class="number">10</span>,</span><br><span class="line">            <span class="number">15</span>, <span class="number">21</span>, <span class="number">6</span>, <span class="number">10</span>, <span class="number">15</span>, <span class="number">21</span>, <span class="number">6</span>, <span class="number">10</span>, <span class="number">15</span>, <span class="number">21</span>, <span class="number">6</span>, <span class="number">10</span>, <span class="number">15</span>, <span class="number">21</span>&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     *初始化函数</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Atemp = A;</span><br><span class="line">        Btemp = B;</span><br><span class="line">        Ctemp = C;</span><br><span class="line">        Dtemp = D;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     *移动一定位数</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">shift</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (a &lt;&lt; s) | (a &gt;&gt;&gt; (<span class="number">32</span> - s));<span class="comment">//右移的时候，高位一定要补零，而不是补充符号位</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     *主循环</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">MainLoop</span><span class="params">(<span class="keyword">int</span> M[])</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> F, g;</span><br><span class="line">        <span class="keyword">int</span> a = Atemp;</span><br><span class="line">        <span class="keyword">int</span> b = Btemp;</span><br><span class="line">        <span class="keyword">int</span> c = Ctemp;</span><br><span class="line">        <span class="keyword">int</span> d = Dtemp;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">64</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i &lt; <span class="number">16</span>) &#123;</span><br><span class="line">                F = (b &amp; c) | ((~b) &amp; d);</span><br><span class="line">                g = i;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (i &lt; <span class="number">32</span>) &#123;</span><br><span class="line">                F = (d &amp; b) | ((~d) &amp; c);</span><br><span class="line">                g = (<span class="number">5</span> * i + <span class="number">1</span>) % <span class="number">16</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (i &lt; <span class="number">48</span>) &#123;</span><br><span class="line">                F = b ^ c ^ d;</span><br><span class="line">                g = (<span class="number">3</span> * i + <span class="number">5</span>) % <span class="number">16</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                F = c ^ (b | (~d));</span><br><span class="line">                g = (<span class="number">7</span> * i) % <span class="number">16</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">int</span> tmp = d;</span><br><span class="line">            d = c;</span><br><span class="line">            c = b;</span><br><span class="line">            b = b + shift(a + F + K[i] + M[g], s[i]);</span><br><span class="line">            a = tmp;</span><br><span class="line">        &#125;</span><br><span class="line">        Atemp = a + Atemp;</span><br><span class="line">        Btemp = b + Btemp;</span><br><span class="line">        Ctemp = c + Ctemp;</span><br><span class="line">        Dtemp = d + Dtemp;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     *填充函数</span></span><br><span class="line"><span class="comment">     *处理后应满足bits≡448(mod512),字节就是bytes≡56（mode64)</span></span><br><span class="line"><span class="comment">     *填充方式为先加一个0,其它位补零</span></span><br><span class="line"><span class="comment">     *最后加上64位的原来长度</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] add(String str) &#123;</span><br><span class="line">        <span class="keyword">byte</span>[] b = str.getBytes();</span><br><span class="line">        <span class="keyword">int</span> num = (b.length + <span class="number">8</span>) % <span class="number">64</span> == <span class="number">0</span> ? ((b.length + <span class="number">8</span>) / <span class="number">64</span>) + <span class="number">2</span> : (b.length + <span class="number">8</span>) / <span class="number">64</span> + <span class="number">1</span>;<span class="comment">//以512位，64个字节为一组, 这是多少个64字节</span></span><br><span class="line">        <span class="keyword">int</span>[] strByte = <span class="keyword">new</span> <span class="keyword">int</span>[num * <span class="number">16</span>];<span class="comment">//64/4=16，所以有16个整数</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num * <span class="number">16</span>; i++) &#123;<span class="comment">//全部初始化0</span></span><br><span class="line">            strByte[i] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; b.length / <span class="number">4</span>; i++)&#123;</span><br><span class="line">            strByte[i]= b[i*<span class="number">4</span>] &amp; <span class="number">0xFF</span> |</span><br><span class="line">                    (b[i*<span class="number">4</span>+<span class="number">1</span>] &amp; <span class="number">0xFF</span>) &lt;&lt; <span class="number">8</span> |</span><br><span class="line">                    (b[i*<span class="number">4</span>+<span class="number">2</span>] &amp; <span class="number">0xFF</span>) &lt;&lt; <span class="number">16</span> |</span><br><span class="line">                    (b[i*<span class="number">4</span>+<span class="number">3</span>] &amp; <span class="number">0xFF</span>) &lt;&lt; <span class="number">24</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i &lt; b.length % <span class="number">4</span>; ++i)&#123;</span><br><span class="line">            <span class="comment">//尾部添加1</span></span><br><span class="line">            strByte[b.length / <span class="number">4</span>] |= (b[b.length / <span class="number">4</span> * <span class="number">4</span> + i] &amp; <span class="number">0xFF</span>) &lt;&lt; i * <span class="number">8</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        strByte[b.length / <span class="number">4</span>] |= <span class="number">0x80</span> &lt;&lt; b.length % <span class="number">4</span> * <span class="number">8</span>;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         *添加原长度，长度指位的长度，所以要乘8，然后是小端序，所以放在倒数第二个,这里长度只用了32位</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        strByte[num * <span class="number">16</span> - <span class="number">2</span>] = (b.length * <span class="number">8</span>);</span><br><span class="line">        <span class="keyword">return</span> strByte;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     *调用函数</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getMD5</span><span class="params">(String source)</span> </span>&#123;</span><br><span class="line">        init();</span><br><span class="line">        <span class="keyword">int</span>[] strByte = add(source);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; strByte.length / <span class="number">16</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span>[] num = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">16</span>];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">16</span>; j++) &#123;</span><br><span class="line">                num[j] = strByte[i * <span class="number">16</span> + j];</span><br><span class="line">            &#125;</span><br><span class="line">            MainLoop(num);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> changeHex(Atemp) + changeHex(Btemp) + changeHex(Ctemp) + changeHex(Dtemp);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     *整数变成16进制字符串</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">changeHex</span><span class="params">(<span class="keyword">int</span> a)</span> </span>&#123;</span><br><span class="line">        String str = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">            str += String.format(<span class="string">"%2s"</span>, Integer.toHexString(((a &gt;&gt; i * <span class="number">8</span>) % (<span class="number">1</span> &lt;&lt; <span class="number">8</span>)) &amp; <span class="number">0xff</span>)).replace(<span class="string">' '</span>, <span class="string">'0'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> str;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     *单例</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> MD5 instance;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> MD5 <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            instance = <span class="keyword">new</span> MD5();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">MD5</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String str = MD5.getInstance().getMD5(<span class="string">"你好"</span>);</span><br><span class="line">        System.out.println(str);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="RSA算法"><a href="#RSA算法" class="headerlink" title="RSA算法"></a>RSA算法</h1><h2 id="公钥密码体制"><a href="#公钥密码体制" class="headerlink" title="公钥密码体制"></a>公钥密码体制</h2><p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20210106214134683.png" alt="image-20210106214134683"></p>
+<p>构造可行的非对称密码系统，关键是找到合适的数学函数—<strong>单向陷门函数</strong></p>
+<ol>
+<li><p>给出f定义域中的任意元素$x$,计算$f(x)$是容易的</p>
+</li>
+<li><p>给出$y=f(x)$中的$y$，计算$x$：</p>
+<ul>
+<li>若知道设计函数f时结合进去的某种信息（称为<strong>陷门</strong>），则x容易计算；</li>
+<li>若不知道该<strong>陷门</strong>信息，则x难以计算</li>
+</ul>
+</li>
+</ol>
+<h3 id="常见数学困难问题"><a href="#常见数学困难问题" class="headerlink" title="常见数学困难问题"></a>常见数学困难问题</h3><ol>
+<li><p>大整数因子分解问题(如公钥密码体制<code>RSA</code>)</p>
+<ul>
+<li>给定两个素数$p,q,$计算乘积$n=pq$很容易，但给定整数$n$，求$n$的素因子$p,q$使得$n=pq$是困难的</li>
+</ul>
+</li>
+<li><p>有限域上的离散对数问题(如公钥密码体制<code>ElGamal</code>)</p>
+<ul>
+<li>已知有限循环群$G=<g>={g^k|k=0,1,2,…}$及其生成元$g$和阶$|G|=n.$给定整数$a$，求$h=g^a$很容易；但是给定元素$h$，计算整数$x$，使得$h=g^x$非常困难</li>
+</ul>
+</li>
+<li><p>椭圆曲线上的离散对数问题(如公钥密码体制<code>ECC</code>)</p>
+</li>
+<li><p>背包问题（背包算法）</p>
+</li>
+<li><p>基于身份的密码体制（<code>IBE</code>）</p>
+</li>
+</ol>
+<h2 id="RSA原理"><a href="#RSA原理" class="headerlink" title="RSA原理"></a>RSA原理</h2><p>安全性基于大整数因子分解的困难性</p>
+<ol>
+<li><p>密钥的生成</p>
+<ul>
+<li>选择两个大素数 $p$和$q$,（$p≠q$，需要保密）</li>
+<li>计算$n=p×q$， $\varphi(n)=(p－1)×(q－1)$</li>
+<li>选择整数 $e$使$ (\varphi(n)，e) =1,  1&lt;e&lt; \varphi(n) $</li>
+<li>计算$d$，使$d=e^{－1} mod \varphi(n)$,</li>
+<li>得到：公钥为${e, n}$； 私钥为${d}$</li>
+</ul>
+</li>
+<li><p>加密$(e，n)$： 明文$M&lt;n$， 密文$C=M^e (mod n)$</p>
+</li>
+<li><p>解密$(d，n)$： 密文$C$， 明文$M =C^d (mod n)$</p>
+</li>
+</ol>
+<p>正确性验证<br>$$<br>C^dmod;n=(M^e)^dmod;n=m^{ed}mod;n≡M;mod;n<br>$$</p>
+<h3 id="大素数的生成与检验"><a href="#大素数的生成与检验" class="headerlink" title="大素数的生成与检验"></a>大素数的生成与检验</h3><p>先随机生成一个适当大小的奇数n，再检测其素性；如果不是，则选取后继的随机数直到找到通过检验的素数为止</p>
+<p><strong>概率素性检测</strong></p>
+<p>这里使用Miller-Rabin算法</p>
+<p>引理：</p>
+<blockquote>
+<p>（1）费马小定理：当$p$为质数，有$a^{p-1}≡1(mod;p)$，不过反过来不一定成立，也就是说，如果$a,p$互质，且$a^{p-1}≡1(mod;p)$，不能推出$p$是质数，比如$Carmichael$数</p>
+<p>（2）二次探测：如果$p$是一个素数，$0&lt;x&lt;p$, 则方程$x^2≡1(mod;p)$的解为$x=1$或$x=p-1$ </p>
+</blockquote>
+<p><strong>算法流程</strong></p>
+<p>（1）对于偶数和 $0，1，2 $可以直接判断。</p>
+<p>（2）设要测试的数为 $x$，我们取一个较小的质数$a$ ，设$s,t$满足$2^st=x-1$（其中$t$是奇数）。</p>
+<p>（3）我们先算出$a^t$，然后不断地平方并且进行二次探测（进行$s$次）。</p>
+<p>（4）最后我们根据费马小定律，如果最后$a^{x-1}≠1(mod;x)$，则说明$x$为合数。</p>
+<p>（5）多次取不同的$a$进行$Miller-Rabin$素数测试，这样可以使正确性更高</p>
+<p><strong>快速幂算法</strong></p>
+<p>常见的快速幂算法是模平方计算法，但是对于大整数，计算机进行取模运算效率是很低的，所以对此进行了优化。</p>
+<p>代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> BigInteger <span class="title">expMod</span><span class="params">(<span class="keyword">int</span> base, BigInteger exp, BigInteger n)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (exp.equals(BigInteger.ZERO)) &#123;</span><br><span class="line">		<span class="keyword">return</span> BigInteger.ONE;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (!exp.testBit(<span class="number">0</span>)) &#123;<span class="comment">//如果为偶数</span></span><br><span class="line">		<span class="keyword">return</span> expMod(base, exp.divide(BigInteger.valueOf(<span class="number">2</span>)), n).pow(<span class="number">2</span>).remainder(n);</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> (expMod(base, exp.subtract(BigInteger.ONE).divide(BigInteger.valueOf(<span class="number">2</span>)), n).pow(<span class="number">2</span>).multiply(BigInteger.valueOf(base))).remainder(n);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>没有进行取模运算，可以说几乎做到了<code>Java</code>代码层最快了。</p>
+<p><code>Miller-Rabin</code>算法代码实现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">passesMillerRabin</span><span class="params">(BigInteger n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> base = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (n.compareTo(BigInteger.valueOf(Integer.MAX_VALUE)) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            base = ran.nextInt(n.intValue() - <span class="number">1</span>) + <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            base = ran.nextInt(Integer.MAX_VALUE - <span class="number">1</span>) + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        BigInteger thisMinusOne = n.subtract(BigInteger.ONE);</span><br><span class="line">        BigInteger m = thisMinusOne;</span><br><span class="line">        <span class="keyword">while</span> (!m.testBit(<span class="number">0</span>)) &#123;</span><br><span class="line">            m = m.shiftRight(<span class="number">1</span>);</span><br><span class="line">            BigInteger z = BigInteger.valueOf(base).modPow(m, n);</span><br><span class="line">            <span class="comment">//BigInteger z = expMod(base, m, n);</span></span><br><span class="line">            <span class="keyword">if</span> (z.equals(thisMinusOne)) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (z.equals(BigInteger.ONE)) &#123;</span><br><span class="line"></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>根据标准 ANSI X9.80, “PRIME NUMBER GENERATION, PRIMALITY TESTING, AND PRIMALITY CERTIFICATES”. n的bit数越多, 需要的检测次数就越少。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isPrime</span><span class="params">(BigInteger n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sizeInBits = n.bitLength();</span><br><span class="line">        <span class="keyword">int</span> tryTime = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (sizeInBits &lt; <span class="number">100</span>) &#123;</span><br><span class="line">            tryTime = <span class="number">50</span>;</span><br><span class="line">            <span class="keyword">return</span> isPrime(n, tryTime);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (sizeInBits &lt; <span class="number">256</span>) &#123;</span><br><span class="line">            tryTime = <span class="number">27</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (sizeInBits &lt; <span class="number">512</span>) &#123;</span><br><span class="line">            tryTime = <span class="number">15</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (sizeInBits &lt; <span class="number">768</span>) &#123;</span><br><span class="line">            tryTime = <span class="number">8</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (sizeInBits &lt; <span class="number">1024</span>) &#123;</span><br><span class="line">            tryTime = <span class="number">4</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            tryTime = <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> isPrime(n, tryTime);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="混合加密实现"><a href="#混合加密实现" class="headerlink" title="混合加密实现"></a>混合加密实现</h1><p><img src="https://aotle.oss-cn-beijing.aliyuncs.com/image-20210107162621192.png" alt="image-20210107162621192"></p>
+<p>基于B/S架构完成，结果老师连看都不看~~，算了不想说了。</p>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=http://aotle.top/2021/01/08/cryptsheji/>http://aotle.top/2021/01/08/cryptsheji/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-08T16:02:32+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Jan 8, 2021</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>密码学</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://aotle.top/2021/01/08/cryptsheji/&title=密码学课程设计 - Aotle&summary=
+CUMT密码学课程设计建议随缘做，做的好也不一定能得高分
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://aotle.top/2021/01/08/cryptsheji/&title=密码学课程设计 - Aotle&summary=
+CUMT密码学课程设计建议随缘做，做的好也不一定能得高分
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://aotle.top/2021/01/08/cryptsheji/&title=密码学课程设计 - Aotle&summary=
+CUMT密码学课程设计建议随缘做，做的好也不一定能得高分
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2020/12/16/java_method/'>
+                <p class='title'>java方法小抄<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>
+Java方法记录
+
+
+
+Array和List相互转化Arrays.asList把数组转化成List123456789101112131415import java.util.Arrays;/*...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '密码学课程设计',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#原理"><span class="toc-text">原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法实现："><span class="toc-text">算法实现：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#维吉尼亚密码攻击"><span class="toc-text">维吉尼亚密码攻击</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一步：确定密钥字"><span class="toc-text">第一步：确定密钥字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二步：确定具体密钥字"><span class="toc-text">第二步：确定具体密钥字</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#密钥流的要求"><span class="toc-text">密钥流的要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#密钥流生成器"><span class="toc-text">密钥流生成器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#反馈移位寄存器"><span class="toc-text">反馈移位寄存器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法实现LSFR"><span class="toc-text">算法实现LSFR</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安全性分析"><span class="toc-text">安全性分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分组密码设计思想✨"><span class="toc-text">分组密码设计思想✨</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DES详解"><span class="toc-text">DES详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#初始置换（IP）"><span class="toc-text">初始置换（IP）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16轮迭代"><span class="toc-text">16轮迭代</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#F函数"><span class="toc-text">F函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#E扩展"><span class="toc-text">E扩展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#S盒"><span class="toc-text">S盒</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P盒"><span class="toc-text">P盒</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DES的缺陷"><span class="toc-text">DES的缺陷</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DES改进"><span class="toc-text">DES改进</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#定义"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MD5分析"><span class="toc-text">MD5分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#公钥密码体制"><span class="toc-text">公钥密码体制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常见数学困难问题"><span class="toc-text">常见数学困难问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RSA原理"><span class="toc-text">RSA原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#大素数的生成与检验"><span class="toc-text">大素数的生成与检验</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='822934507'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="/1781322024@qq.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/Aotle"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=549195595"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://Aotle.github.io" target="_blank" rel="noopener">Copyright © 2017-2020 F.A</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["http://i1.fuimg.com/721743/90478b03f49d8057.png"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('.cover') {
+          $('.cover').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick','mail','link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "B2JRC0gFBmeF5lDPxqa3TuTr-gzGzoHsz",
+    appKey: "x3BFjG0bdCFyRFGeg1QJUP8D",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'robohash',
+    lang:'zh-cn',
+    visitor: 'true',
+    highlight: 'true',
+    mathJax: 'false',
+    enableQQ: 'true',
+    requiredFields: requiredFields,
+    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+    emojiMaps: emojiMaps
+  })
+  </script>
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 标准 markdown 描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+
